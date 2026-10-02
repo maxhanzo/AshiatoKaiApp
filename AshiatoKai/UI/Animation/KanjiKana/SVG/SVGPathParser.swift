@@ -179,6 +179,42 @@ struct SVGPathParser {
 
                     currentPoint = destination
                 }
+                
+            case "Q":
+                while scanner.hasNumberAhead {
+                    let control = try scanner.scanPoint()
+                    let destination = try scanner.scanPoint()
+
+                    path.addQuadCurve(
+                        to: destination,
+                        control: control
+                    )
+
+                    currentPoint = destination
+                }
+
+            case "q":
+                while scanner.hasNumberAhead {
+                    let controlOffset = try scanner.scanPoint()
+                    let destinationOffset = try scanner.scanPoint()
+
+                    let control = CGPoint(
+                        x: currentPoint.x + controlOffset.x,
+                        y: currentPoint.y + controlOffset.y
+                    )
+
+                    let destination = CGPoint(
+                        x: currentPoint.x + destinationOffset.x,
+                        y: currentPoint.y + destinationOffset.y
+                    )
+
+                    path.addQuadCurve(
+                        to: destination,
+                        control: control
+                    )
+
+                    currentPoint = destination
+                }
 
             case "Z", "z":
                 path.closeSubpath()
