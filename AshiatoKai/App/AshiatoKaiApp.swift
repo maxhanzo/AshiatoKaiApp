@@ -20,16 +20,3 @@ struct AshiatoKaiApp: App {
         WindowGroup { AppView(coordinator: coordinator) }
     }
 }
-
-@MainActor
-final class AppContainer {
-    private let repository: any SearchRepository
-
-    init(repository: any SearchRepository = MockSearchRepository()) {
-        self.repository = repository
-    }
-
-    func makeCoordinator() -> AppCoordinator {
-        AppCoordinator(searchViewModel: SearchViewModel(repository: repository))
-    }
-}

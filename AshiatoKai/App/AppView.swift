@@ -17,17 +17,43 @@ struct AppView: View {
                     .navigationDestination(for: SearchRoute.self) { route in
                         switch route {
                         case .detail(let record):
-                            RecordDetailView(record: record)
+                            RecordDetailView(
+                                record: record,
+                                onGroupDetails: {
+                                    coordinator.showGroupDetails(
+                                        groupID: record.groupID
+                                    )
+                                }
+                            )
+
+                        case .groupDetails(let groupID):
+                            GroupDetailsView(
+                                viewModel: coordinator.makeGroupDetailsViewModel(
+                                    groupID: groupID
+                                ),
+                                onMemberSelected: { member in
+                                    coordinator.showNameSurnameKanji(
+                                        member: member
+                                    )
+                                }
+                            )
+                            
+                        case .nameSurnameKanji(let member):
+                            NameSurnameKanjiView(member: member)
                         }
                     }
             }
-            .tabItem { Label("Search", systemImage: "magnifyingglass") }
+            .tabItem {
+                Label("Search", systemImage: "magnifyingglass")
+            }
             .tag(AppTab.search)
 
             NavigationStack {
                 OptionsView()
             }
-            .tabItem { Label("Options", systemImage: "gearshape") }
+            .tabItem {
+                Label("Options", systemImage: "gearshape")
+            }
             .tag(AppTab.options)
         }
         .tint(.indigo)
