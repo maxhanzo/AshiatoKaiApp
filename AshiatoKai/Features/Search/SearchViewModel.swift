@@ -8,50 +8,6 @@
 import Foundation
 import Combine
 
-struct SearchForm: Equatable {
-    var name = ""
-    var surname = ""
-    var year = ""
-    var prefecture = ""
-    var shipName = ""
-
-    var validationMessage: String? {
-        let text = year.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !text.isEmpty else { return nil }
-        guard text.allSatisfy({ $0.isASCII && $0.isNumber }),
-              let value = Int(text), (1...9999).contains(value) else {
-            return "Enter a year between 1 and 9999, or leave it blank."
-        }
-        return nil
-    }
-
-    var criteria: SearchCriteria {
-        func trim(_ value: String) -> String {
-            value.trimmingCharacters(in: .whitespacesAndNewlines)
-        }
-        return SearchCriteria(name: trim(name), surname: trim(surname),
-                              year: Int(trim(year)), prefecture: trim(prefecture),
-                              shipName: trim(shipName))
-    }
-}
-
-enum SearchState {
-    case idle
-    case loading
-    case results([SearchRecord])
-    case empty
-    case failed(String)
-
-    var isLoading: Bool {
-        if case .loading = self { return true }
-        return false
-    }
-}
-
-enum SearchNavigationEvent {
-    case showDetail(SearchRecord)
-}
-
 @MainActor
 final class SearchViewModel: ObservableObject {
     @Published var form = SearchForm()

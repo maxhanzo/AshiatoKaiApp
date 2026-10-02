@@ -31,7 +31,7 @@ struct SearchView: View {
             } header: {
                 Text("Search criteria")
             } footer: {
-                Text("All fields are optional. Fill in any combination to narrow your search.")
+                Text("Name and surname are required. Add optional filters to narrow your search.")
             }
 
             if let message = viewModel.validationMessage {
@@ -79,7 +79,10 @@ struct SearchView: View {
                             HStack {
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text(record.fullName).foregroundStyle(.primary)
-                                    Text("\(String(record.year)) · \(record.prefecture) · \(record.shipName)")
+                                    Text([record.year.map(String.init), record.prefecture, record.shipName]
+                                        .compactMap { $0 }
+                                        .filter { !$0.isEmpty }
+                                        .joined(separator: " · "))
                                         .font(.caption)
                                         .foregroundStyle(.secondary)
                                 }
@@ -94,11 +97,6 @@ struct SearchView: View {
                 }
             }
 
-            Section {
-                Label("Demo data — all records are fictional.", systemImage: "info.circle")
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
-            }
         }
         .navigationTitle("Search")
         .scrollDismissesKeyboard(.interactively)

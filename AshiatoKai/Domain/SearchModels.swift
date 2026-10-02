@@ -16,24 +16,53 @@ struct SearchCriteria: Equatable {
     var shipName = ""
 }
 
-// Provisional domain model. These are not assumed to be API field names.
 struct SearchRecord: Identifiable, Hashable {
-    let id: String
+    let id: Int
+    let groupID: Int
     let name: String
     let surname: String
-    let year: Int
-    let prefecture: String
-    let shipName: String
+    let nameJapanese: String?
+    let surnameJapanese: String?
+    let year: Int?
+    let prefecture: String?
+    let shipName: String?
+    let destination: String?
+    let farm: String?
+    let arrivalDate: String?
+    let departureDate: String?
 
-    var fullName: String { "\(name) \(surname)" }
+    var fullName: String {
+        [name, surname].filter { !$0.isEmpty }.joined(separator: " ")
+    }
+
+    var japaneseFullName: String? {
+        let value = [surnameJapanese, nameJapanese]
+            .compactMap { $0 }
+            .filter { !$0.isEmpty }
+            .joined()
+        return value.isEmpty ? nil : value
+    }
 }
 
 enum SearchError: Error, LocalizedError {
+    case invalidRequest(String)
     case unavailable
     case invalidResponse
 
+    init(apiError: APIError) {
+        switch apiError {
+        case .server(let status, _, let message) where status == 400:
+            self = .invalidRequest(message ?? "The search request is invalid.")
+        case .decoding, .nonHTTPResponse:
+            self = .invalidResponse
+        case .transport, .server:
+            self = .unavailable
+        }
+    }
+
     var errorDescription: String? {
         switch self {
+        case .invalidRequest(let message): return message
         case .unavailable: return "The search could not be completed. Please try again."
         case .invalidResponse: return "The service returned an unexpected response."
         }

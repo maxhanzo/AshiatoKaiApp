@@ -25,8 +25,13 @@ struct AshiatoKaiApp: App {
 final class AppContainer {
     private let repository: any SearchRepository
 
-    init(repository: any SearchRepository = MockSearchRepository()) {
-        self.repository = repository
+    init(repository: (any SearchRepository)? = nil) {
+        if let repository {
+            self.repository = repository
+        } else {
+            let apiClient = URLSessionAPIClient()
+            self.repository = RemoteSearchRepository(apiClient: apiClient)
+        }
     }
 
     func makeCoordinator() -> AppCoordinator {

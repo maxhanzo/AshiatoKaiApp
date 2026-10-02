@@ -9,14 +9,15 @@ import Foundation
 import Combine
 
 struct MockSearchRepository: SearchRepository {
-    // Entirely fictional fixtures, not historical records.
     private let records = [
-        SearchRecord(id: "demo-1", name: "Haruto", surname: "Tanaka", year: 1920,
-                     prefecture: "Osaka", shipName: "Demo Maru"),
-        SearchRecord(id: "demo-2", name: "Yuki", surname: "Sato", year: 1930,
-                     prefecture: "Fukuoka", shipName: "Sample Maru"),
-        SearchRecord(id: "demo-3", name: "Akira", surname: "Suzuki", year: 1920,
-                     prefecture: "Tokyo", shipName: "Demo Maru")
+        SearchRecord(id: 1, groupID: 1, name: "Haruto", surname: "Tanaka",
+                     nameJapanese: nil, surnameJapanese: nil, year: 1920,
+                     prefecture: "Osaka", shipName: "Demo Maru", destination: nil,
+                     farm: nil, arrivalDate: nil, departureDate: nil),
+        SearchRecord(id: 2, groupID: 2, name: "Yuki", surname: "Sato",
+                     nameJapanese: nil, surnameJapanese: nil, year: 1930,
+                     prefecture: "Fukuoka", shipName: "Sample Maru", destination: nil,
+                     farm: nil, arrivalDate: nil, departureDate: nil)
     ]
 
     func search(criteria: SearchCriteria) -> AnyPublisher<[SearchRecord], SearchError> {
@@ -25,8 +26,8 @@ struct MockSearchRepository: SearchRepository {
                 matches(record.name, criteria.name)
                 && matches(record.surname, criteria.surname)
                 && (criteria.year == nil || record.year == criteria.year)
-                && matches(record.prefecture, criteria.prefecture)
-                && matches(record.shipName, criteria.shipName)
+                && matches(record.prefecture ?? "", criteria.prefecture)
+                && matches(record.shipName ?? "", criteria.shipName)
             })
             .setFailureType(to: SearchError.self)
             .delay(for: .milliseconds(450), scheduler: DispatchQueue.global(qos: .userInitiated))
