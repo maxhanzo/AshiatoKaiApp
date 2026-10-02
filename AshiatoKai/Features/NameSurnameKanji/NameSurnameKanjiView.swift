@@ -29,7 +29,8 @@ struct NameSurnameKanjiView: View {
                             .font(.title3)
                     }
 
-                    if let japaneseName = member.japaneseFullName {
+                    if let japaneseName =
+                            member.japaneseFullName {
                         VStack(
                             alignment: .leading,
                             spacing: 4
@@ -46,14 +47,25 @@ struct NameSurnameKanjiView: View {
                 .padding(.vertical, 4)
             }
 
-            if let japaneseName = member.japaneseFullName {
+            if let japaneseName =
+                member.japaneseFullName {
+
                 Section {
-                    verticalName(japaneseName)
-                        .frame(
-                            maxWidth: .infinity,
-                            alignment: .center
+                    HStack(
+                        alignment: .top,
+                        spacing: 40
+                    ) {
+                        verticalName(japaneseName)
+
+                        JapaneseNameWritingContainerView(
+                            name: japaneseName
                         )
-                        .padding(.vertical, 24)
+                    }
+                    .frame(
+                        maxWidth: .infinity,
+                        alignment: .center
+                    )
+                    .padding(.vertical, 24)
                 }
             }
         }
