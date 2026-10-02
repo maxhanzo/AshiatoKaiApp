@@ -20,21 +20,3 @@ struct AshiatoKaiApp: App {
         WindowGroup { AppView(coordinator: coordinator) }
     }
 }
-
-@MainActor
-final class AppContainer {
-    private let repository: any SearchRepository
-
-    init(repository: (any SearchRepository)? = nil) {
-        if let repository {
-            self.repository = repository
-        } else {
-            let apiClient = URLSessionAPIClient()
-            self.repository = RemoteSearchRepository(apiClient: apiClient)
-        }
-    }
-
-    func makeCoordinator() -> AppCoordinator {
-        AppCoordinator(searchViewModel: SearchViewModel(repository: repository))
-    }
-}

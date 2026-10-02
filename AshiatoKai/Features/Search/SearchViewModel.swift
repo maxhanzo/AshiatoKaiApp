@@ -20,6 +20,8 @@ final class SearchViewModel: ObservableObject {
         case cancel
     }
 
+    private let retrieveImmigrantsUseCase: any RetrieveImmigrantsUseCaseInterface
+
     private let actions = PassthroughSubject<Action, Never>()
     private let navigationSubject = PassthroughSubject<SearchNavigationEvent, Never>()
     private var cancellables = Set<AnyCancellable>()
@@ -28,32 +30,45 @@ final class SearchViewModel: ObservableObject {
         navigationSubject.eraseToAnyPublisher()
     }
 
-    init(repository: any SearchRepository) {
-        $form.map(\.validationMessage)
+    init(
+        retrieveImmigrantsUseCase: any RetrieveImmigrantsUseCaseInterface
+    ) {
+        self.retrieveImmigrantsUseCase = retrieveImmigrantsUseCase
+
+        $form
+            .map(\.validationMessage)
             .removeDuplicates()
-            .sink { [weak self] message in self?.validationMessage = message }
+            .sink { [weak self] message in
+                self?.validationMessage = message
+            }
             .store(in: &cancellables)
 
         // The search button remains available during loading: a new submission
         // supersedes the previous request. Cancel is also an inner publisher.
-        $form.map { $0.validationMessage == nil }
+        $form
+            .map { $0.validationMessage == nil }
             .removeDuplicates()
-            .sink { [weak self] value in self?.canSearch = value }
+            .sink { [weak self] value in
+                self?.canSearch = value
+            }
             .store(in: &cancellables)
 
         actions
-            .map { action -> AnyPublisher<SearchState, Never> in
+            .map { [retrieveImmigrantsUseCase] action -> AnyPublisher<SearchState, Never> in
                 switch action {
                 case .cancel:
-                    return Just(SearchState.idle).eraseToAnyPublisher()
+                    return Just(SearchState.idle)
+                        .eraseToAnyPublisher()
+
                 case .search(let criteria):
-                    return repository.search(criteria: criteria)
-                        .map { records -> SearchState in
-                            records.isEmpty ? .empty : .results(records)
-                        }
+                    return retrieveImmigrantsUseCase
+                        .execute(criteria: criteria)
+                        .map(SearchState.results)
                         // Catch inside the inner publisher: subsequent searches
                         // must still work after a failed request.
-                        .catch { Just(SearchState.failed($0.localizedDescription)) }
+                        .catch {
+                            Just(SearchState.failed($0.localizedDescription))
+                        }
                         .prepend(SearchState.loading)
                         // Schedule before switchToLatest so queued responses from
                         // cancelled requests cannot leak into the UI afterwards.
@@ -62,7 +77,9 @@ final class SearchViewModel: ObservableObject {
                 }
             }
             .switchToLatest()
-            .sink { [weak self] state in self?.state = state }
+            .sink { [weak self] state in
+                self?.state = state
+            }
             .store(in: &cancellables)
     }
 
@@ -71,7 +88,9 @@ final class SearchViewModel: ObservableObject {
         actions.send(.search(form.criteria))
     }
 
-    func cancel() { actions.send(.cancel) }
+    func cancel() {
+        actions.send(.cancel)
+    }
 
     func clear() {
         actions.send(.cancel)

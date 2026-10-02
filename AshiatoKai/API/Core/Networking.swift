@@ -38,4 +38,16 @@ enum AshiatoKaiAPI {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         return request
     }
+    
+    static func immigrantGroup(groupID: Int) -> URLRequest {
+        let url = baseURL
+            .appending(path: "/api/v1/groups")
+            .appending(path: String(groupID))
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        return request
+    }
 }

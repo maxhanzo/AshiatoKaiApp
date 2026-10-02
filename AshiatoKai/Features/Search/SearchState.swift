@@ -1,5 +1,5 @@
 //
-//  SearchEnums.swift
+//  SearchState.swift
 //  AshiatoKai
 //
 //  Created by Max Ueda on 02/10/26.
@@ -18,8 +18,4 @@ enum SearchState {
         if case .loading = self { return true }
         return false
     }
-}
-
-enum SearchNavigationEvent {
-    case showDetail(SearchRecord)
 }
