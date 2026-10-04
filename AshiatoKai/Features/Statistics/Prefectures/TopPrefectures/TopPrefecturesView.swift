@@ -9,7 +9,23 @@ import SwiftUI
 
 struct TopPrefecturesView: View {
 
-    @ObservedObject var viewModel: TopPrefecturesViewModel
+    @StateObject private var viewModel: TopPrefecturesViewModel
+
+    let onPrefectureSelected:
+        (PrefectureStatistics) -> Void
+
+    init(
+        viewModel: TopPrefecturesViewModel,
+        onPrefectureSelected:
+            @escaping (PrefectureStatistics) -> Void
+    ) {
+        _viewModel = StateObject(
+            wrappedValue: viewModel
+        )
+
+        self.onPrefectureSelected =
+            onPrefectureSelected
+    }
 
     var body: some View {
         content
@@ -34,7 +50,12 @@ struct TopPrefecturesView: View {
 
         case .loaded(let statistics):
             List(statistics) { statistic in
-                prefectureRow(statistic)
+                Button {
+                    onPrefectureSelected(statistic)
+                } label: {
+                    prefectureRow(statistic)
+                }
+                .buttonStyle(.plain)
             }
 
         case .empty:
@@ -83,7 +104,12 @@ struct TopPrefecturesView: View {
             }
 
             Spacer()
+
+            Image(systemName: "chevron.right")
+                .font(.footnote.weight(.semibold))
+                .foregroundStyle(.tertiary)
         }
         .padding(.vertical, 4)
+        .contentShape(Rectangle())
     }
 }

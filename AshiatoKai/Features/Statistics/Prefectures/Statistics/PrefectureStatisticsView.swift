@@ -9,8 +9,24 @@ import SwiftUI
 
 struct PrefectureStatisticsView: View {
 
-    @ObservedObject var viewModel: PrefectureStatisticsViewModel
+    @StateObject private var viewModel: PrefectureStatisticsViewModel
 
+    let onPrefectureSelected:
+        (PrefectureStatistics) -> Void
+
+    init(
+        viewModel: PrefectureStatisticsViewModel,
+        onPrefectureSelected:
+            @escaping (PrefectureStatistics) -> Void
+    ) {
+        _viewModel = StateObject(
+            wrappedValue: viewModel
+        )
+
+        self.onPrefectureSelected =
+            onPrefectureSelected
+    }
+    
     var body: some View {
         Form {
             Section {
@@ -63,7 +79,12 @@ struct PrefectureStatisticsView: View {
         case .loaded(let statistics):
             Section("Results") {
                 ForEach(statistics) { statistic in
-                    statisticRow(statistic)
+                    Button {
+                        onPrefectureSelected(statistic)
+                    } label: {
+                        statisticRow(statistic)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
 
@@ -110,6 +131,10 @@ struct PrefectureStatisticsView: View {
                     .font(.headline)
                     .foregroundStyle(.secondary)
                     .monospacedDigit()
+
+                Image(systemName: "chevron.right")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(.tertiary)
             }
 
             LabeledContent(
@@ -118,5 +143,6 @@ struct PrefectureStatisticsView: View {
             )
         }
         .padding(.vertical, 4)
+        .contentShape(Rectangle())
     }
 }

@@ -15,6 +15,7 @@ final class AppContainer {
     private let searchRepository: any SearchRepository
     private let immigrantGroupRepository: any ImmigrantGroupRepository
     private let statisticsRepository: any StatisticsRepository
+    private let geolocationRepository: any GeolocationRepository
 
     private let retrieveImmigrantsUseCase:
         any RetrieveImmigrantsUseCaseInterface
@@ -33,6 +34,9 @@ final class AppContainer {
 
     private let retrieveSurnameStatisticsUseCase:
         any RetrieveSurnameStatisticsUseCaseInterface
+    
+    private let retrieveGeolocationUseCase:
+        any RetrieveGeolocationUseCaseInterface
 
     init() {
         let apiClient = URLSessionAPIClient()
@@ -48,6 +52,11 @@ final class AppContainer {
 
         let statisticsRepository =
             RemoteStatisticsRepository(
+                apiClient: apiClient
+            )
+        
+        let geolocationRepository =
+            RemoteGeolocationRepository(
                 apiClient: apiClient
             )
 
@@ -80,7 +89,12 @@ final class AppContainer {
             RetrieveSurnameStatisticsUseCase(
                 repository: statisticsRepository
             )
-
+        
+        let retrieveGeolocationUseCase =
+            RetrieveGeolocationUseCase(
+                repository: geolocationRepository
+            )
+        
         self.apiClient = apiClient
 
         self.searchRepository = searchRepository
@@ -106,6 +120,12 @@ final class AppContainer {
 
         self.retrieveSurnameStatisticsUseCase =
             retrieveSurnameStatisticsUseCase
+        
+        self.geolocationRepository =
+            geolocationRepository
+
+        self.retrieveGeolocationUseCase =
+            retrieveGeolocationUseCase
     }
 
     func makeCoordinator() -> AppCoordinator {
@@ -161,6 +181,16 @@ final class AppContainer {
                 SurnameStatisticsViewModel(
                     retrieveSurnameStatisticsUseCase:
                         retrieveSurnameStatisticsUseCase
+                )
+            },
+
+            makePrefectureDetailViewModelFactory: {
+                [retrieveGeolocationUseCase] statistic in
+
+                PrefectureDetailViewModel(
+                    statistic: statistic,
+                    retrieveGeolocationUseCase:
+                        retrieveGeolocationUseCase
                 )
             }
         )

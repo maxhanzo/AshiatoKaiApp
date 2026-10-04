@@ -7239,6 +7239,24 @@
 		1C856ECD3072212100751712 /* SurnameStatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ECC3072212100751712 /* SurnameStatisticsViewModel.swift */; };
 		1C856ECF3072213200751712 /* SurnameStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ECE3072213200751712 /* SurnameStatisticsView.swift */; };
 		1C856ED2307226CF00751712 /* SurnameKanjiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ED1307226CF00751712 /* SurnameKanjiView.swift */; };
+		1C856ED530722BF200751712 /* JapanesePrefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ED430722BF200751712 /* JapanesePrefecture.swift */; };
+		1C856ED730722C0600751712 /* PrefectureMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ED630722C0600751712 /* PrefectureMapView.swift */; };
+		1C856ED930724FA800751712 /* GeolocationFeatureCollectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ED830724FA800751712 /* GeolocationFeatureCollectionDTO.swift */; };
+		1C856EDC30724FD900751712 /* GeolocationGeometryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EDB30724FD900751712 /* GeolocationGeometryDTO.swift */; };
+		1C856EDF3072500000751712 /* GeographicCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EDE3072500000751712 /* GeographicCoordinate.swift */; };
+		1C856EE13072500F00751712 /* GeographicBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EE03072500F00751712 /* GeographicBounds.swift */; };
+		1C856EE33072502400751712 /* GeographicGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EE23072502400751712 /* GeographicGeometry.swift */; };
+		1C856EE53072504800751712 /* GeographicCapital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EE43072504800751712 /* GeographicCapital.swift */; };
+		1C856EE73072506800751712 /* Geolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EE63072506800751712 /* Geolocation.swift */; };
+		1C856EE93072508F00751712 /* GeolocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EE83072508F00751712 /* GeolocationRepository.swift */; };
+		1C856EEB3072509F00751712 /* RemoteGeolocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EEA3072509F00751712 /* RemoteGeolocationRepository.swift */; };
+		1C856EEE307250DE00751712 /* RetrieveGeolocationUseCaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EED307250DE00751712 /* RetrieveGeolocationUseCaseInterface.swift */; };
+		1C856EF0307250F600751712 /* RetrieveGeolocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EEF307250F600751712 /* RetrieveGeolocationUseCase.swift */; };
+		1C856EF23072513100751712 /* GeolocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EF13072513100751712 /* GeolocationError.swift */; };
+		1C856EF4307252E300751712 /* GeolocationFeatureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EF3307252E300751712 /* GeolocationFeatureDTO.swift */; };
+		1C856EFF30725B2C00751712 /* PrefectureDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EFE30725B2C00751712 /* PrefectureDetailState.swift */; };
+		1C856F0230725B4600751712 /* PrefectureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856F0130725B4600751712 /* PrefectureDetailViewModel.swift */; };
+		1C856F0430725B5900751712 /* PrefectureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856F0330725B5900751712 /* PrefectureDetailView.swift */; };
 		1CD68C9F306F61F50054CB9A /* AshiatoKaiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C90306F61F50054CB9A /* AshiatoKaiApp.swift */; };
 		1CD68CA1306F61F50054CB9A /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C98306F61F50054CB9A /* RecordDetailView.swift */; };
 		1CD68CA2306F61F50054CB9A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C99306F61F50054CB9A /* SearchView.swift */; };
@@ -14511,6 +14529,24 @@
 		1C856ECC3072212100751712 /* SurnameStatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurnameStatisticsViewModel.swift; sourceTree = "<group>"; };
 		1C856ECE3072213200751712 /* SurnameStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurnameStatisticsView.swift; sourceTree = "<group>"; };
 		1C856ED1307226CF00751712 /* SurnameKanjiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurnameKanjiView.swift; sourceTree = "<group>"; };
+		1C856ED430722BF200751712 /* JapanesePrefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapanesePrefecture.swift; sourceTree = "<group>"; };
+		1C856ED630722C0600751712 /* PrefectureMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureMapView.swift; sourceTree = "<group>"; };
+		1C856ED830724FA800751712 /* GeolocationFeatureCollectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationFeatureCollectionDTO.swift; sourceTree = "<group>"; };
+		1C856EDB30724FD900751712 /* GeolocationGeometryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationGeometryDTO.swift; sourceTree = "<group>"; };
+		1C856EDE3072500000751712 /* GeographicCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeographicCoordinate.swift; sourceTree = "<group>"; };
+		1C856EE03072500F00751712 /* GeographicBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeographicBounds.swift; sourceTree = "<group>"; };
+		1C856EE23072502400751712 /* GeographicGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeographicGeometry.swift; sourceTree = "<group>"; };
+		1C856EE43072504800751712 /* GeographicCapital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeographicCapital.swift; sourceTree = "<group>"; };
+		1C856EE63072506800751712 /* Geolocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geolocation.swift; sourceTree = "<group>"; };
+		1C856EE83072508F00751712 /* GeolocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationRepository.swift; sourceTree = "<group>"; };
+		1C856EEA3072509F00751712 /* RemoteGeolocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGeolocationRepository.swift; sourceTree = "<group>"; };
+		1C856EED307250DE00751712 /* RetrieveGeolocationUseCaseInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveGeolocationUseCaseInterface.swift; sourceTree = "<group>"; };
+		1C856EEF307250F600751712 /* RetrieveGeolocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveGeolocationUseCase.swift; sourceTree = "<group>"; };
+		1C856EF13072513100751712 /* GeolocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationError.swift; sourceTree = "<group>"; };
+		1C856EF3307252E300751712 /* GeolocationFeatureDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationFeatureDTO.swift; sourceTree = "<group>"; };
+		1C856EFE30725B2C00751712 /* PrefectureDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureDetailState.swift; sourceTree = "<group>"; };
+		1C856F0130725B4600751712 /* PrefectureDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureDetailViewModel.swift; sourceTree = "<group>"; };
+		1C856F0330725B5900751712 /* PrefectureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureDetailView.swift; sourceTree = "<group>"; };
 		1CD68C8F306F61F50054CB9A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		1CD68C90306F61F50054CB9A /* AshiatoKaiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AshiatoKaiApp.swift; sourceTree = "<group>"; };
 		1CD68C92306F61F50054CB9A /* MockSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchRepository.swift; sourceTree = "<group>"; };
@@ -21849,14 +21885,13 @@
 		1C856E8A30720E2F00751712 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				1C856ED330722BE400751712 /* JapanesePrefecture */,
 				1C856ED0307226C400751712 /* SurnameKanjiView */,
 				1C856EB830721ADD00751712 /* StatisticsViewModel.swift */,
 				1C856E9B3072144900751712 /* StatisticsView.swift */,
 				1C856EB63072188D00751712 /* StatisticsNavigationEvent.swift */,
 				1C856EA03072149D00751712 /* Prefectures */,
 				1C856E9F3072149100751712 /* Surnames */,
-				1C856E9E3072146C00751712 /* TopSurnames */,
-				1C856E9D3072146300751712 /* TopPrefectures */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -21895,9 +21930,8 @@
 		1C856E9F3072149100751712 /* Surnames */ = {
 			isa = PBXGroup;
 			children = (
-				1C856ECE3072213200751712 /* SurnameStatisticsView.swift */,
-				1C856ECC3072212100751712 /* SurnameStatisticsViewModel.swift */,
-				1C856ECA3072211500751712 /* SurnameStatisticsState.swift */,
+				1C856E9E3072146C00751712 /* TopSurnames */,
+				1C856EFD30725B1400751712 /* Statistics */,
 			);
 			path = Surnames;
 			sourceTree = "<group>";
@@ -21905,9 +21939,9 @@
 		1C856EA03072149D00751712 /* Prefectures */ = {
 			isa = PBXGroup;
 			children = (
-				1C856EC83072208100751712 /* PrefectureStatisticsView.swift */,
-				1C856EC63072207400751712 /* PrefectureStatisticsViewModel.swift */,
-				1C856EC43072206900751712 /* PrefectureStatisticsState.swift */,
+				1C856F0030725B3B00751712 /* Detail */,
+				1C856EFC30725AFA00751712 /* Statistics */,
+				1C856E9D3072146300751712 /* TopPrefectures */,
 			);
 			path = Prefectures;
 			sourceTree = "<group>";
@@ -21942,6 +21976,77 @@
 			path = SurnameKanjiView;
 			sourceTree = "<group>";
 		};
+		1C856ED330722BE400751712 /* JapanesePrefecture */ = {
+			isa = PBXGroup;
+			children = (
+				1C856ED630722C0600751712 /* PrefectureMapView.swift */,
+				1C856ED430722BF200751712 /* JapanesePrefecture.swift */,
+			);
+			path = JapanesePrefecture;
+			sourceTree = "<group>";
+		};
+		1C856EDA30724FCC00751712 /* Geolocation */ = {
+			isa = PBXGroup;
+			children = (
+				1C856EF3307252E300751712 /* GeolocationFeatureDTO.swift */,
+				1C856EDB30724FD900751712 /* GeolocationGeometryDTO.swift */,
+				1C856ED830724FA800751712 /* GeolocationFeatureCollectionDTO.swift */,
+			);
+			path = Geolocation;
+			sourceTree = "<group>";
+		};
+		1C856EDD30724FF900751712 /* Geolocation */ = {
+			isa = PBXGroup;
+			children = (
+				1C856EF13072513100751712 /* GeolocationError.swift */,
+				1C856EE63072506800751712 /* Geolocation.swift */,
+				1C856EE43072504800751712 /* GeographicCapital.swift */,
+				1C856EE23072502400751712 /* GeographicGeometry.swift */,
+				1C856EE03072500F00751712 /* GeographicBounds.swift */,
+				1C856EDE3072500000751712 /* GeographicCoordinate.swift */,
+			);
+			path = Geolocation;
+			sourceTree = "<group>";
+		};
+		1C856EEC307250D300751712 /* Geolocation */ = {
+			isa = PBXGroup;
+			children = (
+				1C856EEF307250F600751712 /* RetrieveGeolocationUseCase.swift */,
+				1C856EED307250DE00751712 /* RetrieveGeolocationUseCaseInterface.swift */,
+			);
+			path = Geolocation;
+			sourceTree = "<group>";
+		};
+		1C856EFC30725AFA00751712 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				1C856EC83072208100751712 /* PrefectureStatisticsView.swift */,
+				1C856EC63072207400751712 /* PrefectureStatisticsViewModel.swift */,
+				1C856EC43072206900751712 /* PrefectureStatisticsState.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		1C856EFD30725B1400751712 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				1C856ECE3072213200751712 /* SurnameStatisticsView.swift */,
+				1C856ECC3072212100751712 /* SurnameStatisticsViewModel.swift */,
+				1C856ECA3072211500751712 /* SurnameStatisticsState.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		1C856F0030725B3B00751712 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				1C856F0330725B5900751712 /* PrefectureDetailView.swift */,
+				1C856F0130725B4600751712 /* PrefectureDetailViewModel.swift */,
+				1C856EFE30725B2C00751712 /* PrefectureDetailState.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		1CD68C91306F61F50054CB9A /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -21963,6 +22068,7 @@
 		1CD68C96306F61F50054CB9A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				1C856EDD30724FF900751712 /* Geolocation */,
 				1C856E983072117100751712 /* StatisticsError.swift */,
 				1C856E963072103100751712 /* SurnameStatistics.swift */,
 				1C856E9230720FEC00751712 /* PrefectureStatistics.swift */,
@@ -21984,12 +22090,12 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
-		1CD68C9D306F61F50054CB9A /* Navigation */ = {
+		1CD68C9D306F61F50054CB9A /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				1CD68C9C306F61F50054CB9A /* AppCoordinator.swift */,
 			);
-			path = Navigation;
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		1CD68CAA306F621F0054CB9A /* API */ = {
@@ -22004,6 +22110,7 @@
 		1CD68CAB306F62430054CB9A /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				1C856EDA30724FCC00751712 /* Geolocation */,
 				1C856E9430720FFE00751712 /* SurnameStatisticsDTO.swift */,
 				1C856E8E30720F3800751712 /* PrefectureStatisticsDTO.swift */,
 				1CD68CD1306F6CDD0054CB9A /* ImmigrantGroupMemberDTO.swift */,
@@ -22033,6 +22140,7 @@
 		1CD68CB0306F62740054CB9A /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				1C856EEA3072509F00751712 /* RemoteGeolocationRepository.swift */,
 				1C856E9030720F6300751712 /* RemoteStatisticsRepository.swift */,
 				1CD68CD3306F6D110054CB9A /* RemoteImmigrantGroupRepository.swift */,
 				1CD68CB1306F627A0054CB9A /* RemoteSearchRepository.swift */,
@@ -22075,6 +22183,7 @@
 		1CD68CC1306F67530054CB9A /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				1C856EEC307250D300751712 /* Geolocation */,
 				1C856EA4307215E000751712 /* Surnames */,
 				1C856EA3307215CE00751712 /* Prefectures */,
 				1CD68CDA306F6DA20054CB9A /* RetrieveImmigrantGroup */,
@@ -22096,6 +22205,7 @@
 		1CD68CD5306F6D360054CB9A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				1C856EE83072508F00751712 /* GeolocationRepository.swift */,
 				1C856E8C30720ECA00751712 /* StatisticsRepository.swift */,
 				1CD68CD8306F6D520054CB9A /* ImmigrantGroupRepository.swift */,
 				1CD68CD6306F6D3F0054CB9A /* SearchRepository.swift */,
@@ -22152,7 +22262,7 @@
 				1CD68C94306F61F50054CB9A /* Data */,
 				1CD68C96306F61F50054CB9A /* Domain */,
 				1CD68C9B306F61F50054CB9A /* Features */,
-				1CD68C9D306F61F50054CB9A /* Navigation */,
+				1CD68C9D306F61F50054CB9A /* Coordinator */,
 				1C3A5EA3306F84560001D249 /* Resources */,
 			);
 			path = AshiatoKai;
@@ -29418,28 +29528,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C3A7AC9306F88EB0001D249 /* Scanner.swift in Sources */,
+				1C856EFF30725B2C00751712 /* PrefectureDetailState.swift in Sources */,
 				1C856EBB30721C9F00751712 /* TopPrefecturesViewModel.swift in Sources */,
+				1C856EE93072508F00751712 /* GeolocationRepository.swift in Sources */,
 				1C856EAB3072166B00751712 /* RetrievePrefectureStatisticsUseCaseInterface.swift in Sources */,
 				1CD68C9F306F61F50054CB9A /* AshiatoKaiApp.swift in Sources */,
 				1C856EA6307215E700751712 /* RetrieveTopPrefecturesUseCase.swift in Sources */,
 				1CD68CDE306F6DC20054CB9A /* RetrieveImmigrantGroupUseCase.swift in Sources */,
 				1C3A7AC3306F874C0001D249 /* JapaneseCharacterResource.swift in Sources */,
 				1CD68CBE306F63AB0054CB9A /* APIClient.swift in Sources */,
+				1C856EE53072504800751712 /* GeographicCapital.swift in Sources */,
 				1C856ECB3072211500751712 /* SurnameStatisticsState.swift in Sources */,
 				1C3A7AD1306F89A40001D249 /* AnimCJKParserError.swift in Sources */,
 				1CD68CC6306F677F0054CB9A /* RetrieveImmigrantsError.swift in Sources */,
+				1C856ED930724FA800751712 /* GeolocationFeatureCollectionDTO.swift in Sources */,
 				1C856ED2307226CF00751712 /* SurnameKanjiView.swift in Sources */,
+				1C856F0430725B5900751712 /* PrefectureDetailView.swift in Sources */,
 				1C856EB53072172300751712 /* RetrieveSurnameStatisticsUseCase.swift in Sources */,
 				1C856EC330721F8F00751712 /* TopSurnamesState.swift in Sources */,
 				1C856E9C3072144900751712 /* StatisticsView.swift in Sources */,
 				1C856E9330720FEC00751712 /* PrefectureStatistics.swift in Sources */,
 				1CD68CA1306F61F50054CB9A /* RecordDetailView.swift in Sources */,
+				1C856EE13072500F00751712 /* GeographicBounds.swift in Sources */,
 				1C3A7ACC306F89100001D249 /* SVGPathParser.swift in Sources */,
+				1C856EF0307250F600751712 /* RetrieveGeolocationUseCase.swift in Sources */,
 				1CD68CE3306F6E100054CB9A /* GroupDetailsViewModel.swift in Sources */,
 				1CD68CE1306F6DFE0054CB9A /* GroupDetailsState.swift in Sources */,
 				1CD68CC3306F675C0054CB9A /* RetrieveImmigrantsUseCaseInterface.swift in Sources */,
+				1C856EE73072506800751712 /* Geolocation.swift in Sources */,
 				1C856EBF30721E6F00751712 /* TopSurnamesViewModel.swift in Sources */,
 				1CD68CEE306F78A00054CB9A /* NameSurnameKanjiView.swift in Sources */,
+				1C856EEE307250DE00751712 /* RetrieveGeolocationUseCaseInterface.swift in Sources */,
 				1C856EA83072161200751712 /* RetrieveTopPrefecturesUseCaseInterface.swift in Sources */,
 				1C3A7AC7306F883A0001D249 /* SVGPathParserError.swift in Sources */,
 				1CD68CD2306F6CDD0054CB9A /* ImmigrantGroupMemberDTO.swift in Sources */,
@@ -29456,14 +29575,20 @@
 				1CD68CBA306F63220054CB9A /* SearchState.swift in Sources */,
 				1C3A7ACF306F89840001D249 /* AnimCJKXMLDelegate.swift in Sources */,
 				1C856E8D30720ECA00751712 /* StatisticsRepository.swift in Sources */,
+				1C856EF23072513100751712 /* GeolocationError.swift in Sources */,
 				1CD68CE9306F70260054CB9A /* SearchRecord.swift in Sources */,
 				1C856ECF3072213200751712 /* SurnameStatisticsView.swift in Sources */,
 				1CD68CD7306F6D3F0054CB9A /* SearchRepository.swift in Sources */,
+				1C856EE33072502400751712 /* GeographicGeometry.swift in Sources */,
 				1C856ECD3072212100751712 /* SurnameStatisticsViewModel.swift in Sources */,
 				1C3A7ADC306F929C0001D249 /* JapaneseNameWritingView.swift in Sources */,
+				1C856ED730722C0600751712 /* PrefectureMapView.swift in Sources */,
 				1CD68CAD306F624A0054CB9A /* ImmigrantDTO.swift in Sources */,
 				1C856EB33072170100751712 /* RetrieveSurnameStatisticsUseCaseInterface.swift in Sources */,
+				1C856EDF3072500000751712 /* GeographicCoordinate.swift in Sources */,
+				1C856EF4307252E300751712 /* GeolocationFeatureDTO.swift in Sources */,
 				1CD68CD9306F6D520054CB9A /* ImmigrantGroupRepository.swift in Sources */,
+				1C856ED530722BF200751712 /* JapanesePrefecture.swift in Sources */,
 				1CD68CA3306F61F50054CB9A /* SearchViewModel.swift in Sources */,
 				1C3A7ADA306F91350001D249 /* JapaneseNameWritingViewModel.swift in Sources */,
 				1C3A7ADE306F92BF0001D249 /* JapaneseCharacterLoader.swift in Sources */,
@@ -29491,8 +29616,11 @@
 				1C856EC53072206900751712 /* PrefectureStatisticsState.swift in Sources */,
 				1CD68CCA306F68C10054CB9A /* AppContainer.swift in Sources */,
 				1C3A7AC1306F85370001D249 /* JapaneseCharacterWritingView.swift in Sources */,
+				1C856EDC30724FD900751712 /* GeolocationGeometryDTO.swift in Sources */,
+				1C856EEB3072509F00751712 /* RemoteGeolocationRepository.swift in Sources */,
 				1CD68CB2306F627A0054CB9A /* RemoteSearchRepository.swift in Sources */,
 				1C856E9130720F6300751712 /* RemoteStatisticsRepository.swift in Sources */,
+				1C856F0230725B4600751712 /* PrefectureDetailViewModel.swift in Sources */,
 				1CD68CB8306F63070054CB9A /* SearchForm.swift in Sources */,
 				1C856EC130721EB800751712 /* TopSurnamesView.swift in Sources */,
 				1CD68CA8306F61F50054CB9A /* APIError.swift in Sources */,

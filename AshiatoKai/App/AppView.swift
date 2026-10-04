@@ -56,16 +56,27 @@ struct AppView: View {
                     for: StatisticsRoute.self
                 ) { route in
                     switch route {
+
                     case .topPrefectures:
                         TopPrefecturesView(
                             viewModel:
-                                coordinator.makeTopPrefecturesViewModel()
+                                coordinator.makeTopPrefecturesViewModel(),
+                            onPrefectureSelected: { statistic in
+                                coordinator.showPrefectureMap(
+                                    statistic: statistic
+                                )
+                            }
                         )
 
                     case .prefectureSearch:
                         PrefectureStatisticsView(
                             viewModel:
-                                coordinator.makePrefectureStatisticsViewModel()
+                                coordinator.makePrefectureStatisticsViewModel(),
+                            onPrefectureSelected: { statistic in
+                                coordinator.showPrefectureMap(
+                                    statistic: statistic
+                                )
+                            }
                         )
 
                     case .topSurnames:
@@ -89,10 +100,18 @@ struct AppView: View {
                                 )
                             }
                         )
-                        
+
                     case .surnameWriting(let statistic):
                         SurnameKanjiView(
                             statistic: statistic
+                        )
+
+                    case .prefectureMap(let statistic):
+                        PrefectureDetailView(
+                            viewModel:
+                                coordinator.makePrefectureDetailViewModel(
+                                    statistic: statistic
+                                )
                         )
                     }
                 }
