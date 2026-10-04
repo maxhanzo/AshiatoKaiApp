@@ -7260,6 +7260,9 @@
 		1C856F073072644D00751712 /* GeographicShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856F063072644D00751712 /* GeographicShapeView.swift */; };
 		1C856F093072646100751712 /* GeographicProjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856F083072646100751712 /* GeographicProjection.swift */; };
 		1C856F0B307274C500751712 /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856F0A307274C500751712 /* SearchResultsView.swift */; };
+		1C856F0E3072795A00751712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C856F0D3072795A00751712 /* Assets.xcassets */; };
+		1C856F1130727A4300751712 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856F1030727A3D00751712 /* SplashView.swift */; };
+		1C856F1430727A6D00751712 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856F1330727A6D00751712 /* RootView.swift */; };
 		1CD68C9F306F61F50054CB9A /* AshiatoKaiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C90306F61F50054CB9A /* AshiatoKaiApp.swift */; };
 		1CD68CA1306F61F50054CB9A /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C98306F61F50054CB9A /* RecordDetailView.swift */; };
 		1CD68CA2306F61F50054CB9A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C99306F61F50054CB9A /* SearchView.swift */; };
@@ -14553,6 +14556,9 @@
 		1C856F063072644D00751712 /* GeographicShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeographicShapeView.swift; sourceTree = "<group>"; };
 		1C856F083072646100751712 /* GeographicProjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeographicProjection.swift; sourceTree = "<group>"; };
 		1C856F0A307274C500751712 /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
+		1C856F0D3072795A00751712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = AshiatoKai/Assets.xcassets; sourceTree = "<group>"; };
+		1C856F1030727A3D00751712 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		1C856F1330727A6D00751712 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		1CD68C8F306F61F50054CB9A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		1CD68C90306F61F50054CB9A /* AshiatoKaiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AshiatoKaiApp.swift; sourceTree = "<group>"; };
 		1CD68C92306F61F50054CB9A /* MockSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchRepository.swift; sourceTree = "<group>"; };
@@ -22063,6 +22069,22 @@
 			path = GeographicShape;
 			sourceTree = "<group>";
 		};
+		1C856F0F30727A3800751712 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				1C856F1030727A3D00751712 /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		1C856F1230727A6500751712 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				1C856F1330727A6D00751712 /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		1CD68C91306F61F50054CB9A /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -22100,6 +22122,8 @@
 		1CD68C9B306F61F50054CB9A /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				1C856F1230727A6500751712 /* Root */,
+				1C856F0F30727A3800751712 /* Splash */,
 				1C856E8B30720E4A00751712 /* ImmigrantSearch */,
 				1C856E8A30720E2F00751712 /* Statistics */,
 			);
@@ -22263,6 +22287,7 @@
 		64292B1C2B2E13EAD8788FC8 = {
 			isa = PBXGroup;
 			children = (
+				1C856F0D3072795A00751712 /* Assets.xcassets */,
 				BCE16DD0260827ECF338C787 /* AshiatoKai */,
 				FBDC4F23F93125BBEEAE800C /* Products */,
 			);
@@ -24955,6 +24980,7 @@
 				1C3A68CE306F84570001D249 /* 18035.svg in Resources */,
 				1C3A68CF306F84570001D249 /* 21440.svg in Resources */,
 				1C3A68D0306F84570001D249 /* 27595.svg in Resources */,
+				1C856F0E3072795A00751712 /* Assets.xcassets in Resources */,
 				1C3A68D1306F84570001D249 /* 25277.svg in Resources */,
 				1C3A68D2306F84570001D249 /* 21138.svg in Resources */,
 				1C3A68D3306F84570001D249 /* 34980.svg in Resources */,
@@ -29567,6 +29593,7 @@
 				1C856E9330720FEC00751712 /* PrefectureStatistics.swift in Sources */,
 				1CD68CA1306F61F50054CB9A /* RecordDetailView.swift in Sources */,
 				1C856EE13072500F00751712 /* GeographicBounds.swift in Sources */,
+				1C856F1130727A4300751712 /* SplashView.swift in Sources */,
 				1C3A7ACC306F89100001D249 /* SVGPathParser.swift in Sources */,
 				1C856EF0307250F600751712 /* RetrieveGeolocationUseCase.swift in Sources */,
 				1CD68CE3306F6E100054CB9A /* GroupDetailsViewModel.swift in Sources */,
@@ -29611,6 +29638,7 @@
 				1C3A7ADE306F92BF0001D249 /* JapaneseCharacterLoader.swift in Sources */,
 				1CD68CA4306F61F50054CB9A /* AppView.swift in Sources */,
 				1CD68CD0306F6CC70054CB9A /* ImmigrantGroupDTO.swift in Sources */,
+				1C856F1430727A6D00751712 /* RootView.swift in Sources */,
 				1C856EBD30721CB000751712 /* TopPrefecturesView.swift in Sources */,
 				1CD68CC0306F640C0054CB9A /* APIErrorEnvelope.swift in Sources */,
 				1CD68CBC306F63770054CB9A /* URLSessionAPIClient.swift in Sources */,
@@ -29659,6 +29687,8 @@
 		639A7CA24D39909E713B47F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -29683,6 +29713,8 @@
 		7082CC0B6FC1282FCEABD07A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
