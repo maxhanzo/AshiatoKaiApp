@@ -9,7 +9,23 @@ import SwiftUI
 
 struct TopSurnamesView: View {
 
-    @ObservedObject var viewModel: TopSurnamesViewModel
+    @StateObject private var viewModel: TopSurnamesViewModel
+
+    let onSurnameSelected:
+        (SurnameStatistics) -> Void
+
+    init(
+        viewModel: TopSurnamesViewModel,
+        onSurnameSelected:
+            @escaping (SurnameStatistics) -> Void
+    ) {
+        _viewModel = StateObject(
+            wrappedValue: viewModel
+        )
+
+        self.onSurnameSelected =
+            onSurnameSelected
+    }
 
     var body: some View {
         content
@@ -34,7 +50,12 @@ struct TopSurnamesView: View {
 
         case .loaded(let statistics):
             List(statistics) { statistic in
-                surnameRow(statistic)
+                Button {
+                    onSurnameSelected(statistic)
+                } label: {
+                    surnameRow(statistic)
+                }
+                .buttonStyle(.plain)
             }
 
         case .empty:
@@ -71,7 +92,10 @@ struct TopSurnamesView: View {
                 .monospacedDigit()
                 .frame(width: 32)
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(
+                alignment: .leading,
+                spacing: 4
+            ) {
                 Text(statistic.surnameRomaji)
                     .font(.headline)
 
@@ -88,7 +112,12 @@ struct TopSurnamesView: View {
                 Text(statistic.surnameKanji)
                     .font(.title2)
             }
+
+            Image(systemName: "chevron.right")
+                .font(.caption)
+                .foregroundStyle(.tertiary)
         }
         .padding(.vertical, 4)
+        .contentShape(Rectangle())
     }
 }
