@@ -17,6 +17,10 @@ struct AshiatoKaiApp: App {
     }
 
     var body: some Scene {
-        WindowGroup { AppView(coordinator: coordinator) }
-    }
+           WindowGroup {
+               RootView(
+                   coordinator: coordinator
+               )
+           }
+       }
 }
