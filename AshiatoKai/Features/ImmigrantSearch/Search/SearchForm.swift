@@ -19,8 +19,8 @@ struct SearchForm: Equatable {
             value.trimmingCharacters(in: .whitespacesAndNewlines)
         }
 
-        guard !trim(name).isEmpty, !trim(surname).isEmpty else {
-            return "Name and surname are required."
+        guard !trim(name).isEmpty || !trim(surname).isEmpty else {
+            return "Enter a name or surname."
         }
 
         let text = trim(year)

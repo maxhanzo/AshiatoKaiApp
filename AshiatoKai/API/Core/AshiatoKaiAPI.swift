@@ -26,16 +26,25 @@ enum AshiatoKaiAPI {
             resolvingAgainstBaseURL: false
         )!
 
-        var queryItems = [
-            URLQueryItem(
-                name: "NameRomaji",
-                value: criteria.name
-            ),
-            URLQueryItem(
-                name: "SurnameRomaji",
-                value: criteria.surname
+        var queryItems: [URLQueryItem] = []
+
+        if !criteria.name.isEmpty {
+            queryItems.append(
+                URLQueryItem(
+                    name: "NameRomaji",
+                    value: criteria.name
+                )
             )
-        ]
+        }
+
+        if !criteria.surname.isEmpty {
+            queryItems.append(
+                URLQueryItem(
+                    name: "SurnameRomaji",
+                    value: criteria.surname
+                )
+            )
+        }
 
         if let year = criteria.year {
             queryItems.append(
@@ -146,9 +155,9 @@ enum AshiatoKaiAPI {
             url: components.url!
         )
     }
-    
+
     // MARK: - Geolocation
-    
+
     static func geolocation() -> URLRequest {
         let url = baseURL.appending(
             path: "/api/v1/geolocation"
