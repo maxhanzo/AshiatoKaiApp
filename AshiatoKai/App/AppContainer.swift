@@ -9,16 +9,30 @@ import Foundation
 
 @MainActor
 final class AppContainer {
+
     private let apiClient: any APIClient
 
     private let searchRepository: any SearchRepository
     private let immigrantGroupRepository: any ImmigrantGroupRepository
+    private let statisticsRepository: any StatisticsRepository
 
     private let retrieveImmigrantsUseCase:
         any RetrieveImmigrantsUseCaseInterface
 
     private let retrieveImmigrantGroupUseCase:
         any RetrieveImmigrantGroupUseCaseInterface
+
+    private let retrieveTopPrefecturesUseCase:
+        any RetrieveTopPrefecturesUseCaseInterface
+
+    private let retrieveTopSurnamesUseCase:
+        any RetrieveTopSurnamesUseCaseInterface
+
+    private let retrievePrefectureStatisticsUseCase:
+        any RetrievePrefectureStatisticsUseCaseInterface
+
+    private let retrieveSurnameStatisticsUseCase:
+        any RetrieveSurnameStatisticsUseCaseInterface
 
     init() {
         let apiClient = URLSessionAPIClient()
@@ -27,25 +41,71 @@ final class AppContainer {
             apiClient: apiClient
         )
 
-        let immigrantGroupRepository = RemoteImmigrantGroupRepository(
-            apiClient: apiClient
-        )
+        let immigrantGroupRepository =
+            RemoteImmigrantGroupRepository(
+                apiClient: apiClient
+            )
 
-        let retrieveImmigrantsUseCase = RetrieveImmigrantsUseCase(
-            repository: searchRepository
-        )
+        let statisticsRepository =
+            RemoteStatisticsRepository(
+                apiClient: apiClient
+            )
+
+        let retrieveImmigrantsUseCase =
+            RetrieveImmigrantsUseCase(
+                repository: searchRepository
+            )
 
         let retrieveImmigrantGroupUseCase =
             RetrieveImmigrantGroupUseCase(
                 repository: immigrantGroupRepository
             )
 
+        let retrieveTopPrefecturesUseCase =
+            RetrieveTopPrefecturesUseCase(
+                repository: statisticsRepository
+            )
+
+        let retrieveTopSurnamesUseCase =
+            RetrieveTopSurnamesUseCase(
+                repository: statisticsRepository
+            )
+
+        let retrievePrefectureStatisticsUseCase =
+            RetrievePrefectureStatisticsUseCase(
+                repository: statisticsRepository
+            )
+
+        let retrieveSurnameStatisticsUseCase =
+            RetrieveSurnameStatisticsUseCase(
+                repository: statisticsRepository
+            )
+
         self.apiClient = apiClient
+
         self.searchRepository = searchRepository
-        self.immigrantGroupRepository = immigrantGroupRepository
-        self.retrieveImmigrantsUseCase = retrieveImmigrantsUseCase
+        self.immigrantGroupRepository =
+            immigrantGroupRepository
+        self.statisticsRepository =
+            statisticsRepository
+
+        self.retrieveImmigrantsUseCase =
+            retrieveImmigrantsUseCase
+
         self.retrieveImmigrantGroupUseCase =
             retrieveImmigrantGroupUseCase
+
+        self.retrieveTopPrefecturesUseCase =
+            retrieveTopPrefecturesUseCase
+
+        self.retrieveTopSurnamesUseCase =
+            retrieveTopSurnamesUseCase
+
+        self.retrievePrefectureStatisticsUseCase =
+            retrievePrefectureStatisticsUseCase
+
+        self.retrieveSurnameStatisticsUseCase =
+            retrieveSurnameStatisticsUseCase
     }
 
     func makeCoordinator() -> AppCoordinator {
@@ -54,11 +114,53 @@ final class AppContainer {
                 retrieveImmigrantsUseCase:
                     retrieveImmigrantsUseCase
             ),
-            makeGroupDetailsViewModelFactory: { [retrieveImmigrantGroupUseCase] groupID in
+
+            statisticsViewModel:
+                StatisticsViewModel(),
+
+            makeGroupDetailsViewModelFactory: {
+                [retrieveImmigrantGroupUseCase] groupID in
+
                 GroupDetailsViewModel(
                     groupID: groupID,
                     retrieveImmigrantGroupUseCase:
                         retrieveImmigrantGroupUseCase
+                )
+            },
+
+            makeTopPrefecturesViewModelFactory: {
+                [retrieveTopPrefecturesUseCase] in
+
+                TopPrefecturesViewModel(
+                    retrieveTopPrefecturesUseCase:
+                        retrieveTopPrefecturesUseCase
+                )
+            },
+
+            makeTopSurnamesViewModelFactory: {
+                [retrieveTopSurnamesUseCase] in
+
+                TopSurnamesViewModel(
+                    retrieveTopSurnamesUseCase:
+                        retrieveTopSurnamesUseCase
+                )
+            },
+
+            makePrefectureStatisticsViewModelFactory: {
+                [retrievePrefectureStatisticsUseCase] in
+
+                PrefectureStatisticsViewModel(
+                    retrievePrefectureStatisticsUseCase:
+                        retrievePrefectureStatisticsUseCase
+                )
+            },
+
+            makeSurnameStatisticsViewModelFactory: {
+                [retrieveSurnameStatisticsUseCase] in
+
+                SurnameStatisticsViewModel(
+                    retrieveSurnameStatisticsUseCase:
+                        retrieveSurnameStatisticsUseCase
                 )
             }
         )

@@ -10,7 +10,7 @@ import Foundation
 
 enum AppTab: Hashable {
     case search
-    case options
+    case statistics
 }
 
 enum SearchRoute: Hashable {
@@ -19,24 +19,79 @@ enum SearchRoute: Hashable {
     case nameSurnameKanji(ImmigrantGroupMember)
 }
 
+enum StatisticsRoute: Hashable {
+    case topPrefectures
+    case prefectureSearch
+    case topSurnames
+    case surnameSearch
+}
+
 @MainActor
 final class AppCoordinator: ObservableObject {
+
     @Published var selectedTab: AppTab = .search
     @Published var searchPath: [SearchRoute] = []
+    @Published var statisticsPath: [StatisticsRoute] = []
 
     let searchViewModel: SearchViewModel
+    let statisticsViewModel: StatisticsViewModel
+    
 
-    private let makeGroupDetailsViewModelFactory: (Int) -> GroupDetailsViewModel
+    private let makeGroupDetailsViewModelFactory:
+        (Int) -> GroupDetailsViewModel
+
+    private let makeTopPrefecturesViewModelFactory:
+        () -> TopPrefecturesViewModel
+    
+    private let makeTopSurnamesViewModelFactory:
+        () -> TopSurnamesViewModel
+    
+    private let makePrefectureStatisticsViewModelFactory:
+        () -> PrefectureStatisticsViewModel
+    
+    private let makeSurnameStatisticsViewModelFactory:
+        () -> SurnameStatisticsViewModel
 
     private var cancellables = Set<AnyCancellable>()
 
     init(
         searchViewModel: SearchViewModel,
-        makeGroupDetailsViewModelFactory: @escaping (Int) -> GroupDetailsViewModel
+        statisticsViewModel: StatisticsViewModel,
+        makeGroupDetailsViewModelFactory:
+            @escaping (Int) -> GroupDetailsViewModel,
+        makeTopPrefecturesViewModelFactory:
+            @escaping () -> TopPrefecturesViewModel,
+        makeTopSurnamesViewModelFactory:
+            @escaping () -> TopSurnamesViewModel,
+        makePrefectureStatisticsViewModelFactory:
+            @escaping () -> PrefectureStatisticsViewModel,
+        makeSurnameStatisticsViewModelFactory:
+            @escaping () -> SurnameStatisticsViewModel
     ) {
         self.searchViewModel = searchViewModel
-        self.makeGroupDetailsViewModelFactory = makeGroupDetailsViewModelFactory
+        
+        self.statisticsViewModel = statisticsViewModel
+        
+        self.makeGroupDetailsViewModelFactory =
+            makeGroupDetailsViewModelFactory
+        
+        self.makeTopPrefecturesViewModelFactory =
+            makeTopPrefecturesViewModelFactory
+        
+        self.makeTopSurnamesViewModelFactory =
+            makeTopSurnamesViewModelFactory
+        
+        self.makePrefectureStatisticsViewModelFactory =
+            makePrefectureStatisticsViewModelFactory
+        
+        self.makeSurnameStatisticsViewModelFactory =
+            makeSurnameStatisticsViewModelFactory
 
+        bindSearchNavigation()
+        bindStatisticsNavigation()
+    }
+
+    private func bindSearchNavigation() {
         searchViewModel.navigation
             .sink { [weak self] event in
                 guard let self else { return }
@@ -49,10 +104,32 @@ final class AppCoordinator: ObservableObject {
             .store(in: &cancellables)
     }
 
+    private func bindStatisticsNavigation() {
+        statisticsViewModel.navigationPublisher
+            .sink { [weak self] event in
+                guard let self else { return }
+
+                switch event {
+                case .showTopPrefectures:
+                    statisticsPath.append(.topPrefectures)
+
+                case .showPrefectureSearch:
+                    statisticsPath.append(.prefectureSearch)
+
+                case .showTopSurnames:
+                    statisticsPath.append(.topSurnames)
+
+                case .showSurnameSearch:
+                    statisticsPath.append(.surnameSearch)
+                }
+            }
+            .store(in: &cancellables)
+    }
+
     func showGroupDetails(groupID: Int) {
         searchPath.append(.groupDetails(groupID))
     }
-    
+
     func showNameSurnameKanji(
         member: ImmigrantGroupMember
     ) {
@@ -64,4 +141,29 @@ final class AppCoordinator: ObservableObject {
     ) -> GroupDetailsViewModel {
         makeGroupDetailsViewModelFactory(groupID)
     }
+
+    func makeTopPrefecturesViewModel()
+        -> TopPrefecturesViewModel {
+
+        makeTopPrefecturesViewModelFactory()
+    }
+    
+    func makeTopSurnamesViewModel()
+        -> TopSurnamesViewModel {
+
+        makeTopSurnamesViewModelFactory()
+    }
+    
+    func makePrefectureStatisticsViewModel()
+        -> PrefectureStatisticsViewModel {
+
+        makePrefectureStatisticsViewModelFactory()
+    }
+    
+    func makeSurnameStatisticsViewModel()
+        -> SurnameStatisticsViewModel {
+
+        makeSurnameStatisticsViewModelFactory()
+    }
+    
 }
