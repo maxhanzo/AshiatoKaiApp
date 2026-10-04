@@ -16,6 +16,16 @@ struct AppView: View {
                 SearchView(viewModel: coordinator.searchViewModel)
                     .navigationDestination(for: SearchRoute.self) { route in
                         switch route {
+                        case .results(let records):
+                            SearchResultsView(
+                                records: records,
+                                onRecordSelected: { record in
+                                    coordinator.searchViewModel.select(
+                                        record
+                                    )
+                                }
+                            )
+
                         case .detail(let record):
                             RecordDetailView(
                                 record: record,

@@ -14,6 +14,7 @@ enum AppTab: Hashable {
 }
 
 enum SearchRoute: Hashable {
+    case results([SearchRecord])
     case detail(SearchRecord)
     case groupDetails(Int)
     case nameSurnameKanji(ImmigrantGroupMember)
@@ -107,6 +108,9 @@ final class AppCoordinator: ObservableObject {
                 guard let self else { return }
 
                 switch event {
+                case .showResults(let records):
+                    searchPath.append(.results(records))
+
                 case .showDetail(let record):
                     searchPath.append(.detail(record))
                 }

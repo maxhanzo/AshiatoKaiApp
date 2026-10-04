@@ -78,7 +78,15 @@ final class SearchViewModel: ObservableObject {
             }
             .switchToLatest()
             .sink { [weak self] state in
-                self?.state = state
+                guard let self else { return }
+
+                self.state = state
+
+                if case .results(let records) = state {
+                    self.navigationSubject.send(
+                        .showResults(records)
+                    )
+                }
             }
             .store(in: &cancellables)
     }
