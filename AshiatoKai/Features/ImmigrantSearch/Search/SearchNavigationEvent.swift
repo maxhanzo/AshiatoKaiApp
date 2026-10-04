@@ -8,5 +8,6 @@
 import Foundation
 
 enum SearchNavigationEvent {
+    case showResults([SearchRecord])
     case showDetail(SearchRecord)
 }

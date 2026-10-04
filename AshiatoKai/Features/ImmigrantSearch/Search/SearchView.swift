@@ -31,7 +31,7 @@ struct SearchView: View {
             } header: {
                 Text("Search criteria")
             } footer: {
-                Text("Name and surname are required. Add optional filters to narrow your search.")
+                Text("Enter a name or surname. Add optional filters to narrow your search.")
             }
 
             if let message = viewModel.validationMessage {
@@ -50,51 +50,41 @@ struct SearchView: View {
                 }
                 .disabled(!viewModel.canSearch)
 
-                if viewModel.state.isLoading {
-                    Button("Cancel search", role: .cancel) { viewModel.cancel() }
-                }
                 Button("Clear form") { viewModel.clear() }
             }
 
-            Section("Results") {
-                switch viewModel.state {
-                case .idle:
-                    Text("Enter your criteria and tap Search.")
-                        .foregroundStyle(.secondary)
-                case .loading:
+            switch viewModel.state {
+            case .loading:
+                Section {
                     HStack {
                         ProgressView()
                         Text("Searching…")
                     }
-                case .empty:
-                    ContentUnavailableView("No results", systemImage: "magnifyingglass",
-                                           description: Text("Try fewer or different search criteria."))
-                case .failed(let message):
-                    Text(message).foregroundStyle(.red)
-                    Button("Try again") { viewModel.search() }
-                        .disabled(!viewModel.canSearch)
-                case .results(let records):
-                    ForEach(records) { record in
-                        Button { viewModel.select(record) } label: {
-                            HStack {
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text(record.fullName).foregroundStyle(.primary)
-                                    Text([record.year.map(String.init), record.prefecture, record.shipName]
-                                        .compactMap { $0 }
-                                        .filter { !$0.isEmpty }
-                                        .joined(separator: " · "))
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                }
-                                Spacer()
-                                Image(systemName: "chevron.right")
-                                    .font(.caption)
-                                    .foregroundStyle(.tertiary)
-                            }
-                            .contentShape(Rectangle())
-                        }
+
+                    Button(
+                        "Cancel search",
+                        role: .cancel
+                    ) {
+                        viewModel.cancel()
                     }
                 }
+
+            case .failed(let message):
+                Section {
+                    Text(message)
+                        .foregroundStyle(.red)
+
+                    Button("Try again") {
+                        focusedField = nil
+                        viewModel.search()
+                    }
+                    .disabled(!viewModel.canSearch)
+                }
+
+            case .idle,
+                 .empty,
+                 .results:
+                EmptyView()
             }
 
         }

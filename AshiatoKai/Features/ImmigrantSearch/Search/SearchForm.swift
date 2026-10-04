@@ -5,6 +5,13 @@
 //  Created by Max Ueda on 02/10/26.
 //
 
+//
+//  SearchForm.swift
+//  AshiatoKai
+//
+//  Created by Max Ueda on 02/10/26.
+//
+
 import Foundation
 
 struct SearchForm: Equatable {
@@ -19,8 +26,8 @@ struct SearchForm: Equatable {
             value.trimmingCharacters(in: .whitespacesAndNewlines)
         }
 
-        guard !trim(name).isEmpty, !trim(surname).isEmpty else {
-            return "Name and surname are required."
+        guard !trim(name).isEmpty || !trim(surname).isEmpty else {
+            return "Enter a name or surname."
         }
 
         let text = trim(year)

@@ -7259,6 +7259,7 @@
 		1C856F0430725B5900751712 /* PrefectureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856F0330725B5900751712 /* PrefectureDetailView.swift */; };
 		1C856F073072644D00751712 /* GeographicShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856F063072644D00751712 /* GeographicShapeView.swift */; };
 		1C856F093072646100751712 /* GeographicProjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856F083072646100751712 /* GeographicProjection.swift */; };
+		1C856F0B307274C500751712 /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856F0A307274C500751712 /* SearchResultsView.swift */; };
 		1CD68C9F306F61F50054CB9A /* AshiatoKaiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C90306F61F50054CB9A /* AshiatoKaiApp.swift */; };
 		1CD68CA1306F61F50054CB9A /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C98306F61F50054CB9A /* RecordDetailView.swift */; };
 		1CD68CA2306F61F50054CB9A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C99306F61F50054CB9A /* SearchView.swift */; };
@@ -14551,6 +14552,7 @@
 		1C856F0330725B5900751712 /* PrefectureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureDetailView.swift; sourceTree = "<group>"; };
 		1C856F063072644D00751712 /* GeographicShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeographicShapeView.swift; sourceTree = "<group>"; };
 		1C856F083072646100751712 /* GeographicProjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeographicProjection.swift; sourceTree = "<group>"; };
+		1C856F0A307274C500751712 /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
 		1CD68C8F306F61F50054CB9A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		1CD68C90306F61F50054CB9A /* AshiatoKaiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AshiatoKaiApp.swift; sourceTree = "<group>"; };
 		1CD68C92306F61F50054CB9A /* MockSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchRepository.swift; sourceTree = "<group>"; };
@@ -22177,6 +22179,7 @@
 		1CD68CB4306F62C70054CB9A /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				1C856F0A307274C500751712 /* SearchResultsView.swift */,
 				1CD68CE6306F6FD30054CB9A /* SearchNavigationEvent.swift */,
 				1CD68CB9306F631F0054CB9A /* SearchState.swift */,
 				1CD68CB7306F63070054CB9A /* SearchForm.swift */,
@@ -29642,6 +29645,7 @@
 				1CD68CA8306F61F50054CB9A /* APIError.swift in Sources */,
 				1CD68CA9306F61F50054CB9A /* AshiatoKaiAPI.swift in Sources */,
 				1CD68CEB306F70480054CB9A /* SearchError.swift in Sources */,
+				1C856F0B307274C500751712 /* SearchResultsView.swift in Sources */,
 				1C856E8F30720F3800751712 /* PrefectureStatisticsDTO.swift in Sources */,
 				1CD68CE5306F6EC80054CB9A /* GroupDetailsView.swift in Sources */,
 				1CD68CE7306F6FD30054CB9A /* SearchNavigationEvent.swift in Sources */,
