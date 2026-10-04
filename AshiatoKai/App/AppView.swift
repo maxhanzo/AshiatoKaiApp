@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppView: View {
     @ObservedObject var coordinator: AppCoordinator
-
+    
     var body: some View {
         TabView(selection: $coordinator.selectedTab) {
             NavigationStack(path: $coordinator.searchPath) {
@@ -25,7 +25,7 @@ struct AppView: View {
                                     )
                                 }
                             )
-
+                            
                         case .groupDetails(let groupID):
                             GroupDetailsView(
                                 viewModel: coordinator.makeGroupDetailsViewModel(
@@ -47,15 +47,49 @@ struct AppView: View {
                 Label("Search", systemImage: "magnifyingglass")
             }
             .tag(AppTab.search)
+            
+            NavigationStack(path: $coordinator.statisticsPath) {
+                StatisticsView(
+                    viewModel: coordinator.statisticsViewModel
+                )
+                .navigationDestination(
+                    for: StatisticsRoute.self
+                ) { route in
+                    switch route {
+                    case .topPrefectures:
+                        TopPrefecturesView(
+                            viewModel:
+                                coordinator.makeTopPrefecturesViewModel()
+                        )
 
-            NavigationStack {
-                OptionsView()
+                    case .prefectureSearch:
+                        PrefectureStatisticsView(
+                            viewModel:
+                                coordinator.makePrefectureStatisticsViewModel()
+                        )
+
+                    case .topSurnames:
+                        TopSurnamesView(
+                            viewModel:
+                                coordinator.makeTopSurnamesViewModel()
+                        )
+
+                    case .surnameSearch:
+                        SurnameStatisticsView(
+                            viewModel:
+                                coordinator.makeSurnameStatisticsViewModel()
+                        )
+                    }
+                }
             }
             .tabItem {
-                Label("Options", systemImage: "gearshape")
+                Label(
+                    "Statistics",
+                    systemImage: "chart.bar.xaxis"
+                )
             }
-            .tag(AppTab.options)
+            .tag(AppTab.statistics)
+            .tint(.indigo)
         }
-        .tint(.indigo)
     }
 }
