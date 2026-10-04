@@ -71,7 +71,7 @@ struct PrefectureDetailView: View {
                     spacing: 4
                 ) {
                     Text(geolocation.name)
-                        .font(.title)
+                        .font(.largeTitle)
                         .fontWeight(.semibold)
 
                     if let japaneseName =
@@ -84,40 +84,22 @@ struct PrefectureDetailView: View {
                     }
                 }
 
-                if let capital = geolocation.capital {
-                    VStack(
-                        alignment: .leading,
-                        spacing: 8
-                    ) {
-                        Text("Capital")
-                            .font(.headline)
-
-                        Text(capital.name)
-                            .font(.title3)
-
-                        if let japaneseName =
-                            capital.nameJapanese,
-                           !japaneseName.isEmpty {
-
-                            Text(japaneseName)
-                                .foregroundStyle(.secondary)
-                        }
-
-                        if let modernName =
-                            capital.modernName,
-                           !modernName.isEmpty,
-                           modernName != capital.name {
-
-                            Text("Modern name: \(modernName)")
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                }
-
-                geographicInformation(
-                    geolocation
+                GeographicShapeView(
+                    geolocation: geolocation
                 )
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(
+                    .quaternary.opacity(0.35),
+                    in: RoundedRectangle(
+                        cornerRadius: 24,
+                        style: .continuous
+                    )
+                )
+
+                if let capital = geolocation.capital {
+                    capitalSection(capital)
+                }
             }
             .frame(
                 maxWidth: .infinity,
@@ -127,33 +109,36 @@ struct PrefectureDetailView: View {
         }
     }
 
-    private func geographicInformation(
-        _ geolocation: Geolocation
+    private func capitalSection(
+        _ capital: GeographicCapital
     ) -> some View {
         VStack(
             alignment: .leading,
             spacing: 8
         ) {
-            Text("Geographic Data")
+            Text("Capital")
                 .font(.headline)
 
-            Text(
-                """
-                Longitude: \
-                \(geolocation.bounds.minimumLongitude) – \
-                \(geolocation.bounds.maximumLongitude)
-                """
-            )
+            Text(capital.name)
+                .font(.title3)
 
-            Text(
-                """
-                Latitude: \
-                \(geolocation.bounds.minimumLatitude) – \
-                \(geolocation.bounds.maximumLatitude)
-                """
-            )
+            if let japaneseName =
+                capital.nameJapanese,
+               !japaneseName.isEmpty {
+
+                Text(japaneseName)
+                    .foregroundStyle(.secondary)
+            }
+
+            if let modernName =
+                capital.modernName,
+               !modernName.isEmpty,
+               modernName != capital.name {
+
+                Text("Modern name: \(modernName)")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
         }
-        .font(.subheadline)
-        .foregroundStyle(.secondary)
     }
 }
