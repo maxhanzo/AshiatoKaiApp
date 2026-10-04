@@ -25,6 +25,7 @@ enum StatisticsRoute: Hashable {
     case topSurnames
     case surnameSearch
     case surnameWriting(SurnameStatistics)
+    case prefectureMap(PrefectureStatistics)
 }
 
 @MainActor
@@ -52,6 +53,9 @@ final class AppCoordinator: ObservableObject {
     
     private let makeSurnameStatisticsViewModelFactory:
         () -> SurnameStatisticsViewModel
+    
+    private let makePrefectureDetailViewModelFactory:
+        (PrefectureStatistics) -> PrefectureDetailViewModel
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -67,7 +71,9 @@ final class AppCoordinator: ObservableObject {
         makePrefectureStatisticsViewModelFactory:
             @escaping () -> PrefectureStatisticsViewModel,
         makeSurnameStatisticsViewModelFactory:
-            @escaping () -> SurnameStatisticsViewModel
+            @escaping () -> SurnameStatisticsViewModel,
+        makePrefectureDetailViewModelFactory:
+            @escaping (PrefectureStatistics) -> PrefectureDetailViewModel
     ) {
         self.searchViewModel = searchViewModel
         
@@ -87,6 +93,9 @@ final class AppCoordinator: ObservableObject {
         
         self.makeSurnameStatisticsViewModelFactory =
             makeSurnameStatisticsViewModelFactory
+        
+        self.makePrefectureDetailViewModelFactory =
+            makePrefectureDetailViewModelFactory
 
         bindSearchNavigation()
         bindStatisticsNavigation()
@@ -167,11 +176,27 @@ final class AppCoordinator: ObservableObject {
         makeSurnameStatisticsViewModelFactory()
     }
     
+    func makePrefectureDetailViewModel(
+        statistic: PrefectureStatistics
+    ) -> PrefectureDetailViewModel {
+        makePrefectureDetailViewModelFactory(
+            statistic
+        )
+    }
+    
     func showSurnameWriting(
         statistic: SurnameStatistics
     ) {
         statisticsPath.append(
             .surnameWriting(statistic)
+        )
+    }
+    
+    func showPrefectureMap(
+        statistic: PrefectureStatistics
+    ) {
+        statisticsPath.append(
+            .prefectureMap(statistic)
         )
     }
     

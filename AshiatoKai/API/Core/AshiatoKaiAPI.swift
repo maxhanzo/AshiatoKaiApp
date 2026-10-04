@@ -146,6 +146,26 @@ enum AshiatoKaiAPI {
             url: components.url!
         )
     }
+    
+    // MARK: - Geolocation
+    
+    static func geolocation() -> URLRequest {
+        let url = baseURL.appending(
+            path: "/api/v1/geolocation"
+        )
+
+        return makeGETRequest(url: url)
+    }
+
+    static func geolocation(
+        name: String
+    ) -> URLRequest {
+        let url = baseURL
+            .appending(path: "/api/v1/geolocation")
+            .appending(path: name)
+
+        return makeGETRequest(url: url)
+    }
 
     // MARK: - Request Construction
 
