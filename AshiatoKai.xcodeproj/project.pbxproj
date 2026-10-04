@@ -7238,6 +7238,7 @@
 		1C856ECB3072211500751712 /* SurnameStatisticsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ECA3072211500751712 /* SurnameStatisticsState.swift */; };
 		1C856ECD3072212100751712 /* SurnameStatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ECC3072212100751712 /* SurnameStatisticsViewModel.swift */; };
 		1C856ECF3072213200751712 /* SurnameStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ECE3072213200751712 /* SurnameStatisticsView.swift */; };
+		1C856ED2307226CF00751712 /* SurnameKanjiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ED1307226CF00751712 /* SurnameKanjiView.swift */; };
 		1CD68C9F306F61F50054CB9A /* AshiatoKaiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C90306F61F50054CB9A /* AshiatoKaiApp.swift */; };
 		1CD68CA1306F61F50054CB9A /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C98306F61F50054CB9A /* RecordDetailView.swift */; };
 		1CD68CA2306F61F50054CB9A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C99306F61F50054CB9A /* SearchView.swift */; };
@@ -14509,6 +14510,7 @@
 		1C856ECA3072211500751712 /* SurnameStatisticsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurnameStatisticsState.swift; sourceTree = "<group>"; };
 		1C856ECC3072212100751712 /* SurnameStatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurnameStatisticsViewModel.swift; sourceTree = "<group>"; };
 		1C856ECE3072213200751712 /* SurnameStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurnameStatisticsView.swift; sourceTree = "<group>"; };
+		1C856ED1307226CF00751712 /* SurnameKanjiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurnameKanjiView.swift; sourceTree = "<group>"; };
 		1CD68C8F306F61F50054CB9A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		1CD68C90306F61F50054CB9A /* AshiatoKaiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AshiatoKaiApp.swift; sourceTree = "<group>"; };
 		1CD68C92306F61F50054CB9A /* MockSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchRepository.swift; sourceTree = "<group>"; };
@@ -21847,6 +21849,7 @@
 		1C856E8A30720E2F00751712 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				1C856ED0307226C400751712 /* SurnameKanjiView */,
 				1C856EB830721ADD00751712 /* StatisticsViewModel.swift */,
 				1C856E9B3072144900751712 /* StatisticsView.swift */,
 				1C856EB63072188D00751712 /* StatisticsNavigationEvent.swift */,
@@ -21929,6 +21932,14 @@
 				1C856EAE307216CA00751712 /* RetrieveTopSurnamesUseCaseInterface.swift */,
 			);
 			path = Surnames;
+			sourceTree = "<group>";
+		};
+		1C856ED0307226C400751712 /* SurnameKanjiView */ = {
+			isa = PBXGroup;
+			children = (
+				1C856ED1307226CF00751712 /* SurnameKanjiView.swift */,
+			);
+			path = SurnameKanjiView;
 			sourceTree = "<group>";
 		};
 		1CD68C91306F61F50054CB9A /* App */ = {
@@ -29417,6 +29428,7 @@
 				1C856ECB3072211500751712 /* SurnameStatisticsState.swift in Sources */,
 				1C3A7AD1306F89A40001D249 /* AnimCJKParserError.swift in Sources */,
 				1CD68CC6306F677F0054CB9A /* RetrieveImmigrantsError.swift in Sources */,
+				1C856ED2307226CF00751712 /* SurnameKanjiView.swift in Sources */,
 				1C856EB53072172300751712 /* RetrieveSurnameStatisticsUseCase.swift in Sources */,
 				1C856EC330721F8F00751712 /* TopSurnamesState.swift in Sources */,
 				1C856E9C3072144900751712 /* StatisticsView.swift in Sources */,

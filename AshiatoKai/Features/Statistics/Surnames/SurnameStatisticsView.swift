@@ -10,6 +10,9 @@ import SwiftUI
 struct SurnameStatisticsView: View {
 
     @ObservedObject var viewModel: SurnameStatisticsViewModel
+    
+    let onSurnameSelected:
+            (SurnameStatistics) -> Void
 
     var body: some View {
         Form {
@@ -63,7 +66,12 @@ struct SurnameStatisticsView: View {
         case .loaded(let statistics):
             Section("Results") {
                 ForEach(statistics) { statistic in
-                    statisticRow(statistic)
+                    Button {
+                        onSurnameSelected(statistic)
+                    } label: {
+                        statisticRow(statistic)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
 
@@ -121,7 +129,12 @@ struct SurnameStatisticsView: View {
                 Text(statistic.surnameKanji)
                     .font(.largeTitle)
             }
+
+            Image(systemName: "chevron.right")
+                .font(.caption)
+                .foregroundStyle(.tertiary)
         }
         .padding(.vertical, 6)
+        .contentShape(Rectangle())
     }
 }

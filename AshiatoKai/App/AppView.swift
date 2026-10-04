@@ -71,13 +71,28 @@ struct AppView: View {
                     case .topSurnames:
                         TopSurnamesView(
                             viewModel:
-                                coordinator.makeTopSurnamesViewModel()
+                                coordinator.makeTopSurnamesViewModel(),
+                            onSurnameSelected: { statistic in
+                                coordinator.showSurnameWriting(
+                                    statistic: statistic
+                                )
+                            }
                         )
 
                     case .surnameSearch:
                         SurnameStatisticsView(
                             viewModel:
-                                coordinator.makeSurnameStatisticsViewModel()
+                                coordinator.makeSurnameStatisticsViewModel(),
+                            onSurnameSelected: { statistic in
+                                coordinator.showSurnameWriting(
+                                    statistic: statistic
+                                )
+                            }
+                        )
+                        
+                    case .surnameWriting(let statistic):
+                        SurnameKanjiView(
+                            statistic: statistic
                         )
                     }
                 }

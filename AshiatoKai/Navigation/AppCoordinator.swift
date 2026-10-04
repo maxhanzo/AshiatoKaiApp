@@ -24,6 +24,7 @@ enum StatisticsRoute: Hashable {
     case prefectureSearch
     case topSurnames
     case surnameSearch
+    case surnameWriting(SurnameStatistics)
 }
 
 @MainActor
@@ -164,6 +165,14 @@ final class AppCoordinator: ObservableObject {
         -> SurnameStatisticsViewModel {
 
         makeSurnameStatisticsViewModelFactory()
+    }
+    
+    func showSurnameWriting(
+        statistic: SurnameStatistics
+    ) {
+        statisticsPath.append(
+            .surnameWriting(statistic)
+        )
     }
     
 }
