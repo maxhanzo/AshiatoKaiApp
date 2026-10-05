@@ -1,0 +1,112 @@
+//
+//  SurnameKanjiView.swift
+//  AshiatoKai
+//
+//  Created by Max Hiroyuki Ueda on 04/10/26.
+//
+
+import SwiftUI
+
+struct SurnameKanjiView: View {
+    @State private var highlightedCharacterIndex = 0
+    
+    let statistic: SurnameStatistics
+
+    var body: some View {
+        Form {
+            Section {
+                VStack(
+                    alignment: .leading,
+                    spacing: 16
+                ) {
+                    VStack(
+                        alignment: .leading,
+                        spacing: 4
+                    ) {
+                        Text("kanji.how_written")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+
+                        Text(
+                            statistic.surnameRomaji.capitalized
+                        )
+                        .font(.title3)
+                    }
+
+                    VStack(
+                        alignment: .leading,
+                        spacing: 4
+                    ) {
+                        Text("kanji.in_japanese")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+
+                        HStack {
+                            Text(statistic.surnameKanji)
+                                .textSelection(.enabled)
+
+                            Spacer()
+
+                            Button {
+                                UIPasteboard.general.string = statistic.surnameKanji
+                            } label: {
+                                Image(systemName: "doc.on.doc")
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel("kanji.copy_surname.accessibility")
+                        }
+                            .font(.title2)
+                    }
+                }
+                .padding(.vertical, 4)
+            }
+
+            Section {
+                HStack(
+                    alignment: .top,
+                    spacing: 40
+                ) {
+                    verticalSurname(
+                        statistic.surnameKanji
+                    )
+
+                    JapaneseNameWritingContainerView(
+                        name: statistic.surnameKanji
+                    ) { index in
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            highlightedCharacterIndex = index
+                        }
+                    }
+                }
+                .frame(
+                    maxWidth: .infinity,
+                    alignment: .center
+                )
+                .padding(.vertical, 24)
+            }
+        }
+        .navigationTitle(
+            statistic.surnameRomaji.uppercased()
+        )
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private func verticalSurname(
+        _ surname: String
+    ) -> some View {
+        VStack(spacing: 8) {
+            ForEach(
+                Array(surname.enumerated()),
+                id: \.offset
+            ) { index, character in
+                Text(String(character))
+                    .font(.system(size: 52))
+                    .foregroundStyle(
+                        index <= highlightedCharacterIndex
+                            ? Color.blue
+                            : Color.primary
+                    )
+            }
+        }
+    }
+}

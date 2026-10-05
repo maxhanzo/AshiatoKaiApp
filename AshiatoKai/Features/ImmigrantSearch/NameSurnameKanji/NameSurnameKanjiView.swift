@@ -1,0 +1,124 @@
+//
+//  NameSurnameKanjiView.swift
+//  AshiatoKai
+//
+//  Created by Max Hiroyuki Ueda on 02/10/26.
+//
+
+import SwiftUI
+
+struct NameSurnameKanjiView: View {
+    @State private var highlightedCharacterIndex = 0
+    
+    let member: ImmigrantGroupMember
+
+    var body: some View {
+        Form {
+            Section {
+                VStack(
+                    alignment: .leading,
+                    spacing: 16
+                ) {
+                    VStack(
+                        alignment: .leading,
+                        spacing: 4
+                    ) {
+                        Text("kanji.how_written")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+
+                        Text(romajiName)
+                            .font(.title3)
+                    }
+
+                    if let japaneseName =
+                            member.japaneseFullName {
+                        VStack(
+                            alignment: .leading,
+                            spacing: 4
+                        ) {
+                            Text("kanji.in_japanese")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+
+                            HStack {
+                                Text(japaneseName)
+                                    .textSelection(.enabled)
+
+                                Spacer()
+
+                                Button {
+                                    UIPasteboard.general.string = japaneseName
+                                } label: {
+                                    Image(systemName: "doc.on.doc")
+                                }
+                                .buttonStyle(.plain)
+                                .accessibilityLabel("kanji.copy_name.accessibility")
+                            }
+                                .font(.title2)
+                        }
+                    }
+                }
+                .padding(.vertical, 4)
+            }
+
+            if let japaneseName =
+                member.japaneseFullName {
+
+                Section {
+                    HStack(
+                        alignment: .top,
+                        spacing: 40
+                    ) {
+                        verticalName(japaneseName)
+
+                        JapaneseNameWritingContainerView(
+                            name: japaneseName
+                        ) { index in
+                            withAnimation(.easeInOut(duration: 0.2)) {
+                                highlightedCharacterIndex = index
+                            }
+                        }
+                    }
+                    .frame(
+                        maxWidth: .infinity,
+                        alignment: .center
+                    )
+                    .padding(.vertical, 24)
+                }
+            }
+        }
+        .navigationTitle(member.fullName)
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private var romajiName: String {
+        [
+            member.surnameRomaji,
+            member.nameRomaji
+        ]
+        .compactMap { $0 }
+        .filter { !$0.isEmpty }
+        .joined(separator: " ")
+        .capitalized
+    }
+
+    private func verticalName(
+        _ name: String
+    ) -> some View {
+        VStack(spacing: 8) {
+            ForEach(
+                Array(name.enumerated()),
+                id: \.offset
+            ) { index, character in
+                Text(String(character))
+                    .font(.system(size: 52))
+                    .foregroundStyle(
+                        index <= highlightedCharacterIndex
+                            ? Color.blue
+                            : Color.primary
+                    )
+            }
+        }
+    }
+}
