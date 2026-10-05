@@ -39,7 +39,20 @@ struct NameSurnameKanjiView: View {
                                 .font(.subheadline)
                                 .foregroundStyle(.secondary)
 
-                            Text(japaneseName)
+                            HStack {
+                                Text(japaneseName)
+                                    .textSelection(.enabled)
+
+                                Spacer()
+
+                                Button {
+                                    UIPasteboard.general.string = japaneseName
+                                } label: {
+                                    Image(systemName: "doc.on.doc")
+                                }
+                                .buttonStyle(.plain)
+                                .accessibilityLabel("Copiar nome em japonês")
+                            }
                                 .font(.title2)
                         }
                     }
