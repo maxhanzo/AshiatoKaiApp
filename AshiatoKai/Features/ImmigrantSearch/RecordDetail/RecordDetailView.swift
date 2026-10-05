@@ -2,7 +2,7 @@
 //  RecordDetailView.swift
 //  AshiatoKai
 //
-//  Created by Max Ueda on 01/10/26.
+//  Created by Max Hiroyuki Ueda on 01/10/26.
 //
 
 import SwiftUI
