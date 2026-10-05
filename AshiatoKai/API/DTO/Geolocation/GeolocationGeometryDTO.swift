@@ -2,7 +2,7 @@
 //  GeolocationGeometryDTO.swift
 //  AshiatoKai
 //
-//  Created by Max Ueda on 04/10/26.
+//  Created by Max Hiroyuki Ueda on 04/10/26.
 //
 
 import Foundation

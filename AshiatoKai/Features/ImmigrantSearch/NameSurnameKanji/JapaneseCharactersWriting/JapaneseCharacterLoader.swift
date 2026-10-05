@@ -2,7 +2,7 @@
 //  JapaneseCharacterLoader.swift
 //  AshiatoKai
 //
-//  Created by Max Ueda on 02/10/26.
+//  Created by Max Hiroyuki Ueda on 02/10/26.
 //
 
 import Foundation
