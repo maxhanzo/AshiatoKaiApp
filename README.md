@@ -21,7 +21,7 @@ The project has two purposes:
 **Ashiato (足跡)** means *footprints* or *traces left behind*.
 
 The name honours the original **Projeto ASHIATO**, associated with the
-**Museu Histórico da Imigração Japonesa no Brasil / Bunkyo
+**[Museu Histórico da Imigração Japonesa no Brasil / Bunkyo](https://bunkyo.org.br/br/museu-historico/)
 (Sociedade Brasileira de Cultura Japonesa e de Assistência Social)**.
 Volunteers from the Japanese-Brazilian community worked to transcribe,
 romanise and digitise historical Japanese immigration records so that this
