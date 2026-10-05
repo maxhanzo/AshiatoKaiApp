@@ -27,7 +27,7 @@ struct SearchForm: Equatable {
         }
 
         guard !trim(name).isEmpty || !trim(surname).isEmpty else {
-            return "Enter a name or surname."
+            return String(localized: "search.validation.name_or_surname")
         }
 
         let text = trim(year)
@@ -35,7 +35,7 @@ struct SearchForm: Equatable {
         guard text.count == 4,
               text.allSatisfy({ $0.isASCII && $0.isNumber }),
               Int(text) != nil else {
-            return "Enter a four-digit year, or leave it blank."
+            return String(localized: "search.validation.year")
         }
         return nil
     }

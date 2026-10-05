@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA11BB22CC33DD44EE55FF02 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA11BB22CC33DD44EE55FF01 /* Localizable.xcstrings */; };
 		1C3A5EA4306F84570001D249 /* 32114.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1C3A543B306F84560001D249 /* 32114.svg */; };
 		1C3A5EA5306F84570001D249 /* 22352.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1C3A46FE306F84560001D249 /* 22352.svg */; };
 		1C3A5EA6306F84570001D249 /* 25340.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1C3A4B5A306F84560001D249 /* 25340.svg */; };
@@ -7303,6 +7304,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA11BB22CC33DD44EE55FF01 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1C3A4290306F84560001D249 /* 11904.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = 11904.svg; sourceTree = "<group>"; };
 		1C3A4291306F84560001D249 /* 11908.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = 11908.svg; sourceTree = "<group>"; };
 		1C3A4292306F84560001D249 /* 11910.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = 11910.svg; sourceTree = "<group>"; };
@@ -22296,6 +22298,7 @@
 		BCE16DD0260827ECF338C787 /* AshiatoKai */ = {
 			isa = PBXGroup;
 			children = (
+				AA11BB22CC33DD44EE55FF01 /* Localizable.xcstrings */,
 				1C3A7AB4306F84B00001D249 /* UI */,
 				1CD68CC1306F67530054CB9A /* UseCases */,
 				1CD68CAE306F62650054CB9A /* Repositories */,
@@ -22358,6 +22361,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"pt-BR",
+				ja,
 				Base,
 			);
 			mainGroup = 64292B1C2B2E13EAD8788FC8;
@@ -22375,6 +22380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA11BB22CC33DD44EE55FF02 /* Localizable.xcstrings in Resources */,
 				1C3A5EA4306F84570001D249 /* 32114.svg in Resources */,
 				1C3A5EA5306F84570001D249 /* 22352.svg in Resources */,
 				1C3A5EA6306F84570001D249 /* 25340.svg in Resources */,

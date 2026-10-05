@@ -29,7 +29,7 @@ struct TopPrefecturesView: View {
 
     var body: some View {
         content
-            .navigationTitle("Top 10 Prefectures")
+            .navigationTitle("statistics.prefectures.top10")
             .navigationBarTitleDisplayMode(.inline)
             .task {
                 if case .idle = viewModel.state {
@@ -60,23 +60,23 @@ struct TopPrefecturesView: View {
 
         case .empty:
             ContentUnavailableView(
-                "No Statistics",
+                "statistics.no_statistics",
                 systemImage: "chart.bar",
                 description: Text(
-                    "No prefecture statistics are available."
+                    "statistics.prefectures.none_available"
                 )
             )
 
         case .failed(let message):
             ContentUnavailableView {
                 Label(
-                    "Unable to Load Statistics",
+                    "statistics.load_failed",
                     systemImage: "exclamationmark.triangle"
                 )
             } description: {
                 Text(message)
             } actions: {
-                Button("Try Again") {
+                Button("common.try_again") {
                     viewModel.load()
                 }
             }
@@ -97,7 +97,7 @@ struct TopPrefecturesView: View {
                     .font(.headline)
 
                 Text(
-                    "\(statistic.count.formatted()) immigrants"
+                    "\(statistic.count.formatted()) \(String(localized: "statistics.immigrants.lowercase"))"
                 )
                 .font(.subheadline)
                 .foregroundStyle(.secondary)

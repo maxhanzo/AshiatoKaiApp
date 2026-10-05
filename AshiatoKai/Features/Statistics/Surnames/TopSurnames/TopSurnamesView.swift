@@ -29,7 +29,7 @@ struct TopSurnamesView: View {
 
     var body: some View {
         content
-            .navigationTitle("Top 10 Surnames")
+            .navigationTitle("statistics.surnames.top10")
             .navigationBarTitleDisplayMode(.inline)
             .task {
                 if case .idle = viewModel.state {
@@ -60,23 +60,23 @@ struct TopSurnamesView: View {
 
         case .empty:
             ContentUnavailableView(
-                "No Statistics",
+                "statistics.no_statistics",
                 systemImage: "person.2",
                 description: Text(
-                    "No surname statistics are available."
+                    "statistics.surnames.none_available"
                 )
             )
 
         case .failed(let message):
             ContentUnavailableView {
                 Label(
-                    "Unable to Load Statistics",
+                    "statistics.load_failed",
                     systemImage: "exclamationmark.triangle"
                 )
             } description: {
                 Text(message)
             } actions: {
-                Button("Try Again") {
+                Button("common.try_again") {
                     viewModel.load()
                 }
             }
@@ -100,7 +100,7 @@ struct TopSurnamesView: View {
                     .font(.headline)
 
                 Text(
-                    "\(statistic.count.formatted()) immigrants"
+                    "\(statistic.count.formatted()) \(String(localized: "statistics.immigrants.lowercase"))"
                 )
                 .font(.subheadline)
                 .foregroundStyle(.secondary)

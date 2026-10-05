@@ -14,7 +14,7 @@ struct GroupDetailsView: View {
 
     var body: some View {
         content
-            .navigationTitle("Group Details")
+            .navigationTitle("group.title")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 viewModel.retrieveGroup()
@@ -25,18 +25,18 @@ struct GroupDetailsView: View {
     private var content: some View {
         switch viewModel.state {
         case .idle, .loading:
-            ProgressView("Loading group...")
+            ProgressView("group.loading")
 
         case .loaded(let group):
             Form {
-                Section("Journey") {
+                Section("record.journey") {
                     LabeledContent(
-                        "Group ID",
+                        "group.id",
                         value: String(group.groupID)
                     )
                 }
 
-                Section("Group Members") {
+                Section("group.members") {
                     ForEach(group.immigrants) { immigrant in
                         Button {
                             onMemberSelected(immigrant)
@@ -67,7 +67,7 @@ struct GroupDetailsView: View {
 
         case .failed(let message):
             ContentUnavailableView(
-                "Unable to Load Group",
+                "group.error.title",
                 systemImage: "exclamationmark.triangle",
                 description: Text(message)
             )

@@ -49,7 +49,7 @@ struct PrefectureDetailView: View {
         case .failed(let message):
             ContentUnavailableView {
                 Label(
-                    "Unable to Load Location",
+                    "statistics.location_failed",
                     systemImage: "map"
                 )
             } description: {
@@ -90,7 +90,7 @@ struct PrefectureDetailView: View {
                                 Image(systemName: "doc.on.doc")
                             }
                             .buttonStyle(.plain)
-                            .accessibilityLabel("Copiar nome em japonês")
+                            .accessibilityLabel("kanji.copy_japanese_name.accessibility")
                         }
                             .font(.title2)
                             .foregroundStyle(.primary)
@@ -129,7 +129,7 @@ struct PrefectureDetailView: View {
             alignment: .leading,
             spacing: 8
         ) {
-            Text("Capital")
+            Text("statistics.capital")
                 .font(.headline)
 
             Text(capital.name)
@@ -143,7 +143,7 @@ struct PrefectureDetailView: View {
                     alignment: .leading,
                     spacing: 4
                 ) {
-                    Text("Em japonês:")
+                    Text("kanji.in_japanese")
                         .font(.headline)
                         .foregroundStyle(.primary)
 
@@ -159,7 +159,7 @@ struct PrefectureDetailView: View {
                             Image(systemName: "doc.on.doc")
                         }
                         .buttonStyle(.plain)
-                        .accessibilityLabel("Copiar nome em japonês")
+                        .accessibilityLabel("kanji.copy_japanese_name.accessibility")
                     }
                         .font(.title2)
                 }
@@ -170,7 +170,7 @@ struct PrefectureDetailView: View {
                !modernName.isEmpty,
                modernName != capital.name {
 
-                Text("Modern name: \(modernName)")
+                Text("statistics.modern_name \(modernName)")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }

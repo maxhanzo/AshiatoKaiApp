@@ -96,7 +96,7 @@ struct GeographicShapeView: View {
         }
         .position(point)
         .accessibilityLabel(
-            "Capital: \(capital.name)"
+            Text("statistics.capital_accessibility \(capital.name)")
         )
     }
 

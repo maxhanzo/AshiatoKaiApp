@@ -15,7 +15,7 @@ enum SearchError: Error, LocalizedError {
     init(apiError: APIError) {
         switch apiError {
         case .server(let status, _, let message) where status == 400:
-            self = .invalidRequest(message ?? "The search request is invalid.")
+            self = .invalidRequest(message ?? String(localized: "search.error.invalid_request"))
         case .decoding, .nonHTTPResponse:
             self = .invalidResponse
         case .transport, .server:
@@ -26,8 +26,8 @@ enum SearchError: Error, LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidRequest(let message): return message
-        case .unavailable: return "The search could not be completed. Please try again."
-        case .invalidResponse: return "The service returned an unexpected response."
+        case .unavailable: return String(localized: "search.error.unavailable")
+        case .invalidResponse: return String(localized: "search.error.invalid_response")
         }
     }
 }
