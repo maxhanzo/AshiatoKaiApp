@@ -52,7 +52,7 @@ struct SearchResultsView: View {
             }
             .buttonStyle(.plain)
         }
-        .navigationTitle("Search Results")
+        .navigationTitle("results.title")
         .navigationBarTitleDisplayMode(.inline)
         .safeAreaInset(edge: .top) {
             HStack {
@@ -69,8 +69,13 @@ struct SearchResultsView: View {
     }
 
     private var resultCountText: String {
-        records.count == 1
-            ? "1 record found"
-            : "\(records.count) records found"
+        if records.count == 1 {
+            return String(localized: "results.count.one")
+        }
+
+        return String(
+            format: String(localized: "results.count.many"),
+            records.count
+        )
     }
 }

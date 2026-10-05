@@ -23,7 +23,7 @@ struct NameSurnameKanjiView: View {
                         alignment: .leading,
                         spacing: 4
                     ) {
-                        Text("Como se escreve:")
+                        Text("kanji.how_written")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
 
@@ -37,7 +37,7 @@ struct NameSurnameKanjiView: View {
                             alignment: .leading,
                             spacing: 4
                         ) {
-                            Text("Em japonês:")
+                            Text("kanji.in_japanese")
                                 .font(.subheadline)
                                 .foregroundStyle(.secondary)
 
@@ -53,7 +53,7 @@ struct NameSurnameKanjiView: View {
                                     Image(systemName: "doc.on.doc")
                                 }
                                 .buttonStyle(.plain)
-                                .accessibilityLabel("Copiar nome em japonês")
+                                .accessibilityLabel("kanji.copy_name.accessibility")
                             }
                                 .font(.title2)
                         }

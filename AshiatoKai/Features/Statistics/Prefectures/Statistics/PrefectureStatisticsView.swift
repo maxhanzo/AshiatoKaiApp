@@ -31,7 +31,7 @@ struct PrefectureStatisticsView: View {
         Form {
             Section {
                 TextField(
-                    "Prefecture",
+                    "statistics.prefectures.placeholder",
                     text: $viewModel.prefecture
                 )
                 .textInputAutocapitalization(.words)
@@ -43,21 +43,21 @@ struct PrefectureStatisticsView: View {
                     }
                 }
 
-                Button("Search") {
+                Button("search.button") {
                     viewModel.search()
                 }
                 .disabled(!viewModel.canSearch)
             } header: {
-                Text("Search")
+                Text("search.button")
             } footer: {
                 Text(
-                    "Enter a Japanese prefecture, for example Yamaguchi or Hiroshima."
+                    "statistics.prefectures.search.help"
                 )
             }
 
             results
         }
-        .navigationTitle("Prefecture Search")
+        .navigationTitle("statistics.prefectures.search")
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -77,7 +77,7 @@ struct PrefectureStatisticsView: View {
             }
 
         case .loaded(let statistics):
-            Section("Results") {
+            Section("search.results.section") {
                 ForEach(statistics) { statistic in
                     Button {
                         onPrefectureSelected(statistic)
@@ -91,10 +91,10 @@ struct PrefectureStatisticsView: View {
         case .empty:
             Section {
                 ContentUnavailableView(
-                    "No Results",
+                    "search.results.empty.title",
                     systemImage: "magnifyingglass",
                     description: Text(
-                        "No statistics were found for this prefecture."
+                        "statistics.prefectures.no_results"
                     )
                 )
             }
@@ -103,13 +103,13 @@ struct PrefectureStatisticsView: View {
             Section {
                 ContentUnavailableView {
                     Label(
-                        "Unable to Search",
+                        "statistics.search_failed",
                         systemImage: "exclamationmark.triangle"
                     )
                 } description: {
                     Text(message)
                 } actions: {
-                    Button("Try Again") {
+                    Button("common.try_again") {
                         viewModel.search()
                     }
                 }
@@ -138,7 +138,7 @@ struct PrefectureStatisticsView: View {
             }
 
             LabeledContent(
-                "Immigrants",
+                "statistics.immigrants",
                 value: statistic.count.formatted()
             )
         }

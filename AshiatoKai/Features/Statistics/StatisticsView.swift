@@ -14,13 +14,13 @@ struct StatisticsView: View {
 
     var body: some View {
         List {
-            Section("Prefectures") {
+            Section("statistics.prefectures.section") {
                 Button {
                     viewModel.showTopPrefectures()
                 } label: {
                     row(
-                        title: "Top 10 Prefectures",
-                        subtitle: "Prefectures with the most immigrants",
+                        title: "statistics.prefectures.top10",
+                        subtitle: "statistics.prefectures.top10.subtitle",
                         systemImage: "map"
                     )
                 }
@@ -29,20 +29,20 @@ struct StatisticsView: View {
                     viewModel.showPrefectureSearch()
                 } label: {
                     row(
-                        title: "Prefecture Search",
-                        subtitle: "Find the number and ranking of a prefecture",
+                        title: "statistics.prefectures.search",
+                        subtitle: "statistics.prefectures.search.subtitle",
                         systemImage: "magnifyingglass"
                     )
                 }
             }
 
-            Section("Surnames") {
+            Section("statistics.surnames.section") {
                 Button {
                     viewModel.showTopSurnames()
                 } label: {
                     row(
-                        title: "Top 10 Surnames",
-                        subtitle: "Most common surnames in the records",
+                        title: "statistics.surnames.top10",
+                        subtitle: "statistics.surnames.top10.subtitle",
                         systemImage: "person.2"
                     )
                 }
@@ -51,19 +51,19 @@ struct StatisticsView: View {
                     viewModel.showSurnameSearch()
                 } label: {
                     row(
-                        title: "Surname Search",
-                        subtitle: "Find variants, counts and rankings",
+                        title: "statistics.surnames.search",
+                        subtitle: "statistics.surnames.search.subtitle",
                         systemImage: "character.book.closed"
                     )
                 }
             }
         }
-        .navigationTitle("Statistics")
+        .navigationTitle("statistics.title")
     }
 
     private func row(
-        title: String,
-        subtitle: String,
+        title: LocalizedStringKey,
+        subtitle: LocalizedStringKey,
         systemImage: String
     ) -> some View {
         HStack(spacing: 16) {

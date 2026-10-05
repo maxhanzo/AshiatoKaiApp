@@ -54,7 +54,7 @@ struct AppView: View {
                     }
             }
             .tabItem {
-                Label("Search", systemImage: "magnifyingglass")
+                Label("tab.search", systemImage: "magnifyingglass")
             }
             .tag(AppTab.search)
             
@@ -128,7 +128,7 @@ struct AppView: View {
             }
             .tabItem {
                 Label(
-                    "Statistics",
+                    "tab.statistics",
                     systemImage: "chart.bar.xaxis"
                 )
             }

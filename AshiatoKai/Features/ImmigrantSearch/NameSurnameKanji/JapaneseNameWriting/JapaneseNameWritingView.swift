@@ -58,7 +58,7 @@ struct JapaneseNameWritingView: View {
                 viewModel.replay()
             } label: {
                 Label(
-                    "Replay",
+                    "kanji.replay",
                     systemImage:
                         "arrow.counterclockwise"
                 )

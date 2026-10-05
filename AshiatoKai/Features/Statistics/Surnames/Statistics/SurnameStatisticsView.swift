@@ -18,7 +18,7 @@ struct SurnameStatisticsView: View {
         Form {
             Section {
                 TextField(
-                    "Surname",
+                    "statistics.surnames.placeholder",
                     text: $viewModel.surname
                 )
                 .textInputAutocapitalization(.characters)
@@ -30,21 +30,21 @@ struct SurnameStatisticsView: View {
                     }
                 }
 
-                Button("Search") {
+                Button("search.button") {
                     viewModel.search()
                 }
                 .disabled(!viewModel.canSearch)
             } header: {
-                Text("Search")
+                Text("search.button")
             } footer: {
                 Text(
-                    "Enter a surname in Romaji, for example Ueda, Sato or Tanaka."
+                    "statistics.surnames.search.help"
                 )
             }
 
             results
         }
-        .navigationTitle("Surname Search")
+        .navigationTitle("statistics.surnames.search")
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -64,7 +64,7 @@ struct SurnameStatisticsView: View {
             }
 
         case .loaded(let statistics):
-            Section("Results") {
+            Section("search.results.section") {
                 ForEach(statistics) { statistic in
                     Button {
                         onSurnameSelected(statistic)
@@ -78,10 +78,10 @@ struct SurnameStatisticsView: View {
         case .empty:
             Section {
                 ContentUnavailableView(
-                    "No Results",
+                    "search.results.empty.title",
                     systemImage: "magnifyingglass",
                     description: Text(
-                        "No statistics were found for this surname."
+                        "statistics.surnames.no_results"
                     )
                 )
             }
@@ -90,13 +90,13 @@ struct SurnameStatisticsView: View {
             Section {
                 ContentUnavailableView {
                     Label(
-                        "Unable to Search",
+                        "statistics.search_failed",
                         systemImage: "exclamationmark.triangle"
                     )
                 } description: {
                     Text(message)
                 } actions: {
-                    Button("Try Again") {
+                    Button("common.try_again") {
                         viewModel.search()
                     }
                 }
@@ -113,12 +113,12 @@ struct SurnameStatisticsView: View {
                     .font(.headline)
 
                 LabeledContent(
-                    "Immigrants",
+                    "statistics.immigrants",
                     value: statistic.count.formatted()
                 )
 
                 LabeledContent(
-                    "Rank",
+                    "statistics.rank",
                     value: "#\(statistic.rank)"
                 )
             }

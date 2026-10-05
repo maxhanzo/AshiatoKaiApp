@@ -13,30 +13,30 @@ struct RecordDetailView: View {
 
     var body: some View {
         Form {
-            Section("Person") {
-                LabeledContent("Name", value: record.name)
-                LabeledContent("Surname", value: record.surname)
+            Section("record.person") {
+                LabeledContent("record.name", value: record.name)
+                LabeledContent("record.surname", value: record.surname)
 
                 if let japaneseFullName = record.japaneseFullName {
                     LabeledContent(
-                        "Japanese name",
+                        "record.japanese_name",
                         value: japaneseFullName
                     )
                 }
             }
 
-            Section("Journey") {
-                optionalContent("Year", record.year.map(String.init))
-                optionalContent("Prefecture", record.prefecture)
-                optionalContent("Ship name", record.shipName)
-                optionalContent("Departure date", record.departureDate)
-                optionalContent("Arrival date", record.arrivalDate)
-                optionalContent("Destination", record.destination)
-                optionalContent("Farm", record.farm)
+            Section("record.journey") {
+                optionalContent("record.year", record.year.map(String.init))
+                optionalContent("record.prefecture", record.prefecture)
+                optionalContent("record.ship_name", record.shipName)
+                optionalContent("record.departure_date", record.departureDate)
+                optionalContent("record.arrival_date", record.arrivalDate)
+                optionalContent("record.destination", record.destination)
+                optionalContent("record.farm", record.farm)
             }
 
             Section {
-                Button("Group Details") {
+                Button("record.group_details") {
                     onGroupDetails()
                 }
             }
@@ -47,7 +47,7 @@ struct RecordDetailView: View {
 
     @ViewBuilder
     private func optionalContent(
-        _ label: String,
+        _ label: LocalizedStringKey,
         _ value: String?
     ) -> some View {
         if let value, !value.isEmpty {

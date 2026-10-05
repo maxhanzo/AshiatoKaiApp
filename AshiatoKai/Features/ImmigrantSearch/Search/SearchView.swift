@@ -15,23 +15,23 @@ struct SearchView: View {
     var body: some View {
         Form {
             Section {
-                TextField("Name", text: $viewModel.form.name)
+                TextField("search.name.placeholder", text: $viewModel.form.name)
                     .focused($focusedField, equals: .name)
                     .textContentType(.givenName)
-                TextField("Surname", text: $viewModel.form.surname)
+                TextField("search.surname.placeholder", text: $viewModel.form.surname)
                     .focused($focusedField, equals: .surname)
                     .textContentType(.familyName)
-                TextField("Year", text: $viewModel.form.year)
+                TextField("search.year.placeholder", text: $viewModel.form.year)
                     .focused($focusedField, equals: .year)
                     .keyboardType(.numberPad)
-                TextField("Prefecture", text: $viewModel.form.prefecture)
+                TextField("search.prefecture.placeholder", text: $viewModel.form.prefecture)
                     .focused($focusedField, equals: .prefecture)
-                TextField("Ship name", text: $viewModel.form.shipName)
+                TextField("search.ship.placeholder", text: $viewModel.form.shipName)
                     .focused($focusedField, equals: .ship)
             } header: {
-                Text("Search criteria")
+                Text("search.criteria")
             } footer: {
-                Text("Enter a name or surname. Add optional filters to narrow your search.")
+                Text("search.footer")
             }
 
             if let message = viewModel.validationMessage {
@@ -46,11 +46,11 @@ struct SearchView: View {
                     focusedField = nil
                     viewModel.search()
                 } label: {
-                    Label("Search", systemImage: "magnifyingglass")
+                    Label("search.button", systemImage: "magnifyingglass")
                 }
                 .disabled(!viewModel.canSearch)
 
-                Button("Clear form") { viewModel.clear() }
+                Button("search.clear") { viewModel.clear() }
             }
 
             switch viewModel.state {
@@ -58,11 +58,11 @@ struct SearchView: View {
                 Section {
                     HStack {
                         ProgressView()
-                        Text("Searching…")
+                        Text("search.searching")
                     }
 
                     Button(
-                        "Cancel search",
+                        "search.cancel",
                         role: .cancel
                     ) {
                         viewModel.cancel()
@@ -74,7 +74,7 @@ struct SearchView: View {
                     Text(message)
                         .foregroundStyle(.red)
 
-                    Button("Try again") {
+                    Button("search.try_again") {
                         focusedField = nil
                         viewModel.search()
                     }
@@ -88,12 +88,12 @@ struct SearchView: View {
             }
 
         }
-        .navigationTitle("Search")
+        .navigationTitle("search.title")
         .scrollDismissesKeyboard(.interactively)
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
-                Button("Done") { focusedField = nil }
+                Button("common.done") { focusedField = nil }
             }
         }
     }
