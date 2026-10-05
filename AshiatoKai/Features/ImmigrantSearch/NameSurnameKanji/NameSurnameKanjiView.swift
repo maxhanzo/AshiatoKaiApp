@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NameSurnameKanjiView: View {
+    @State private var highlightedCharacterIndex = 0
+    
     let member: ImmigrantGroupMember
 
     var body: some View {
@@ -72,7 +74,11 @@ struct NameSurnameKanjiView: View {
 
                         JapaneseNameWritingContainerView(
                             name: japaneseName
-                        )
+                        ) { index in
+                            withAnimation(.easeInOut(duration: 0.2)) {
+                                highlightedCharacterIndex = index
+                            }
+                        }
                     }
                     .frame(
                         maxWidth: .infinity,
@@ -104,9 +110,14 @@ struct NameSurnameKanjiView: View {
             ForEach(
                 Array(name.enumerated()),
                 id: \.offset
-            ) { _, character in
+            ) { index, character in
                 Text(String(character))
                     .font(.system(size: 52))
+                    .foregroundStyle(
+                        index <= highlightedCharacterIndex
+                            ? Color.blue
+                            : Color.primary
+                    )
             }
         }
     }
