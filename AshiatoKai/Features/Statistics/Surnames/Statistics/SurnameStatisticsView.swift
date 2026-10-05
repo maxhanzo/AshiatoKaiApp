@@ -18,7 +18,7 @@ struct SurnameStatisticsView: View {
         Form {
             Section {
                 TextField(
-                    "Surname",
+                    "Surname. Ex: Ueda",
                     text: $viewModel.surname
                 )
                 .textInputAutocapitalization(.characters)

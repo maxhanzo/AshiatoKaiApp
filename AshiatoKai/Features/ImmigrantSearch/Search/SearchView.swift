@@ -15,18 +15,22 @@ struct SearchView: View {
     var body: some View {
         Form {
             Section {
-                TextField("Name", text: $viewModel.form.name)
+                TextField("Name. Ex: Tadao", text: $viewModel.form.name)
                     .focused($focusedField, equals: .name)
                     .textContentType(.givenName)
-                TextField("Surname", text: $viewModel.form.surname)
+
+                TextField("Surname. Ex: Ueda", text: $viewModel.form.surname)
                     .focused($focusedField, equals: .surname)
                     .textContentType(.familyName)
-                TextField("Year", text: $viewModel.form.year)
+
+                TextField("Year. Ex: 1955", text: $viewModel.form.year)
                     .focused($focusedField, equals: .year)
                     .keyboardType(.numberPad)
-                TextField("Prefecture", text: $viewModel.form.prefecture)
+
+                TextField("Prefecture. Ex: Yamaguchi", text: $viewModel.form.prefecture)
                     .focused($focusedField, equals: .prefecture)
-                TextField("Ship name", text: $viewModel.form.shipName)
+
+                TextField("Ship name. Ex: America-Maru", text: $viewModel.form.shipName)
                     .focused($focusedField, equals: .ship)
             } header: {
                 Text("Search criteria")

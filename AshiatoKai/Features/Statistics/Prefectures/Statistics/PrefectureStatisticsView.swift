@@ -31,7 +31,7 @@ struct PrefectureStatisticsView: View {
         Form {
             Section {
                 TextField(
-                    "Prefecture",
+                    "Prefecture. Ex: Yamaguchi",
                     text: $viewModel.prefecture
                 )
                 .textInputAutocapitalization(.words)
