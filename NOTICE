@@ -1,0 +1,36 @@
+Ashiato Kai
+Copyright 2026 Max Hiroyuki Ueda
+
+This product includes software developed for the Ashiato Kai project.
+
+The Apache License 2.0 applies to the original Ashiato Kai software source
+code and documentation authored for this project, except where a file or
+third-party component states otherwise.
+
+HISTORICAL DATA
+
+Historical immigration records, transcriptions, names, geographic material,
+and other source data exposed by or used with Ashiato Kai are not, merely by
+their inclusion in or use by the project, relicensed under the Apache License
+2.0.
+
+The historical dataset originates from material associated with Japanese
+immigration to Brazil and the Projeto ASHIATO initiative associated with the
+Museu Histórico da Imigração Japonesa no Brasil / Bunkyo (Sociedade
+Brasileira de Cultura Japonesa e de Assistência Social). Ashiato Kai provides
+software for exploring and researching this material.
+
+Users and redistributors are responsible for observing any rights,
+restrictions, attribution requirements, or other terms that apply to source
+datasets independently of the Ashiato Kai software licence.
+
+THIRD-PARTY MATERIAL
+
+Third-party libraries, source files, artwork, fonts, geographic datasets and
+other incorporated material remain subject to their respective licences,
+copyright notices and attribution requirements. Where applicable, those terms
+take precedence for the relevant third-party material.
+
+The Apache License 2.0 does not grant permission to use third-party names,
+logos or trademarks except as permitted by their respective owners or by
+applicable law.

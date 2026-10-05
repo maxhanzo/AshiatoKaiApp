@@ -1366,19 +1366,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Find the number and ranking of a prefecture"
+            "value" : "Discover a prefecture's presence in the records"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "都道府県の人数と順位を調べます"
+            "state" : "needs_review",
+            "value" : "記録から都道府県の足跡を探る"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Consulte a quantidade e a posição de uma província"
+            "state" : "needs_review",
+            "value" : "Descubra a presença de uma província nos registros"
           }
         }
       }
@@ -1410,19 +1410,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Top 10 Prefectures"
+            "value" : "Top Prefectures of Origin"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "都道府県トップ10"
+            "value" : "主な出身都道府県"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "10 províncias mais frequentes"
+            "state" : "needs_review",
+            "value" : "Principais províncias de origem"
           }
         }
       }
@@ -1432,19 +1432,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Prefectures with the most immigrants"
+            "value" : "The 10 Most Common Prefectures of Origin in the Records"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "移民数が最も多い都道府県"
+            "value" : "記録に最も多く見られる出身都道府県10選"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Províncias com o maior número de imigrantes"
+            "state" : "needs_review",
+            "value" : "As 10 províncias de origem mais frequentes nos registros"
           }
         }
       }
@@ -1608,19 +1608,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Find variants, counts and rankings"
+            "value" : "Explore a surname and how it is written in the records"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "表記の種類、人数、順位を調べます"
+            "state" : "needs_review",
+            "value" : "記録から姓とその表記を探る"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Consulte variantes, quantidades e posições"
+            "value" : "Descubra a presença de um sobrenome nos registros e como escrever em japonês"
           }
         }
       }
@@ -1652,19 +1652,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Top 10 Surnames"
+            "value" : "Most common surnames"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "姓トップ10"
+            "value" : "よく見られる姓"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "10 sobrenomes mais frequentes"
+            "state" : "needs_review",
+            "value" : "Sobrenomes mais frequentes"
           }
         }
       }
@@ -1674,19 +1674,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Most common surnames in the records"
+            "value" : "The 10 most common surnames in the records and how to write these in Japanese"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "記録で最も多い姓"
+            "state" : "needs_review",
+            "value" : "記録に最も多く見られる姓10選"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sobrenomes mais frequentes nos registros"
+            "state" : "needs_review",
+            "value" : "Os 10 Sobrenomes mais frequentes nos registros e como escrever em japonês"
           }
         }
       }
