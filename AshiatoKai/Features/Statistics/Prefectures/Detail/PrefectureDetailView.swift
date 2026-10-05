@@ -78,9 +78,22 @@ struct PrefectureDetailView: View {
                         geolocation.nameJapanese,
                        !japaneseName.isEmpty {
 
-                        Text(japaneseName)
+                        HStack {
+                            Text(japaneseName)
+                                .textSelection(.enabled)
+
+                            Spacer()
+
+                            Button {
+                                UIPasteboard.general.string = japaneseName
+                            } label: {
+                                Image(systemName: "doc.on.doc")
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel("Copiar nome em japonês")
+                        }
                             .font(.title2)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(.primary)
                     }
                 }
 
@@ -126,8 +139,30 @@ struct PrefectureDetailView: View {
                 capital.nameJapanese,
                !japaneseName.isEmpty {
 
-                Text(japaneseName)
-                    .foregroundStyle(.secondary)
+                VStack(
+                    alignment: .leading,
+                    spacing: 4
+                ) {
+                    Text("Em japonês:")
+                        .font(.headline)
+                        .foregroundStyle(.primary)
+
+                    HStack {
+                        Text(japaneseName)
+                            .textSelection(.enabled)
+
+                        Spacer()
+
+                        Button {
+                            UIPasteboard.general.string = japaneseName
+                        } label: {
+                            Image(systemName: "doc.on.doc")
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("Copiar nome em japonês")
+                    }
+                        .font(.title2)
+                }
             }
 
             if let modernName =

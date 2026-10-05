@@ -12,12 +12,17 @@ struct JapaneseNameWritingView: View {
     @StateObject private var viewModel:
         JapaneseNameWritingViewModel
 
+    let onCharacterChanged: (Int) -> Void
+    
     private let characterPause:
         Duration = .milliseconds(350)
 
     init(
-        characters: [JapaneseCharacter]
+        characters: [JapaneseCharacter],
+        onCharacterChanged: @escaping (Int) -> Void = { _ in }
     ) {
+        self.onCharacterChanged = onCharacterChanged
+
         _viewModel = StateObject(
             wrappedValue:
                 JapaneseNameWritingViewModel(
@@ -59,6 +64,16 @@ struct JapaneseNameWritingView: View {
                 )
             }
             .buttonStyle(.bordered)
+        }
+        .onAppear {
+            onCharacterChanged(
+                viewModel.currentCharacterIndex
+            )
+        }
+        .onChange(
+            of: viewModel.currentCharacterIndex
+        ) { _, newIndex in
+            onCharacterChanged(newIndex)
         }
     }
 

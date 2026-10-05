@@ -10,6 +10,7 @@ import SwiftUI
 struct JapaneseNameWritingContainerView: View {
 
     let name: String
+    let onCharacterChanged: (Int) -> Void
 
     @State private var characters:
         [JapaneseCharacter] = []
@@ -17,11 +18,20 @@ struct JapaneseNameWritingContainerView: View {
     @State private var errorMessage:
         String?
 
+    init(
+        name: String,
+        onCharacterChanged: @escaping (Int) -> Void = { _ in }
+    ) {
+        self.name = name
+        self.onCharacterChanged = onCharacterChanged
+    }
+
     var body: some View {
         Group {
             if !characters.isEmpty {
                 JapaneseNameWritingView(
-                    characters: characters
+                    characters: characters,
+                    onCharacterChanged: onCharacterChanged
                 )
             } else if let errorMessage {
                 ContentUnavailableView(

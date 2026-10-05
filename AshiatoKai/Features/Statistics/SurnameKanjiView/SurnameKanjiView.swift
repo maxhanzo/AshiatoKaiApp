@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SurnameKanjiView: View {
-
+    @State private var highlightedCharacterIndex = 0
+    
     let statistic: SurnameStatistics
 
     var body: some View {
@@ -40,7 +41,20 @@ struct SurnameKanjiView: View {
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
 
-                        Text(statistic.surnameKanji)
+                        HStack {
+                            Text(statistic.surnameKanji)
+                                .textSelection(.enabled)
+
+                            Spacer()
+
+                            Button {
+                                UIPasteboard.general.string = statistic.surnameKanji
+                            } label: {
+                                Image(systemName: "doc.on.doc")
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel("Copiar nome em japonês")
+                        }
                             .font(.title2)
                     }
                 }
@@ -58,7 +72,11 @@ struct SurnameKanjiView: View {
 
                     JapaneseNameWritingContainerView(
                         name: statistic.surnameKanji
-                    )
+                    ) { index in
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            highlightedCharacterIndex = index
+                        }
+                    }
                 }
                 .frame(
                     maxWidth: .infinity,
@@ -80,9 +98,14 @@ struct SurnameKanjiView: View {
             ForEach(
                 Array(surname.enumerated()),
                 id: \.offset
-            ) { _, character in
+            ) { index, character in
                 Text(String(character))
                     .font(.system(size: 52))
+                    .foregroundStyle(
+                        index <= highlightedCharacterIndex
+                            ? Color.blue
+                            : Color.primary
+                    )
             }
         }
     }
