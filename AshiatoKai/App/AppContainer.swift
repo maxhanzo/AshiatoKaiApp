@@ -34,6 +34,12 @@ final class AppContainer {
 
     private let retrieveSurnameStatisticsUseCase:
         any RetrieveSurnameStatisticsUseCaseInterface
+
+    private let retrieveTopNamesUseCase:
+        any RetrieveTopNamesUseCaseInterface
+
+    private let retrieveNameStatisticsUseCase:
+        any RetrieveNameStatisticsUseCaseInterface
     
     private let retrieveGeolocationUseCase:
         any RetrieveGeolocationUseCaseInterface
@@ -80,6 +86,16 @@ final class AppContainer {
                 repository: statisticsRepository
             )
 
+        let retrieveTopNamesUseCase =
+            RetrieveTopNamesUseCase(
+                repository: statisticsRepository
+            )
+
+        let retrieveNameStatisticsUseCase =
+            RetrieveNameStatisticsUseCase(
+                repository: statisticsRepository
+            )
+
         let retrievePrefectureStatisticsUseCase =
             RetrievePrefectureStatisticsUseCase(
                 repository: statisticsRepository
@@ -114,6 +130,12 @@ final class AppContainer {
 
         self.retrieveTopSurnamesUseCase =
             retrieveTopSurnamesUseCase
+
+        self.retrieveTopNamesUseCase =
+            retrieveTopNamesUseCase
+
+        self.retrieveNameStatisticsUseCase =
+            retrieveNameStatisticsUseCase
 
         self.retrievePrefectureStatisticsUseCase =
             retrievePrefectureStatisticsUseCase
@@ -181,6 +203,24 @@ final class AppContainer {
                 SurnameStatisticsViewModel(
                     retrieveSurnameStatisticsUseCase:
                         retrieveSurnameStatisticsUseCase
+                )
+            },
+
+            makeTopNamesViewModelFactory: {
+                [retrieveTopNamesUseCase] in
+
+                TopNamesViewModel(
+                    retrieveTopNamesUseCase:
+                        retrieveTopNamesUseCase
+                )
+            },
+
+            makeNameStatisticsViewModelFactory: {
+                [retrieveNameStatisticsUseCase] in
+
+                NameStatisticsViewModel(
+                    retrieveNameStatisticsUseCase:
+                        retrieveNameStatisticsUseCase
                 )
             },
 

@@ -57,6 +57,28 @@ struct StatisticsView: View {
                     )
                 }
             }
+
+            Section("statistics.names.section") {
+                Button {
+                    viewModel.showTopNames()
+                } label: {
+                    row(
+                        title: "statistics.names.top10",
+                        subtitle: "statistics.names.top10.subtitle",
+                        systemImage: "person.text.rectangle"
+                    )
+                }
+
+                Button {
+                    viewModel.showNameSearch()
+                } label: {
+                    row(
+                        title: "statistics.names.search",
+                        subtitle: "statistics.names.search.subtitle",
+                        systemImage: "character.book.closed"
+                    )
+                }
+            }
         }
         .navigationTitle("statistics.title")
     }

@@ -38,4 +38,13 @@ final class StatisticsViewModel: ObservableObject {
     func showSurnameSearch() {
         navigationSubject.send(.showSurnameSearch)
     }
+
+    func showTopNames() {
+        navigationSubject.send(.showTopNames)
+    }
+
+    func showNameSearch() {
+        navigationSubject.send(.showNameSearch)
+    }
 }
+

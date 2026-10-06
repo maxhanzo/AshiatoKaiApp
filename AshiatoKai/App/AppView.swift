@@ -116,6 +116,33 @@ struct AppView: View {
                             statistic: statistic
                         )
 
+                    case .topNames:
+                        TopNamesView(
+                            viewModel:
+                                coordinator.makeTopNamesViewModel(),
+                            onNameSelected: { statistic in
+                                coordinator.showNameWriting(
+                                    statistic: statistic
+                                )
+                            }
+                        )
+
+                    case .nameSearch:
+                        NameStatisticsView(
+                            viewModel:
+                                coordinator.makeNameStatisticsViewModel(),
+                            onNameSelected: { statistic in
+                                coordinator.showNameWriting(
+                                    statistic: statistic
+                                )
+                            }
+                        )
+
+                    case .nameWriting(let statistic):
+                        NameKanjiView(
+                            statistic: statistic
+                        )
+
                     case .prefectureMap(let statistic):
                         PrefectureDetailView(
                             viewModel:

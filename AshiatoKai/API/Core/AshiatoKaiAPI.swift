@@ -156,6 +156,38 @@ enum AshiatoKaiAPI {
         )
     }
 
+    // MARK: - Statistics - Names
+
+    static func topNames() -> URLRequest {
+        let url = baseURL.appending(
+            path: "/api/v1/statistics/names/top"
+        )
+
+        return makeGETRequest(url: url)
+    }
+
+    static func nameStatistics(
+        nameRomaji: String
+    ) -> URLRequest {
+        var components = URLComponents(
+            url: baseURL.appending(
+                path: "/api/v1/statistics/names"
+            ),
+            resolvingAgainstBaseURL: false
+        )!
+
+        components.queryItems = [
+            URLQueryItem(
+                name: "NameRomaji",
+                value: nameRomaji
+            )
+        ]
+
+        return makeGETRequest(
+            url: components.url!
+        )
+    }
+
     // MARK: - Geolocation
 
     static func geolocation() -> URLRequest {

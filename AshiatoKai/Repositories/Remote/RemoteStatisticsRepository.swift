@@ -99,4 +99,46 @@ final class RemoteStatisticsRepository: StatisticsRepository {
             .mapError(StatisticsError.init)
             .eraseToAnyPublisher()
     }
+
+    // MARK: - Names
+
+    func retrieveTopNames()
+        -> AnyPublisher<
+            [NameStatistics],
+            StatisticsError
+        > {
+
+        apiClient
+            .execute(
+                AshiatoKaiAPI.topNames(),
+                as: [NameStatisticsDTO].self
+            )
+            .map { dtos in
+                dtos.map { $0.toDomain() }
+            }
+            .mapError(StatisticsError.init)
+            .eraseToAnyPublisher()
+    }
+
+    func retrieveNameStatistics(
+        nameRomaji: String
+    ) -> AnyPublisher<
+        [NameStatistics],
+        StatisticsError
+    > {
+
+        apiClient
+            .execute(
+                AshiatoKaiAPI.nameStatistics(
+                    nameRomaji: nameRomaji
+                ),
+                as: [NameStatisticsDTO].self
+            )
+            .map { dtos in
+                dtos.map { $0.toDomain() }
+            }
+            .mapError(StatisticsError.init)
+            .eraseToAnyPublisher()
+    }
+
 }
