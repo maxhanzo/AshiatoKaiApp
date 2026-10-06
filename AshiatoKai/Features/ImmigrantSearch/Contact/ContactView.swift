@@ -16,21 +16,31 @@ struct ContactView: View {
         Form {
             Section {
                 Text("contact.description")
+                    .font(AshiatoKaiTheme.Typography.body)
+                    .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
+                    .padding(.vertical, 4)
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
             Section {
                 Button {
                     sendEmail()
                 } label: {
                     Label("contact.email", systemImage: "envelope")
+                        .font(AshiatoKaiTheme.Typography.body)
+                        .foregroundStyle(AshiatoKaiTheme.Colour.vermilion)
                 }
 
                 Text(email)
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
+                    .font(AshiatoKaiTheme.Typography.caption)
+                    .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
+                    .textSelection(.enabled)
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
         }
         .navigationTitle("contact.title")
+        .navigationBarTitleDisplayMode(.inline)
+        .ashiatoArchiveStyle()
     }
 
     private func sendEmail() {

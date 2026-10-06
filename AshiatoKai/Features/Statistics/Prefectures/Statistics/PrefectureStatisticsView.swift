@@ -42,10 +42,12 @@ struct PrefectureStatisticsView: View {
                         viewModel.search()
                     }
                 }
+                .font(AshiatoKaiTheme.Typography.body)
 
                 Button("search.button") {
                     viewModel.search()
                 }
+                .font(AshiatoKaiTheme.Typography.body)
                 .disabled(!viewModel.canSearch)
             } header: {
                 Text("search.button")
@@ -53,12 +55,16 @@ struct PrefectureStatisticsView: View {
                 Text(
                     "statistics.prefectures.search.help"
                 )
+                .font(AshiatoKaiTheme.Typography.caption)
+                .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
             results
         }
         .navigationTitle("statistics.prefectures.search")
         .navigationBarTitleDisplayMode(.inline)
+        .ashiatoArchiveStyle()
     }
 
     @ViewBuilder
@@ -72,9 +78,11 @@ struct PrefectureStatisticsView: View {
                 HStack {
                     Spacer()
                     ProgressView()
+                        .tint(AshiatoKaiTheme.Colour.indigo)
                     Spacer()
                 }
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
         case .loaded(let statistics):
             Section("search.results.section") {
@@ -87,6 +95,7 @@ struct PrefectureStatisticsView: View {
                     .buttonStyle(.plain)
                 }
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
         case .empty:
             Section {
@@ -98,6 +107,7 @@ struct PrefectureStatisticsView: View {
                     )
                 )
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
         case .failed(let message):
             Section {
@@ -114,6 +124,7 @@ struct PrefectureStatisticsView: View {
                     }
                 }
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
         }
     }
 
@@ -123,24 +134,28 @@ struct PrefectureStatisticsView: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
                 Text(statistic.prefectureName)
-                    .font(.headline)
+                    .font(AshiatoKaiTheme.Typography.recordTitle)
+                    .foregroundStyle(AshiatoKaiTheme.Colour.indigo)
 
                 Spacer()
 
                 Text("#\(statistic.rank)")
-                    .font(.headline)
-                    .foregroundStyle(.secondary)
+                    .font(AshiatoKaiTheme.Typography.sectionTitle)
+                    .foregroundStyle(AshiatoKaiTheme.Colour.indigo)
                     .monospacedDigit()
 
                 Image(systemName: "chevron.right")
                     .font(.footnote.weight(.semibold))
-                    .foregroundStyle(.tertiary)
+                    .foregroundStyle(
+                        AshiatoKaiTheme.Colour.mutedSumi.opacity(0.65)
+                    )
             }
 
-            LabeledContent(
-                "statistics.immigrants",
-                value: statistic.count.formatted()
-            )
+            LabeledContent("statistics.immigrants") {
+                Text(statistic.count.formatted())
+                    .font(AshiatoKaiTheme.Typography.metadata)
+                    .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
+            }
         }
         .padding(.vertical, 4)
         .contentShape(Rectangle())

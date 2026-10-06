@@ -11,17 +11,29 @@ struct SplashView: View {
 
     var body: some View {
         ZStack {
-            Color.white
+            AshiatoKaiTheme.Colour.paper
                 .ignoresSafeArea()
 
-            Image("AshiatoKaiSplash")
-                .resizable()
-                .scaledToFit()
-                .frame(
-                    maxWidth: 320,
-                    maxHeight: 320
-                )
-                .padding(32)
+            VStack(spacing: 18) {
+                Image("AshiatoKaiSplash")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(
+                        maxWidth: 300,
+                        maxHeight: 300
+                    )
+                    .padding(.horizontal, 32)
+
+                VStack(spacing: 4) {
+                    Text("Ashiato Kai")
+                        .font(AshiatoKaiTheme.Typography.sectionTitle)
+                        .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
+
+                    Text("splash.subtitle")
+                        .font(AshiatoKaiTheme.Typography.caption)
+                        .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
+                }
+            }
         }
     }
 }

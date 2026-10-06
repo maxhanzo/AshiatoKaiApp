@@ -163,7 +163,15 @@ struct AppView: View {
                 )
             }
             .tag(AppTab.statistics)
-            .tint(.indigo)
         }
+        .tint(AshiatoKaiTheme.Colour.vermilion)
+        .toolbarBackground(
+            AshiatoKaiTheme.Colour.paper,
+            for: .tabBar
+        )
+        .toolbarBackground(
+            .visible,
+            for: .tabBar
+        )
     }
 }

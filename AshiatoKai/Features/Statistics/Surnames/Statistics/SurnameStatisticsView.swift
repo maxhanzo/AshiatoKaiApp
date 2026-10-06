@@ -29,10 +29,12 @@ struct SurnameStatisticsView: View {
                         viewModel.search()
                     }
                 }
+                .font(AshiatoKaiTheme.Typography.body)
 
                 Button("search.button") {
                     viewModel.search()
                 }
+                .font(AshiatoKaiTheme.Typography.body)
                 .disabled(!viewModel.canSearch)
             } header: {
                 Text("search.button")
@@ -40,12 +42,16 @@ struct SurnameStatisticsView: View {
                 Text(
                     "statistics.surnames.search.help"
                 )
+                .font(AshiatoKaiTheme.Typography.caption)
+                .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
             results
         }
         .navigationTitle("statistics.surnames.search")
         .navigationBarTitleDisplayMode(.inline)
+        .ashiatoArchiveStyle()
     }
 
     @ViewBuilder
@@ -59,9 +65,11 @@ struct SurnameStatisticsView: View {
                 HStack {
                     Spacer()
                     ProgressView()
+                        .tint(AshiatoKaiTheme.Colour.vermilion)
                     Spacer()
                 }
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
         case .loaded(let statistics):
             Section("search.results.section") {
@@ -74,6 +82,7 @@ struct SurnameStatisticsView: View {
                     .buttonStyle(.plain)
                 }
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
         case .empty:
             Section {
@@ -85,6 +94,7 @@ struct SurnameStatisticsView: View {
                     )
                 )
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
         case .failed(let message):
             Section {
@@ -101,6 +111,7 @@ struct SurnameStatisticsView: View {
                     }
                 }
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
         }
     }
 
@@ -110,29 +121,36 @@ struct SurnameStatisticsView: View {
         HStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 8) {
                 Text(statistic.surnameRomaji)
-                    .font(.headline)
+                    .font(AshiatoKaiTheme.Typography.recordTitle)
+                    .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
 
-                LabeledContent(
-                    "statistics.immigrants",
-                    value: statistic.count.formatted()
-                )
+                LabeledContent("statistics.immigrants") {
+                    Text(statistic.count.formatted())
+                        .font(AshiatoKaiTheme.Typography.metadata)
+                        .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
+                }
 
-                LabeledContent(
-                    "statistics.rank",
-                    value: "#\(statistic.rank)"
-                )
+                LabeledContent("statistics.rank") {
+                    Text("#\(statistic.rank)")
+                        .font(AshiatoKaiTheme.Typography.metadata)
+                        .monospacedDigit()
+                        .foregroundStyle(AshiatoKaiTheme.Colour.vermilion)
+                }
             }
 
             Spacer()
 
             if !statistic.surnameKanji.isEmpty {
                 Text(statistic.surnameKanji)
-                    .font(.largeTitle)
+                    .font(.system(size: 34, weight: .regular, design: .serif))
+                    .foregroundStyle(AshiatoKaiTheme.Colour.vermilion)
             }
 
             Image(systemName: "chevron.right")
                 .font(.caption)
-                .foregroundStyle(.tertiary)
+                .foregroundStyle(
+                    AshiatoKaiTheme.Colour.mutedSumi.opacity(0.65)
+                )
         }
         .padding(.vertical, 6)
         .contentShape(Rectangle())

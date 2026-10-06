@@ -29,6 +29,7 @@ struct TopNamesView: View {
 
     var body: some View {
         content
+            .background(AshiatoKaiTheme.Colour.paper)
             .navigationTitle("statistics.names.top10")
             .navigationBarTitleDisplayMode(.inline)
             .task {
@@ -43,6 +44,7 @@ struct TopNamesView: View {
         switch viewModel.state {
         case .idle, .loading:
             ProgressView()
+                .tint(AshiatoKaiTheme.Colour.vermilion)
                 .frame(
                     maxWidth: .infinity,
                     maxHeight: .infinity
@@ -56,7 +58,9 @@ struct TopNamesView: View {
                     nameRow(statistic)
                 }
                 .buttonStyle(.plain)
+                .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
             }
+            .ashiatoArchiveStyle()
 
         case .empty:
             ContentUnavailableView(
@@ -88,8 +92,9 @@ struct TopNamesView: View {
     ) -> some View {
         HStack(spacing: 16) {
             Text("\(statistic.rank)")
-                .font(.headline)
+                .font(AshiatoKaiTheme.Typography.sectionTitle)
                 .monospacedDigit()
+                .foregroundStyle(AshiatoKaiTheme.Colour.vermilion)
                 .frame(width: 32)
 
             VStack(
@@ -97,25 +102,29 @@ struct TopNamesView: View {
                 spacing: 4
             ) {
                 Text(statistic.nameRomaji)
-                    .font(.headline)
+                    .font(AshiatoKaiTheme.Typography.recordTitle)
+                    .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
 
                 Text(
                     "\(statistic.count.formatted()) \(String(localized: "statistics.immigrants.lowercase"))"
                 )
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+                .font(AshiatoKaiTheme.Typography.metadata)
+                .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
             }
 
             Spacer()
 
             if !statistic.nameKanji.isEmpty {
                 Text(statistic.nameKanji)
-                    .font(.title2)
+                    .font(.system(size: 28, weight: .regular, design: .serif))
+                    .foregroundStyle(AshiatoKaiTheme.Colour.vermilion)
             }
 
             Image(systemName: "chevron.right")
                 .font(.caption)
-                .foregroundStyle(.tertiary)
+                .foregroundStyle(
+                    AshiatoKaiTheme.Colour.mutedSumi.opacity(0.65)
+                )
         }
         .padding(.vertical, 4)
         .contentShape(Rectangle())

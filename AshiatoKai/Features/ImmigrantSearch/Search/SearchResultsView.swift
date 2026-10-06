@@ -5,7 +5,6 @@
 //  Created by Max Hiroyuki Ueda on 04/10/26.
 //
 
-
 import SwiftUI
 
 struct SearchResultsView: View {
@@ -24,7 +23,8 @@ struct SearchResultsView: View {
                         spacing: 4
                     ) {
                         Text(record.fullName)
-                            .foregroundStyle(.primary)
+                            .font(AshiatoKaiTheme.Typography.recordTitle)
+                            .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
 
                         let details = [
                             record.year.map(String.init),
@@ -37,8 +37,8 @@ struct SearchResultsView: View {
 
                         if !details.isEmpty {
                             Text(details)
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
+                                .font(AshiatoKaiTheme.Typography.caption)
+                                .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
                         }
                     }
 
@@ -46,26 +46,29 @@ struct SearchResultsView: View {
 
                     Image(systemName: "chevron.right")
                         .font(.caption)
-                        .foregroundStyle(.tertiary)
+                        .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi.opacity(0.65))
                 }
                 .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
         }
+        .listStyle(.insetGrouped)
         .navigationTitle("results.title")
         .navigationBarTitleDisplayMode(.inline)
         .safeAreaInset(edge: .top) {
             HStack {
                 Text(resultCountText)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .font(AshiatoKaiTheme.Typography.metadata)
+                    .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
 
                 Spacer()
             }
             .padding(.horizontal)
             .padding(.vertical, 8)
-            .background(.bar)
+            .background(AshiatoKaiTheme.Colour.paper.opacity(0.96))
         }
+        .ashiatoArchiveStyle()
     }
 
     private var resultCountText: String {

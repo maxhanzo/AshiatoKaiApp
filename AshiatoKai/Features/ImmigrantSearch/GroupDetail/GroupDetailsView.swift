@@ -14,6 +14,7 @@ struct GroupDetailsView: View {
 
     var body: some View {
         content
+            .background(AshiatoKaiTheme.Colour.paper)
             .navigationTitle("group.title")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
@@ -26,15 +27,19 @@ struct GroupDetailsView: View {
         switch viewModel.state {
         case .idle, .loading:
             ProgressView("group.loading")
+                .font(AshiatoKaiTheme.Typography.body)
+                .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
 
         case .loaded(let group):
             Form {
                 Section("record.journey") {
-                    LabeledContent(
-                        "group.id",
-                        value: String(group.groupID)
-                    )
+                    LabeledContent("group.id") {
+                        Text(String(group.groupID))
+                            .font(AshiatoKaiTheme.Typography.metadata)
+                            .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
+                    }
                 }
+                .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
                 Section("group.members") {
                     ForEach(group.immigrants) { immigrant in
@@ -44,11 +49,13 @@ struct GroupDetailsView: View {
                             HStack {
                                 VStack(alignment: .leading) {
                                     Text(immigrant.fullName)
-                                        .foregroundStyle(.primary)
+                                        .font(AshiatoKaiTheme.Typography.recordTitle)
+                                        .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
 
                                     if let japaneseName = immigrant.japaneseFullName {
                                         Text(japaneseName)
-                                            .foregroundStyle(.secondary)
+                                            .font(AshiatoKaiTheme.Typography.japaneseName)
+                                            .foregroundStyle(AshiatoKaiTheme.Colour.vermilion)
                                     }
                                 }
 
@@ -56,14 +63,18 @@ struct GroupDetailsView: View {
 
                                 Image(systemName: "chevron.right")
                                     .font(.footnote)
-                                    .foregroundStyle(.tertiary)
+                                    .foregroundStyle(
+                                        AshiatoKaiTheme.Colour.mutedSumi.opacity(0.65)
+                                    )
                             }
                             .contentShape(Rectangle())
                         }
                         .buttonStyle(.plain)
                     }
                 }
+                .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
             }
+            .ashiatoArchiveStyle()
 
         case .failed(let message):
             ContentUnavailableView(

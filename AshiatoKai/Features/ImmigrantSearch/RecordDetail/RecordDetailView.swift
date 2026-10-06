@@ -14,16 +14,27 @@ struct RecordDetailView: View {
     var body: some View {
         Form {
             Section("record.person") {
-                LabeledContent("record.name", value: record.name)
-                LabeledContent("record.surname", value: record.surname)
+                LabeledContent("record.name") {
+                    Text(record.name)
+                        .font(AshiatoKaiTheme.Typography.recordTitle)
+                        .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
+                }
+
+                LabeledContent("record.surname") {
+                    Text(record.surname)
+                        .font(AshiatoKaiTheme.Typography.recordTitle)
+                        .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
+                }
 
                 if let japaneseFullName = record.japaneseFullName {
-                    LabeledContent(
-                        "record.japanese_name",
-                        value: japaneseFullName
-                    )
+                    LabeledContent("record.japanese_name") {
+                        Text(japaneseFullName)
+                            .font(AshiatoKaiTheme.Typography.japaneseName) // Type 'AshiatoKaiTheme.Typography' has no member 'japaneseName'
+                            .foregroundStyle(AshiatoKaiTheme.Colour.vermilion)
+                    }
                 }
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
             Section("record.journey") {
                 optionalContent("record.year", record.year.map(String.init))
@@ -34,15 +45,21 @@ struct RecordDetailView: View {
                 optionalContent("record.destination", record.destination)
                 optionalContent("record.farm", record.farm)
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
             Section {
-                Button("record.group_details") {
+                Button {
                     onGroupDetails()
+                } label: {
+                    Label("record.group_details", systemImage: "person.3")
+                        .font(AshiatoKaiTheme.Typography.body)
                 }
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
         }
         .navigationTitle(record.fullName)
         .navigationBarTitleDisplayMode(.inline)
+        .ashiatoArchiveStyle()
     }
 
     @ViewBuilder
@@ -51,7 +68,15 @@ struct RecordDetailView: View {
         _ value: String?
     ) -> some View {
         if let value, !value.isEmpty {
-            LabeledContent(label, value: value)
+            LabeledContent(label) {
+                Text(value)
+                    .font(AshiatoKaiTheme.Typography.metadata)
+                    .foregroundStyle(
+                        label == "record.prefecture"
+                            ? AshiatoKaiTheme.Colour.indigo
+                            : AshiatoKaiTheme.Colour.sumi
+                    )
+            }
         }
     }
 }

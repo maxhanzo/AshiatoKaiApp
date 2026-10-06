@@ -29,6 +29,7 @@ struct TopPrefecturesView: View {
 
     var body: some View {
         content
+            .background(AshiatoKaiTheme.Colour.paper)
             .navigationTitle("statistics.prefectures.top10")
             .navigationBarTitleDisplayMode(.inline)
             .task {
@@ -43,6 +44,7 @@ struct TopPrefecturesView: View {
         switch viewModel.state {
         case .idle, .loading:
             ProgressView()
+                .tint(AshiatoKaiTheme.Colour.indigo)
                 .frame(
                     maxWidth: .infinity,
                     maxHeight: .infinity
@@ -56,7 +58,9 @@ struct TopPrefecturesView: View {
                     prefectureRow(statistic)
                 }
                 .buttonStyle(.plain)
+                .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
             }
+            .ashiatoArchiveStyle()
 
         case .empty:
             ContentUnavailableView(
@@ -88,26 +92,30 @@ struct TopPrefecturesView: View {
     ) -> some View {
         HStack(spacing: 16) {
             Text("\(statistic.rank)")
-                .font(.headline)
+                .font(AshiatoKaiTheme.Typography.sectionTitle)
                 .monospacedDigit()
+                .foregroundStyle(AshiatoKaiTheme.Colour.indigo)
                 .frame(width: 32)
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(statistic.prefectureName)
-                    .font(.headline)
+                    .font(AshiatoKaiTheme.Typography.recordTitle)
+                    .foregroundStyle(AshiatoKaiTheme.Colour.indigo)
 
                 Text(
                     "\(statistic.count.formatted()) \(String(localized: "statistics.immigrants.lowercase"))"
                 )
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+                .font(AshiatoKaiTheme.Typography.metadata)
+                .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
             }
 
             Spacer()
 
             Image(systemName: "chevron.right")
                 .font(.footnote.weight(.semibold))
-                .foregroundStyle(.tertiary)
+                .foregroundStyle(
+                    AshiatoKaiTheme.Colour.mutedSumi.opacity(0.65)
+                )
         }
         .padding(.vertical, 4)
         .contentShape(Rectangle())

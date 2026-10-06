@@ -24,13 +24,14 @@ struct NameKanjiView: View {
                         spacing: 4
                     ) {
                         Text("kanji.how_written")
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                            .font(AshiatoKaiTheme.Typography.metadata)
+                            .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
 
                         Text(
                             statistic.nameRomaji.capitalized
                         )
-                        .font(.title3)
+                        .font(AshiatoKaiTheme.Typography.sectionTitle)
+                        .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
                     }
 
                     VStack(
@@ -38,11 +39,13 @@ struct NameKanjiView: View {
                         spacing: 4
                     ) {
                         Text("kanji.in_japanese")
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                            .font(AshiatoKaiTheme.Typography.metadata)
+                            .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
 
                         HStack {
                             Text(statistic.nameKanji)
+                                .font(AshiatoKaiTheme.Typography.japaneseName)
+                                .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
                                 .textSelection(.enabled)
 
                             Spacer()
@@ -53,13 +56,14 @@ struct NameKanjiView: View {
                                 Image(systemName: "doc.on.doc")
                             }
                             .buttonStyle(.plain)
+                            .foregroundStyle(AshiatoKaiTheme.Colour.vermilion)
                             .accessibilityLabel("kanji.copy_name.accessibility")
                         }
-                            .font(.title2)
                     }
                 }
                 .padding(.vertical, 4)
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
             Section {
                 HStack(
@@ -84,11 +88,13 @@ struct NameKanjiView: View {
                 )
                 .padding(.vertical, 24)
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
         }
         .navigationTitle(
             statistic.nameRomaji.uppercased()
         )
         .navigationBarTitleDisplayMode(.inline)
+        .ashiatoArchiveStyle()
     }
 
     private func verticalName(
@@ -100,11 +106,11 @@ struct NameKanjiView: View {
                 id: \.offset
             ) { index, character in
                 Text(String(character))
-                    .font(.system(size: 52))
+                    .font(.system(size: 54, weight: .regular, design: .serif))
                     .foregroundStyle(
                         index <= highlightedCharacterIndex
-                            ? Color.blue
-                            : Color.primary
+                            ? AshiatoKaiTheme.Colour.vermilion
+                            : AshiatoKaiTheme.Colour.sumi
                     )
             }
         }

@@ -21,6 +21,7 @@ struct PrefectureDetailView: View {
 
     var body: some View {
         content
+            .background(AshiatoKaiTheme.Colour.paper)
             .navigationTitle(
                 viewModel.statistic.prefectureName
             )
@@ -36,6 +37,7 @@ struct PrefectureDetailView: View {
         case .idle,
              .loading:
             ProgressView()
+                .tint(AshiatoKaiTheme.Colour.indigo)
                 .frame(
                     maxWidth: .infinity,
                     maxHeight: .infinity
@@ -71,8 +73,8 @@ struct PrefectureDetailView: View {
                     spacing: 4
                 ) {
                     Text(geolocation.name)
-                        .font(.largeTitle)
-                        .fontWeight(.semibold)
+                        .font(AshiatoKaiTheme.Typography.screenTitle)
+                        .foregroundStyle(AshiatoKaiTheme.Colour.indigo)
 
                     if let japaneseName =
                         geolocation.nameJapanese,
@@ -80,6 +82,8 @@ struct PrefectureDetailView: View {
 
                         HStack {
                             Text(japaneseName)
+                                .font(AshiatoKaiTheme.Typography.japaneseName)
+                                .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
                                 .textSelection(.enabled)
 
                             Spacer()
@@ -90,10 +94,9 @@ struct PrefectureDetailView: View {
                                 Image(systemName: "doc.on.doc")
                             }
                             .buttonStyle(.plain)
+                            .foregroundStyle(AshiatoKaiTheme.Colour.indigo)
                             .accessibilityLabel("kanji.copy_japanese_name.accessibility")
                         }
-                            .font(.title2)
-                            .foregroundStyle(.primary)
                     }
                 }
 
@@ -103,12 +106,22 @@ struct PrefectureDetailView: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(
-                    .quaternary.opacity(0.35),
+                    AshiatoKaiTheme.Colour.lightPaper,
                     in: RoundedRectangle(
-                        cornerRadius: 24,
+                        cornerRadius: AshiatoKaiTheme.Layout.cornerRadius,
                         style: .continuous
                     )
                 )
+                .overlay {
+                    RoundedRectangle(
+                        cornerRadius: AshiatoKaiTheme.Layout.cornerRadius,
+                        style: .continuous
+                    )
+                    .stroke(
+                        AshiatoKaiTheme.Colour.indigo.opacity(0.18),
+                        lineWidth: 1
+                    )
+                }
 
                 if let capital = geolocation.capital {
                     capitalSection(capital)
@@ -130,10 +143,12 @@ struct PrefectureDetailView: View {
             spacing: 8
         ) {
             Text("statistics.capital")
-                .font(.headline)
+                .font(AshiatoKaiTheme.Typography.metadata)
+                .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
 
             Text(capital.name)
-                .font(.title3)
+                .font(AshiatoKaiTheme.Typography.sectionTitle)
+                .foregroundStyle(AshiatoKaiTheme.Colour.indigo)
 
             if let japaneseName =
                 capital.nameJapanese,
@@ -144,11 +159,13 @@ struct PrefectureDetailView: View {
                     spacing: 4
                 ) {
                     Text("kanji.in_japanese")
-                        .font(.headline)
-                        .foregroundStyle(.primary)
+                        .font(AshiatoKaiTheme.Typography.metadata)
+                        .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
 
                     HStack {
                         Text(japaneseName)
+                            .font(AshiatoKaiTheme.Typography.japaneseName)
+                            .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
                             .textSelection(.enabled)
 
                         Spacer()
@@ -159,9 +176,9 @@ struct PrefectureDetailView: View {
                             Image(systemName: "doc.on.doc")
                         }
                         .buttonStyle(.plain)
+                        .foregroundStyle(AshiatoKaiTheme.Colour.indigo)
                         .accessibilityLabel("kanji.copy_japanese_name.accessibility")
                     }
-                        .font(.title2)
                 }
             }
 
@@ -171,8 +188,8 @@ struct PrefectureDetailView: View {
                modernName != capital.name {
 
                 Text("statistics.modern_name \(modernName)")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .font(AshiatoKaiTheme.Typography.metadata)
+                    .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
             }
         }
     }

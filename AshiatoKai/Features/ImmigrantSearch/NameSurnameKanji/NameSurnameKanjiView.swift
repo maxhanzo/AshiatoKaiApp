@@ -24,11 +24,12 @@ struct NameSurnameKanjiView: View {
                         spacing: 4
                     ) {
                         Text("kanji.how_written")
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                            .font(AshiatoKaiTheme.Typography.metadata)
+                            .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
 
                         Text(romajiName)
-                            .font(.title3)
+                            .font(AshiatoKaiTheme.Typography.sectionTitle)
+                            .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
                     }
 
                     if let japaneseName =
@@ -38,11 +39,13 @@ struct NameSurnameKanjiView: View {
                             spacing: 4
                         ) {
                             Text("kanji.in_japanese")
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
+                                .font(AshiatoKaiTheme.Typography.metadata)
+                                .foregroundStyle(AshiatoKaiTheme.Colour.mutedSumi)
 
                             HStack {
                                 Text(japaneseName)
+                                    .font(AshiatoKaiTheme.Typography.japaneseName)
+                                    .foregroundStyle(AshiatoKaiTheme.Colour.sumi)
                                     .textSelection(.enabled)
 
                                 Spacer()
@@ -53,14 +56,15 @@ struct NameSurnameKanjiView: View {
                                     Image(systemName: "doc.on.doc")
                                 }
                                 .buttonStyle(.plain)
+                                .foregroundStyle(AshiatoKaiTheme.Colour.vermilion)
                                 .accessibilityLabel("kanji.copy_name.accessibility")
                             }
-                                .font(.title2)
                         }
                     }
                 }
                 .padding(.vertical, 4)
             }
+            .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
 
             if let japaneseName =
                 member.japaneseFullName {
@@ -86,10 +90,12 @@ struct NameSurnameKanjiView: View {
                     )
                     .padding(.vertical, 24)
                 }
+                .listRowBackground(AshiatoKaiTheme.Colour.lightPaper)
             }
         }
         .navigationTitle(member.fullName)
         .navigationBarTitleDisplayMode(.inline)
+        .ashiatoArchiveStyle()
     }
 
     private var romajiName: String {
@@ -112,11 +118,14 @@ struct NameSurnameKanjiView: View {
                 id: \.offset
             ) { index, character in
                 Text(String(character))
-                    .font(.system(size: 52))
+                    // A serif Japanese system design gives the static vertical
+                    // name a Mincho / calligraphic character without bundling
+                    // a decorative font or altering the stroke engine.
+                    .font(.system(size: 54, weight: .regular, design: .serif))
                     .foregroundStyle(
                         index <= highlightedCharacterIndex
-                            ? Color.blue
-                            : Color.primary
+                            ? AshiatoKaiTheme.Colour.vermilion
+                            : AshiatoKaiTheme.Colour.sumi
                     )
             }
         }

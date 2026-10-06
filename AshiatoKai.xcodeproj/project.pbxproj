@@ -7209,6 +7209,10 @@
 		1C3A7ADE306F92BF0001D249 /* JapaneseCharacterLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A7ADD306F92BF0001D249 /* JapaneseCharacterLoader.swift */; };
 		1C3A7AE0306F92D00001D249 /* JapaneseNameWritingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A7ADF306F92D00001D249 /* JapaneseNameWritingContainerView.swift */; };
 		1C5444203074B754005BA7BC /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54441F3074B754005BA7BC /* ContactView.swift */; };
+		1C54442C3074C232005BA7BC /* AshiatoKaiTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54442B3074C232005BA7BC /* AshiatoKaiTheme.swift */; };
+		1C54442E3074C247005BA7BC /* ArchiveHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54442D3074C247005BA7BC /* ArchiveHeader.swift */; };
+		1C5444303074C259005BA7BC /* ArchiveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54442F3074C259005BA7BC /* ArchiveCard.swift */; };
+		1C5444323074C269005BA7BC /* ArchiveBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5444313074C269005BA7BC /* ArchiveBackgroundModifier.swift */; };
 		1C856E8D30720ECA00751712 /* StatisticsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E8C30720ECA00751712 /* StatisticsRepository.swift */; };
 		1C856E8F30720F3800751712 /* PrefectureStatisticsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E8E30720F3800751712 /* PrefectureStatisticsDTO.swift */; };
 		1C856E9130720F6300751712 /* RemoteStatisticsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E9030720F6300751712 /* RemoteStatisticsRepository.swift */; };
@@ -14520,6 +14524,10 @@
 		1C3A7ADD306F92BF0001D249 /* JapaneseCharacterLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapaneseCharacterLoader.swift; sourceTree = "<group>"; };
 		1C3A7ADF306F92D00001D249 /* JapaneseNameWritingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapaneseNameWritingContainerView.swift; sourceTree = "<group>"; };
 		1C54441F3074B754005BA7BC /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		1C54442B3074C232005BA7BC /* AshiatoKaiTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AshiatoKaiTheme.swift; sourceTree = "<group>"; };
+		1C54442D3074C247005BA7BC /* ArchiveHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveHeader.swift; sourceTree = "<group>"; };
+		1C54442F3074C259005BA7BC /* ArchiveCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCard.swift; sourceTree = "<group>"; };
+		1C5444313074C269005BA7BC /* ArchiveBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveBackgroundModifier.swift; sourceTree = "<group>"; };
 		1C856E8C30720ECA00751712 /* StatisticsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsRepository.swift; sourceTree = "<group>"; };
 		1C856E8E30720F3800751712 /* PrefectureStatisticsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureStatisticsDTO.swift; sourceTree = "<group>"; };
 		1C856E9030720F6300751712 /* RemoteStatisticsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStatisticsRepository.swift; sourceTree = "<group>"; };
@@ -21858,6 +21866,7 @@
 		1C3A7AB4306F84B00001D249 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1C54442A3074C214005BA7BC /* Theme */,
 				1C3A7AB5306F84B70001D249 /* Animation */,
 			);
 			path = UI;
@@ -21930,6 +21939,17 @@
 				1C54441F3074B754005BA7BC /* ContactView.swift */,
 			);
 			path = Contact;
+			sourceTree = "<group>";
+		};
+		1C54442A3074C214005BA7BC /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				1C5444313074C269005BA7BC /* ArchiveBackgroundModifier.swift */,
+				1C54442F3074C259005BA7BC /* ArchiveCard.swift */,
+				1C54442D3074C247005BA7BC /* ArchiveHeader.swift */,
+				1C54442B3074C232005BA7BC /* AshiatoKaiTheme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		1C856E8A30720E2F00751712 /* Statistics */ = {
@@ -29703,6 +29723,7 @@
 				1CD68CA1306F61F50054CB9A /* RecordDetailView.swift in Sources */,
 				1C856EE13072500F00751712 /* GeographicBounds.swift in Sources */,
 				1C856F1130727A4300751712 /* SplashView.swift in Sources */,
+				1C5444323074C269005BA7BC /* ArchiveBackgroundModifier.swift in Sources */,
 				1C3A7ACC306F89100001D249 /* SVGPathParser.swift in Sources */,
 				1C856EF0307250F600751712 /* RetrieveGeolocationUseCase.swift in Sources */,
 				1CD68CE3306F6E100054CB9A /* GroupDetailsViewModel.swift in Sources */,
@@ -29755,16 +29776,19 @@
 				1C3A7AC5306F87F00001D249 /* JapaneseStrokeComponent.swift in Sources */,
 				1C3A7AE0306F92D00001D249 /* JapaneseNameWritingContainerView.swift in Sources */,
 				1C856EAF307216CA00751712 /* RetrieveTopSurnamesUseCaseInterface.swift in Sources */,
+				1C5444303074C259005BA7BC /* ArchiveCard.swift in Sources */,
 				1CD68CA5306F61F50054CB9A /* MockSearchRepository.swift in Sources */,
 				1CD68CA6306F61F50054CB9A /* AppCoordinator.swift in Sources */,
 				1CD68CA7306F61F50054CB9A /* SearchModels.swift in Sources */,
 				1C856EC93072208100751712 /* PrefectureStatisticsView.swift in Sources */,
+				1C54442E3074C247005BA7BC /* ArchiveHeader.swift in Sources */,
 				1C856EA2307214A800751712 /* TopPrefecturesState.swift in Sources */,
 				1C856EC73072207400751712 /* PrefectureStatisticsViewModel.swift in Sources */,
 				1CD68CCC306F6C910054CB9A /* ImmigrantGroup.swift in Sources */,
 				1CD68CCE306F6CA90054CB9A /* ImmigrantGroupMember.swift in Sources */,
 				1C856F093072646100751712 /* GeographicProjection.swift in Sources */,
 				1CD68CDC306F6DB20054CB9A /* RetrieveImmigrantGroupUseCaseInterface.swift in Sources */,
+				1C54442C3074C232005BA7BC /* AshiatoKaiTheme.swift in Sources */,
 				1C3A7ABF306F852A0001D249 /* JapaneseCharacterWritingViewModel.swift in Sources */,
 				1C856EAD3072167D00751712 /* RetrievePrefectureStatisticsUseCase.swift in Sources */,
 				1C3A7ABC306F85070001D249 /* AnimCJKParser.swift in Sources */,
@@ -29801,9 +29825,9 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 628CH5N6UW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Ashiato Kai";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
@@ -29830,9 +29854,9 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 628CH5N6UW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Ashiato Kai";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
