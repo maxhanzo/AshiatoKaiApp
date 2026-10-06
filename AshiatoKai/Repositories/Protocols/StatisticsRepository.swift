@@ -21,4 +21,11 @@ protocol StatisticsRepository {
     func retrieveSurnameStatistics(
         surnameRomaji: String
     ) -> AnyPublisher<[SurnameStatistics], StatisticsError>
+    func retrieveTopNames()
+        -> AnyPublisher<[NameStatistics], StatisticsError>
+
+    func retrieveNameStatistics(
+        nameRomaji: String
+    ) -> AnyPublisher<[NameStatistics], StatisticsError>
+
 }

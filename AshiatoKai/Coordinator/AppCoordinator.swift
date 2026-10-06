@@ -26,6 +26,9 @@ enum StatisticsRoute: Hashable {
     case topSurnames
     case surnameSearch
     case surnameWriting(SurnameStatistics)
+    case topNames
+    case nameSearch
+    case nameWriting(NameStatistics)
     case prefectureMap(PrefectureStatistics)
 }
 
@@ -54,6 +57,12 @@ final class AppCoordinator: ObservableObject {
     
     private let makeSurnameStatisticsViewModelFactory:
         () -> SurnameStatisticsViewModel
+
+    private let makeTopNamesViewModelFactory:
+        () -> TopNamesViewModel
+
+    private let makeNameStatisticsViewModelFactory:
+        () -> NameStatisticsViewModel
     
     private let makePrefectureDetailViewModelFactory:
         (PrefectureStatistics) -> PrefectureDetailViewModel
@@ -73,6 +82,10 @@ final class AppCoordinator: ObservableObject {
             @escaping () -> PrefectureStatisticsViewModel,
         makeSurnameStatisticsViewModelFactory:
             @escaping () -> SurnameStatisticsViewModel,
+        makeTopNamesViewModelFactory:
+            @escaping () -> TopNamesViewModel,
+        makeNameStatisticsViewModelFactory:
+            @escaping () -> NameStatisticsViewModel,
         makePrefectureDetailViewModelFactory:
             @escaping (PrefectureStatistics) -> PrefectureDetailViewModel
     ) {
@@ -94,6 +107,12 @@ final class AppCoordinator: ObservableObject {
         
         self.makeSurnameStatisticsViewModelFactory =
             makeSurnameStatisticsViewModelFactory
+
+        self.makeTopNamesViewModelFactory =
+            makeTopNamesViewModelFactory
+
+        self.makeNameStatisticsViewModelFactory =
+            makeNameStatisticsViewModelFactory
         
         self.makePrefectureDetailViewModelFactory =
             makePrefectureDetailViewModelFactory
@@ -135,6 +154,12 @@ final class AppCoordinator: ObservableObject {
 
                 case .showSurnameSearch:
                     statisticsPath.append(.surnameSearch)
+
+                case .showTopNames:
+                    statisticsPath.append(.topNames)
+
+                case .showNameSearch:
+                    statisticsPath.append(.nameSearch)
                 }
             }
             .store(in: &cancellables)
@@ -180,6 +205,18 @@ final class AppCoordinator: ObservableObject {
         makeSurnameStatisticsViewModelFactory()
     }
     
+    func makeTopNamesViewModel()
+        -> TopNamesViewModel {
+
+        makeTopNamesViewModelFactory()
+    }
+
+    func makeNameStatisticsViewModel()
+        -> NameStatisticsViewModel {
+
+        makeNameStatisticsViewModelFactory()
+    }
+
     func makePrefectureDetailViewModel(
         statistic: PrefectureStatistics
     ) -> PrefectureDetailViewModel {
@@ -193,6 +230,14 @@ final class AppCoordinator: ObservableObject {
     ) {
         statisticsPath.append(
             .surnameWriting(statistic)
+        )
+    }
+    
+    func showNameWriting(
+        statistic: NameStatistics
+    ) {
+        statisticsPath.append(
+            .nameWriting(statistic)
         )
     }
     

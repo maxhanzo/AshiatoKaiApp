@@ -12,4 +12,6 @@ enum StatisticsNavigationEvent {
     case showPrefectureSearch
     case showTopSurnames
     case showSurnameSearch
+    case showTopNames
+    case showNameSearch
 }

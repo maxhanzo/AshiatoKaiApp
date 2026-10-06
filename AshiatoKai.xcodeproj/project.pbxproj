@@ -7301,6 +7301,19 @@
 		1CD68CEB306F70480054CB9A /* SearchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CEA306F70480054CB9A /* SearchError.swift */; };
 		1CD68CEE306F78A00054CB9A /* NameSurnameKanjiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CED306F78A00054CB9A /* NameSurnameKanjiView.swift */; };
 		AA11BB22CC33DD44EE55FF02 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA11BB22CC33DD44EE55FF01 /* Localizable.xcstrings */; };
+		AB0000010000000000000001 /* NameStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000010000000000000001 /* NameStatistics.swift */; };
+		AB0000020000000000000002 /* NameStatisticsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000002 /* NameStatisticsDTO.swift */; };
+		AB0000030000000000000003 /* RetrieveNameStatisticsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000030000000000000003 /* RetrieveNameStatisticsUseCase.swift */; };
+		AB0000040000000000000004 /* RetrieveNameStatisticsUseCaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000040000000000000004 /* RetrieveNameStatisticsUseCaseInterface.swift */; };
+		AB0000050000000000000005 /* RetrieveTopNamesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000050000000000000005 /* RetrieveTopNamesUseCase.swift */; };
+		AB0000060000000000000006 /* RetrieveTopNamesUseCaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000060000000000000006 /* RetrieveTopNamesUseCaseInterface.swift */; };
+		AB0000070000000000000007 /* NameStatisticsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000070000000000000007 /* NameStatisticsState.swift */; };
+		AB0000080000000000000008 /* NameStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000080000000000000008 /* NameStatisticsView.swift */; };
+		AB0000090000000000000009 /* NameStatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000090000000000000009 /* NameStatisticsViewModel.swift */; };
+		AB00000A000000000000000A /* TopNamesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000A000000000000000A /* TopNamesState.swift */; };
+		AB00000B000000000000000B /* TopNamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000B000000000000000B /* TopNamesView.swift */; };
+		AB00000C000000000000000C /* TopNamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000C000000000000000C /* TopNamesViewModel.swift */; };
+		AB00000D000000000000000D /* NameKanjiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000D000000000000000D /* NameKanjiView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -14598,6 +14611,19 @@
 		1CD68CEA306F70480054CB9A /* SearchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchError.swift; sourceTree = "<group>"; };
 		1CD68CED306F78A00054CB9A /* NameSurnameKanjiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSurnameKanjiView.swift; sourceTree = "<group>"; };
 		38A007151ABE87CC01A5B6E9 /* AshiatoKai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AshiatoKai.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000010000000000000001 /* NameStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameStatistics.swift; sourceTree = "<group>"; };
+		AA0000020000000000000002 /* NameStatisticsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameStatisticsDTO.swift; sourceTree = "<group>"; };
+		AA0000030000000000000003 /* RetrieveNameStatisticsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveNameStatisticsUseCase.swift; sourceTree = "<group>"; };
+		AA0000040000000000000004 /* RetrieveNameStatisticsUseCaseInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveNameStatisticsUseCaseInterface.swift; sourceTree = "<group>"; };
+		AA0000050000000000000005 /* RetrieveTopNamesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveTopNamesUseCase.swift; sourceTree = "<group>"; };
+		AA0000060000000000000006 /* RetrieveTopNamesUseCaseInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveTopNamesUseCaseInterface.swift; sourceTree = "<group>"; };
+		AA0000070000000000000007 /* NameStatisticsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameStatisticsState.swift; sourceTree = "<group>"; };
+		AA0000080000000000000008 /* NameStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameStatisticsView.swift; sourceTree = "<group>"; };
+		AA0000090000000000000009 /* NameStatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameStatisticsViewModel.swift; sourceTree = "<group>"; };
+		AA00000A000000000000000A /* TopNamesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNamesState.swift; sourceTree = "<group>"; };
+		AA00000B000000000000000B /* TopNamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNamesView.swift; sourceTree = "<group>"; };
+		AA00000C000000000000000C /* TopNamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNamesViewModel.swift; sourceTree = "<group>"; };
+		AA00000D000000000000000D /* NameKanjiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameKanjiView.swift; sourceTree = "<group>"; };
 		AA11BB22CC33DD44EE55FF01 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -21899,6 +21925,8 @@
 		1C856E8A30720E2F00751712 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				AC0000050000000000000005 /* NameKanjiView */,
+				AC0000020000000000000002 /* Names */,
 				1C856ED330722BE400751712 /* JapanesePrefecture */,
 				1C856ED0307226C400751712 /* SurnameKanjiView */,
 				1C856EB830721ADD00751712 /* StatisticsViewModel.swift */,
@@ -22108,6 +22136,7 @@
 		1CD68C96306F61F50054CB9A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				AA0000010000000000000001 /* NameStatistics.swift */,
 				1C856EDD30724FF900751712 /* Geolocation */,
 				1C856E983072117100751712 /* StatisticsError.swift */,
 				1C856E963072103100751712 /* SurnameStatistics.swift */,
@@ -22152,6 +22181,7 @@
 		1CD68CAB306F62430054CB9A /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				AA0000020000000000000002 /* NameStatisticsDTO.swift */,
 				1C856EDA30724FCC00751712 /* Geolocation */,
 				1C856E9430720FFE00751712 /* SurnameStatisticsDTO.swift */,
 				1C856E8E30720F3800751712 /* PrefectureStatisticsDTO.swift */,
@@ -22226,6 +22256,7 @@
 		1CD68CC1306F67530054CB9A /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				AC0000010000000000000001 /* Names */,
 				1C856EEC307250D300751712 /* Geolocation */,
 				1C856EA4307215E000751712 /* Surnames */,
 				1C856EA3307215CE00751712 /* Prefectures */,
@@ -22293,6 +22324,54 @@
 				BCE16DD0260827ECF338C787 /* AshiatoKai */,
 				FBDC4F23F93125BBEEAE800C /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		AC0000010000000000000001 /* Names */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000030000000000000003 /* RetrieveNameStatisticsUseCase.swift */,
+				AA0000040000000000000004 /* RetrieveNameStatisticsUseCaseInterface.swift */,
+				AA0000050000000000000005 /* RetrieveTopNamesUseCase.swift */,
+				AA0000060000000000000006 /* RetrieveTopNamesUseCaseInterface.swift */,
+			);
+			path = Names;
+			sourceTree = "<group>";
+		};
+		AC0000020000000000000002 /* Names */ = {
+			isa = PBXGroup;
+			children = (
+				AC0000040000000000000004 /* TopNames */,
+				AC0000030000000000000003 /* Statistics */,
+			);
+			path = Names;
+			sourceTree = "<group>";
+		};
+		AC0000030000000000000003 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000070000000000000007 /* NameStatisticsState.swift */,
+				AA0000080000000000000008 /* NameStatisticsView.swift */,
+				AA0000090000000000000009 /* NameStatisticsViewModel.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		AC0000040000000000000004 /* TopNames */ = {
+			isa = PBXGroup;
+			children = (
+				AA00000A000000000000000A /* TopNamesState.swift */,
+				AA00000B000000000000000B /* TopNamesView.swift */,
+				AA00000C000000000000000C /* TopNamesViewModel.swift */,
+			);
+			path = TopNames;
+			sourceTree = "<group>";
+		};
+		AC0000050000000000000005 /* NameKanjiView */ = {
+			isa = PBXGroup;
+			children = (
+				AA00000D000000000000000D /* NameKanjiView.swift */,
+			);
+			path = NameKanjiView;
 			sourceTree = "<group>";
 		};
 		BCE16DD0260827ECF338C787 /* AshiatoKai */ = {
@@ -29576,6 +29655,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0000010000000000000001 /* NameStatistics.swift in Sources */,
+				AB0000020000000000000002 /* NameStatisticsDTO.swift in Sources */,
+				AB0000030000000000000003 /* RetrieveNameStatisticsUseCase.swift in Sources */,
+				AB0000040000000000000004 /* RetrieveNameStatisticsUseCaseInterface.swift in Sources */,
+				AB0000050000000000000005 /* RetrieveTopNamesUseCase.swift in Sources */,
+				AB0000060000000000000006 /* RetrieveTopNamesUseCaseInterface.swift in Sources */,
+				AB0000070000000000000007 /* NameStatisticsState.swift in Sources */,
+				AB0000080000000000000008 /* NameStatisticsView.swift in Sources */,
+				AB0000090000000000000009 /* NameStatisticsViewModel.swift in Sources */,
+				AB00000A000000000000000A /* TopNamesState.swift in Sources */,
+				AB00000B000000000000000B /* TopNamesView.swift in Sources */,
+				AB00000C000000000000000C /* TopNamesViewModel.swift in Sources */,
+				AB00000D000000000000000D /* NameKanjiView.swift in Sources */,
 				1C3A7AC9306F88EB0001D249 /* Scanner.swift in Sources */,
 				1C856EFF30725B2C00751712 /* PrefectureDetailState.swift in Sources */,
 				1C856EBB30721C9F00751712 /* TopPrefecturesViewModel.swift in Sources */,
@@ -29707,7 +29799,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.YOURCOMPANY.ashiatokai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YOURNAME.ashiatokai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -29736,7 +29828,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.YOURCOMPANY.ashiatokai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YOURNAME.ashiatokai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
