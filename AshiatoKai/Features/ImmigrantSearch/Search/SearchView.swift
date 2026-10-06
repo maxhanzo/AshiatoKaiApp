@@ -52,6 +52,15 @@ struct SearchView: View {
 
                 Button("search.clear") { viewModel.clear() }
             }
+            
+            Section {
+                Button {
+                    focusedField = nil
+                    viewModel.contactUs()
+                } label: {
+                    Label("contact.title", systemImage: "envelope")
+                }
+            }
 
             switch viewModel.state {
             case .loading:

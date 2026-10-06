@@ -50,6 +50,9 @@ struct AppView: View {
                             
                         case .nameSurnameKanji(let member):
                             NameSurnameKanjiView(member: member)
+                            
+                        case .contactUs:
+                            ContactView()
                         }
                     }
             }
