@@ -13,7 +13,7 @@ enum RetrieveImmigrantsError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .noResults:
-            return "No immigrants were found matching your search criteria."
+            String(localized: "search.no_results.message")
         }
     }
 }

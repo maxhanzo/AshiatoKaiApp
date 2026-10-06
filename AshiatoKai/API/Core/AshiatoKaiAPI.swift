@@ -11,7 +11,7 @@ import Foundation
 enum AshiatoKaiAPI {
 
     static let baseURL = URL(
-        string: "https://ashiato-kai-api.ashiato-kai.workers.dev"
+        string: "https://api.ashiato-kai.com"
     )!
 
     // MARK: - Immigrants
