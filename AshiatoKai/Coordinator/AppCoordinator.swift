@@ -18,6 +18,7 @@ enum SearchRoute: Hashable {
     case detail(SearchRecord)
     case groupDetails(Int)
     case nameSurnameKanji(ImmigrantGroupMember)
+    case contactUs
 }
 
 enum StatisticsRoute: Hashable {
@@ -132,6 +133,9 @@ final class AppCoordinator: ObservableObject {
 
                 case .showDetail(let record):
                     searchPath.append(.detail(record))
+                    
+                case .showContact:
+                    searchPath.append(SearchRoute.contactUs)
                 }
             }
             .store(in: &cancellables)

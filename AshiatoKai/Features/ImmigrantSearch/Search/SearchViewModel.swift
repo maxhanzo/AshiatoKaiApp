@@ -108,4 +108,8 @@ final class SearchViewModel: ObservableObject {
     func select(_ record: SearchRecord) {
         navigationSubject.send(.showDetail(record))
     }
+    
+    func contactUs() {
+        navigationSubject.send(.showContact)
+    }
 }

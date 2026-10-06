@@ -7208,6 +7208,7 @@
 		1C3A7ADC306F929C0001D249 /* JapaneseNameWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A7ADB306F929C0001D249 /* JapaneseNameWritingView.swift */; };
 		1C3A7ADE306F92BF0001D249 /* JapaneseCharacterLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A7ADD306F92BF0001D249 /* JapaneseCharacterLoader.swift */; };
 		1C3A7AE0306F92D00001D249 /* JapaneseNameWritingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A7ADF306F92D00001D249 /* JapaneseNameWritingContainerView.swift */; };
+		1C5444203074B754005BA7BC /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54441F3074B754005BA7BC /* ContactView.swift */; };
 		1C856E8D30720ECA00751712 /* StatisticsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E8C30720ECA00751712 /* StatisticsRepository.swift */; };
 		1C856E8F30720F3800751712 /* PrefectureStatisticsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E8E30720F3800751712 /* PrefectureStatisticsDTO.swift */; };
 		1C856E9130720F6300751712 /* RemoteStatisticsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E9030720F6300751712 /* RemoteStatisticsRepository.swift */; };
@@ -14518,6 +14519,7 @@
 		1C3A7ADB306F929C0001D249 /* JapaneseNameWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapaneseNameWritingView.swift; sourceTree = "<group>"; };
 		1C3A7ADD306F92BF0001D249 /* JapaneseCharacterLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapaneseCharacterLoader.swift; sourceTree = "<group>"; };
 		1C3A7ADF306F92D00001D249 /* JapaneseNameWritingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapaneseNameWritingContainerView.swift; sourceTree = "<group>"; };
+		1C54441F3074B754005BA7BC /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		1C856E8C30720ECA00751712 /* StatisticsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsRepository.swift; sourceTree = "<group>"; };
 		1C856E8E30720F3800751712 /* PrefectureStatisticsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureStatisticsDTO.swift; sourceTree = "<group>"; };
 		1C856E9030720F6300751712 /* RemoteStatisticsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStatisticsRepository.swift; sourceTree = "<group>"; };
@@ -21922,6 +21924,14 @@
 			path = JapaneseNameWriting;
 			sourceTree = "<group>";
 		};
+		1C54441E3074B74B005BA7BC /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				1C54441F3074B754005BA7BC /* ContactView.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
 		1C856E8A30720E2F00751712 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
@@ -21941,6 +21951,7 @@
 		1C856E8B30720E4A00751712 /* ImmigrantSearch */ = {
 			isa = PBXGroup;
 			children = (
+				1C54441E3074B74B005BA7BC /* Contact */,
 				1CD68CEC306F78940054CB9A /* NameSurnameKanji */,
 				1CD68CDF306F6DDF0054CB9A /* GroupDetail */,
 				1CD68CB6306F62DA0054CB9A /* RecordDetail */,
@@ -29706,6 +29717,7 @@
 				1CD68CD2306F6CDD0054CB9A /* ImmigrantGroupMemberDTO.swift in Sources */,
 				1C856E993072117100751712 /* StatisticsError.swift in Sources */,
 				1CD68CD4306F6D110054CB9A /* RemoteImmigrantGroupRepository.swift in Sources */,
+				1C5444203074B754005BA7BC /* ContactView.swift in Sources */,
 				1C856EB73072188D00751712 /* StatisticsNavigationEvent.swift in Sources */,
 				1CD68CC8306F678E0054CB9A /* RetrieveImmigrantsUseCase.swift in Sources */,
 				1C3A7AB8306F84E40001D249 /* JapaneseStroke.swift in Sources */,
