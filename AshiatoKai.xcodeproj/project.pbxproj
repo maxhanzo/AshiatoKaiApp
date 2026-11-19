@@ -7213,6 +7213,7 @@
 		1C54442E3074C247005BA7BC /* ArchiveHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54442D3074C247005BA7BC /* ArchiveHeader.swift */; };
 		1C5444303074C259005BA7BC /* ArchiveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54442F3074C259005BA7BC /* ArchiveCard.swift */; };
 		1C5444323074C269005BA7BC /* ArchiveBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5444313074C269005BA7BC /* ArchiveBackgroundModifier.swift */; };
+		1C6E602930AF7CEB00D3B65C /* APIErrorMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E602830AF7CEB00D3B65C /* APIErrorMapper.swift */; };
 		1C856E8D30720ECA00751712 /* StatisticsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E8C30720ECA00751712 /* StatisticsRepository.swift */; };
 		1C856E8F30720F3800751712 /* PrefectureStatisticsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E8E30720F3800751712 /* PrefectureStatisticsDTO.swift */; };
 		1C856E9130720F6300751712 /* RemoteStatisticsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E9030720F6300751712 /* RemoteStatisticsRepository.swift */; };
@@ -7273,7 +7274,6 @@
 		1CD68CA2306F61F50054CB9A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C99306F61F50054CB9A /* SearchView.swift */; };
 		1CD68CA3306F61F50054CB9A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C9A306F61F50054CB9A /* SearchViewModel.swift */; };
 		1CD68CA4306F61F50054CB9A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C8F306F61F50054CB9A /* AppView.swift */; };
-		1CD68CA5306F61F50054CB9A /* MockSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C92306F61F50054CB9A /* MockSearchRepository.swift */; };
 		1CD68CA6306F61F50054CB9A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C9C306F61F50054CB9A /* AppCoordinator.swift */; };
 		1CD68CA7306F61F50054CB9A /* SearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C95306F61F50054CB9A /* SearchModels.swift */; };
 		1CD68CA8306F61F50054CB9A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C93306F61F50054CB9A /* APIError.swift */; };
@@ -14528,6 +14528,7 @@
 		1C54442D3074C247005BA7BC /* ArchiveHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveHeader.swift; sourceTree = "<group>"; };
 		1C54442F3074C259005BA7BC /* ArchiveCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCard.swift; sourceTree = "<group>"; };
 		1C5444313074C269005BA7BC /* ArchiveBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveBackgroundModifier.swift; sourceTree = "<group>"; };
+		1C6E602830AF7CEB00D3B65C /* APIErrorMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorMapper.swift; sourceTree = "<group>"; };
 		1C856E8C30720ECA00751712 /* StatisticsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsRepository.swift; sourceTree = "<group>"; };
 		1C856E8E30720F3800751712 /* PrefectureStatisticsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureStatisticsDTO.swift; sourceTree = "<group>"; };
 		1C856E9030720F6300751712 /* RemoteStatisticsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStatisticsRepository.swift; sourceTree = "<group>"; };
@@ -14580,12 +14581,11 @@
 		1C856F063072644D00751712 /* GeographicShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeographicShapeView.swift; sourceTree = "<group>"; };
 		1C856F083072646100751712 /* GeographicProjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeographicProjection.swift; sourceTree = "<group>"; };
 		1C856F0A307274C500751712 /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
-		1C856F0D3072795A00751712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = AshiatoKai/Assets.xcassets; sourceTree = "<group>"; };
+		1C856F0D3072795A00751712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		1C856F1030727A3D00751712 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		1C856F1330727A6D00751712 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		1CD68C8F306F61F50054CB9A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		1CD68C90306F61F50054CB9A /* AshiatoKaiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AshiatoKaiApp.swift; sourceTree = "<group>"; };
-		1CD68C92306F61F50054CB9A /* MockSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchRepository.swift; sourceTree = "<group>"; };
 		1CD68C93306F61F50054CB9A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		1CD68C95306F61F50054CB9A /* SearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModels.swift; sourceTree = "<group>"; };
 		1CD68C98306F61F50054CB9A /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
@@ -21866,8 +21866,11 @@
 		1C3A7AB4306F84B00001D249 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AA11BB22CC33DD44EE55FF01 /* Localizable.xcstrings */,
+				1C856F0D3072795A00751712 /* Assets.xcassets */,
 				1C54442A3074C214005BA7BC /* Theme */,
 				1C3A7AB5306F84B70001D249 /* Animation */,
+				1C3A5EA3306F84560001D249 /* Resources */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -21950,6 +21953,47 @@
 				1C54442B3074C232005BA7BC /* AshiatoKaiTheme.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		1C6E602630ACEF8100D3B65C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1C6E602730AF7CE100D3B65C /* Mapping */,
+				1CD68CAA306F621F0054CB9A /* API */,
+				1CD68CAE306F62650054CB9A /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		1C6E602730AF7CE100D3B65C /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				1C6E602830AF7CEB00D3B65C /* APIErrorMapper.swift */,
+			);
+			path = Mapping;
+			sourceTree = "<group>";
+		};
+		1C6E602A30AF7E3100D3B65C /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000010000000000000001 /* NameStatistics.swift */,
+				1C856E983072117100751712 /* StatisticsError.swift */,
+				1C856E963072103100751712 /* SurnameStatistics.swift */,
+				1C856E9230720FEC00751712 /* PrefectureStatistics.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		1C6E602B30AF7E3800D3B65C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1CD68C95306F61F50054CB9A /* SearchModels.swift */,
+				1CD68CEA306F70480054CB9A /* SearchError.swift */,
+				1CD68CE8306F70260054CB9A /* SearchRecord.swift */,
+				1CD68CCD306F6CA90054CB9A /* ImmigrantGroupMember.swift */,
+				1CD68CCB306F6C910054CB9A /* ImmigrantGroup.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		1C856E8A30720E2F00751712 /* Statistics */ = {
@@ -22149,6 +22193,9 @@
 		1CD68C91306F61F50054CB9A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				1CD68C9B306F61F50054CB9A /* Features */,
+				1CD68C9D306F61F50054CB9A /* Coordinator */,
+				1CD68CC1306F67530054CB9A /* UseCases */,
 				1CD68CC9306F68C10054CB9A /* AppContainer.swift */,
 				1CD68C8F306F61F50054CB9A /* AppView.swift */,
 				1CD68C90306F61F50054CB9A /* AshiatoKaiApp.swift */,
@@ -22156,27 +22203,12 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		1CD68C94306F61F50054CB9A /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				1CD68C92306F61F50054CB9A /* MockSearchRepository.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		1CD68C96306F61F50054CB9A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				AA0000010000000000000001 /* NameStatistics.swift */,
+				1C6E602B30AF7E3800D3B65C /* Search */,
+				1C6E602A30AF7E3100D3B65C /* Statistics */,
 				1C856EDD30724FF900751712 /* Geolocation */,
-				1C856E983072117100751712 /* StatisticsError.swift */,
-				1C856E963072103100751712 /* SurnameStatistics.swift */,
-				1C856E9230720FEC00751712 /* PrefectureStatistics.swift */,
-				1CD68CEA306F70480054CB9A /* SearchError.swift */,
-				1CD68CE8306F70260054CB9A /* SearchRecord.swift */,
-				1CD68CCD306F6CA90054CB9A /* ImmigrantGroupMember.swift */,
-				1CD68CCB306F6C910054CB9A /* ImmigrantGroup.swift */,
-				1CD68C95306F61F50054CB9A /* SearchModels.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -22228,16 +22260,8 @@
 			children = (
 				1CD68CD5306F6D360054CB9A /* Protocols */,
 				1CD68CB0306F62740054CB9A /* Remote */,
-				1CD68CAF306F626F0054CB9A /* Local */,
 			);
 			path = Repositories;
-			sourceTree = "<group>";
-		};
-		1CD68CAF306F626F0054CB9A /* Local */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Local;
 			sourceTree = "<group>";
 		};
 		1CD68CB0306F62740054CB9A /* Remote */ = {
@@ -22351,7 +22375,6 @@
 		64292B1C2B2E13EAD8788FC8 = {
 			isa = PBXGroup;
 			children = (
-				1C856F0D3072795A00751712 /* Assets.xcassets */,
 				BCE16DD0260827ECF338C787 /* AshiatoKai */,
 				FBDC4F23F93125BBEEAE800C /* Products */,
 			);
@@ -22408,17 +22431,10 @@
 		BCE16DD0260827ECF338C787 /* AshiatoKai */ = {
 			isa = PBXGroup;
 			children = (
-				AA11BB22CC33DD44EE55FF01 /* Localizable.xcstrings */,
+				1C6E602630ACEF8100D3B65C /* Data */,
 				1C3A7AB4306F84B00001D249 /* UI */,
-				1CD68CC1306F67530054CB9A /* UseCases */,
-				1CD68CAE306F62650054CB9A /* Repositories */,
-				1CD68CAA306F621F0054CB9A /* API */,
 				1CD68C91306F61F50054CB9A /* App */,
-				1CD68C94306F61F50054CB9A /* Data */,
 				1CD68C96306F61F50054CB9A /* Domain */,
-				1CD68C9B306F61F50054CB9A /* Features */,
-				1CD68C9D306F61F50054CB9A /* Coordinator */,
-				1C3A5EA3306F84560001D249 /* Resources */,
 			);
 			path = AshiatoKai;
 			sourceTree = "<group>";
@@ -22458,7 +22474,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 2650;
+				LastUpgradeCheck = 2710;
 				TargetAttributes = {
 					0E8A3AD980EC179856012B7E = {
 						CreatedOnToolsVersion = 16.0;
@@ -29777,7 +29793,6 @@
 				1C3A7AE0306F92D00001D249 /* JapaneseNameWritingContainerView.swift in Sources */,
 				1C856EAF307216CA00751712 /* RetrieveTopSurnamesUseCaseInterface.swift in Sources */,
 				1C5444303074C259005BA7BC /* ArchiveCard.swift in Sources */,
-				1CD68CA5306F61F50054CB9A /* MockSearchRepository.swift in Sources */,
 				1CD68CA6306F61F50054CB9A /* AppCoordinator.swift in Sources */,
 				1CD68CA7306F61F50054CB9A /* SearchModels.swift in Sources */,
 				1C856EC93072208100751712 /* PrefectureStatisticsView.swift in Sources */,
@@ -29785,6 +29800,7 @@
 				1C856EA2307214A800751712 /* TopPrefecturesState.swift in Sources */,
 				1C856EC73072207400751712 /* PrefectureStatisticsViewModel.swift in Sources */,
 				1CD68CCC306F6C910054CB9A /* ImmigrantGroup.swift in Sources */,
+				1C6E602930AF7CEB00D3B65C /* APIErrorMapper.swift in Sources */,
 				1CD68CCE306F6CA90054CB9A /* ImmigrantGroupMember.swift in Sources */,
 				1C856F093072646100751712 /* GeographicProjection.swift in Sources */,
 				1CD68CDC306F6DB20054CB9A /* RetrieveImmigrantGroupUseCaseInterface.swift in Sources */,
@@ -29834,8 +29850,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.YOURCOMPANY.ashiatokai;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.uedasoft-it.ashiatokai";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -29863,8 +29879,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.YOURCOMPANY.ashiatokai;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.uedasoft-it.ashiatokai";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -29879,6 +29895,7 @@
 		89E1FD6268CC0F221A2BE178 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -29923,6 +29940,7 @@
 		E6DE6C99132752C914FEF632 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;

@@ -34,7 +34,7 @@ final class RemoteStatisticsRepository: StatisticsRepository {
             .map { dtos in
                 dtos.map { $0.toDomain() }
             }
-            .mapError(StatisticsError.init)
+            .mapError(APIErrorMapper.statistics)
             .eraseToAnyPublisher()
     }
 
@@ -55,7 +55,7 @@ final class RemoteStatisticsRepository: StatisticsRepository {
             .map { dtos in
                 dtos.map { $0.toDomain() }
             }
-            .mapError(StatisticsError.init)
+            .mapError(APIErrorMapper.statistics)
             .eraseToAnyPublisher()
     }
 
@@ -75,7 +75,7 @@ final class RemoteStatisticsRepository: StatisticsRepository {
             .map { dtos in
                 dtos.map { $0.toDomain() }
             }
-            .mapError(StatisticsError.init)
+            .mapError(APIErrorMapper.statistics)
             .eraseToAnyPublisher()
     }
 
@@ -96,7 +96,7 @@ final class RemoteStatisticsRepository: StatisticsRepository {
             .map { dtos in
                 dtos.map { $0.toDomain() }
             }
-            .mapError(StatisticsError.init)
+            .mapError(APIErrorMapper.statistics)
             .eraseToAnyPublisher()
     }
 
@@ -116,7 +116,7 @@ final class RemoteStatisticsRepository: StatisticsRepository {
             .map { dtos in
                 dtos.map { $0.toDomain() }
             }
-            .mapError(StatisticsError.init)
+            .mapError(APIErrorMapper.statistics)
             .eraseToAnyPublisher()
     }
 
@@ -137,7 +137,7 @@ final class RemoteStatisticsRepository: StatisticsRepository {
             .map { dtos in
                 dtos.map { $0.toDomain() }
             }
-            .mapError(StatisticsError.init)
+            .mapError(APIErrorMapper.statistics)
             .eraseToAnyPublisher()
     }
 

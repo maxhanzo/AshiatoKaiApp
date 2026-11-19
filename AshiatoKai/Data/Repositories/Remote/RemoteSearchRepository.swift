@@ -19,7 +19,7 @@ struct RemoteSearchRepository: SearchRepository {
         apiClient
             .execute(AshiatoKaiAPI.immigrants(criteria: criteria), as: [ImmigrantDTO].self)
             .map { $0.map(\.domainModel) }
-            .mapError(SearchError.init(apiError:))
+            .mapError(APIErrorMapper.search)
             .eraseToAnyPublisher()
     }
 }
