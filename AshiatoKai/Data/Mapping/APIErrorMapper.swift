@@ -5,6 +5,7 @@
 //  Created by Max Ueda on 19/11/26.
 //
 
+import AshiatoKaiDomain
 import Foundation
 
 enum APIErrorMapper {

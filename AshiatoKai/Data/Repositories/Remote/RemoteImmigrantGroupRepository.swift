@@ -5,9 +5,7 @@
 //  Created by Max Hiroyuki Ueda on 02/10/26.
 //
 
-import Combine
-import Foundation
-
+import AshiatoKaiDomain
 import Combine
 import Foundation
 

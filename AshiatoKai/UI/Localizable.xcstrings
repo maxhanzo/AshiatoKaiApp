@@ -954,6 +954,7 @@
       }
     },
     "search.error.invalid_response" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -976,6 +977,7 @@
       }
     },
     "search.error.unavailable" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

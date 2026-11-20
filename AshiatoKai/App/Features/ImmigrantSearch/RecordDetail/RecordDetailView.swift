@@ -5,6 +5,7 @@
 //  Created by Max Hiroyuki Ueda on 01/10/26.
 //
 
+import AshiatoKaiDomain
 import SwiftUI
 
 struct RecordDetailView: View {

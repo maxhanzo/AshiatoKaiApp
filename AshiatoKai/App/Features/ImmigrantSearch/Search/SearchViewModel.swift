@@ -5,8 +5,9 @@
 //  Created by Max Hiroyuki Ueda on 01/10/26.
 //
 
-import Foundation
+import AshiatoKaiDomain
 import Combine
+import Foundation
 
 @MainActor
 final class SearchViewModel: ObservableObject {

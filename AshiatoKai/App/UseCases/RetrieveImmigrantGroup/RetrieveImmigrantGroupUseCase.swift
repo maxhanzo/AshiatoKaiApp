@@ -5,6 +5,7 @@
 //  Created by Max Hiroyuki Ueda on 02/10/26.
 //
 
+import AshiatoKaiDomain
 import Combine
 
 final class RetrieveImmigrantGroupUseCase:
