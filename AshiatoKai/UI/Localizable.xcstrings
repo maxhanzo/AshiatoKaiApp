@@ -932,6 +932,7 @@
       }
     },
     "search.error.invalid_request" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

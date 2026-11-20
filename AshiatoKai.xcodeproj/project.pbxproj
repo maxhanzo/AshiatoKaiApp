@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C04B83230B00C3300355F4C /* AshiatoKaiData in Frameworks */ = {isa = PBXBuildFile; productRef = 1C04B83130B00C3300355F4C /* AshiatoKaiData */; };
 		1C3A5EA4306F84570001D249 /* 32114.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1C3A543B306F84560001D249 /* 32114.svg */; };
 		1C3A5EA5306F84570001D249 /* 22352.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1C3A46FE306F84560001D249 /* 22352.svg */; };
 		1C3A5EA6306F84570001D249 /* 25340.svg in Resources */ = {isa = PBXBuildFile; fileRef = 1C3A4B5A306F84560001D249 /* 25340.svg */; };
@@ -7213,11 +7214,6 @@
 		1C54442E3074C247005BA7BC /* ArchiveHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54442D3074C247005BA7BC /* ArchiveHeader.swift */; };
 		1C5444303074C259005BA7BC /* ArchiveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C54442F3074C259005BA7BC /* ArchiveCard.swift */; };
 		1C5444323074C269005BA7BC /* ArchiveBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5444313074C269005BA7BC /* ArchiveBackgroundModifier.swift */; };
-		1C6E602930AF7CEB00D3B65C /* APIErrorMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E602830AF7CEB00D3B65C /* APIErrorMapper.swift */; };
-		1C856E8D30720ECA00751712 /* StatisticsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E8C30720ECA00751712 /* StatisticsRepository.swift */; };
-		1C856E8F30720F3800751712 /* PrefectureStatisticsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E8E30720F3800751712 /* PrefectureStatisticsDTO.swift */; };
-		1C856E9130720F6300751712 /* RemoteStatisticsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E9030720F6300751712 /* RemoteStatisticsRepository.swift */; };
-		1C856E9530720FFE00751712 /* SurnameStatisticsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E9430720FFE00751712 /* SurnameStatisticsDTO.swift */; };
 		1C856E9C3072144900751712 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856E9B3072144900751712 /* StatisticsView.swift */; };
 		1C856EA2307214A800751712 /* TopPrefecturesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EA1307214A800751712 /* TopPrefecturesState.swift */; };
 		1C856EA6307215E700751712 /* RetrieveTopPrefecturesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EA5307215E700751712 /* RetrieveTopPrefecturesUseCase.swift */; };
@@ -7244,13 +7240,8 @@
 		1C856ED2307226CF00751712 /* SurnameKanjiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ED1307226CF00751712 /* SurnameKanjiView.swift */; };
 		1C856ED530722BF200751712 /* JapanesePrefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ED430722BF200751712 /* JapanesePrefecture.swift */; };
 		1C856ED730722C0600751712 /* PrefectureMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ED630722C0600751712 /* PrefectureMapView.swift */; };
-		1C856ED930724FA800751712 /* GeolocationFeatureCollectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856ED830724FA800751712 /* GeolocationFeatureCollectionDTO.swift */; };
-		1C856EDC30724FD900751712 /* GeolocationGeometryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EDB30724FD900751712 /* GeolocationGeometryDTO.swift */; };
-		1C856EE93072508F00751712 /* GeolocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EE83072508F00751712 /* GeolocationRepository.swift */; };
-		1C856EEB3072509F00751712 /* RemoteGeolocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EEA3072509F00751712 /* RemoteGeolocationRepository.swift */; };
 		1C856EEE307250DE00751712 /* RetrieveGeolocationUseCaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EED307250DE00751712 /* RetrieveGeolocationUseCaseInterface.swift */; };
 		1C856EF0307250F600751712 /* RetrieveGeolocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EEF307250F600751712 /* RetrieveGeolocationUseCase.swift */; };
-		1C856EF4307252E300751712 /* GeolocationFeatureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EF3307252E300751712 /* GeolocationFeatureDTO.swift */; };
 		1C856EFF30725B2C00751712 /* PrefectureDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856EFE30725B2C00751712 /* PrefectureDetailState.swift */; };
 		1C856F0230725B4600751712 /* PrefectureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856F0130725B4600751712 /* PrefectureDetailViewModel.swift */; };
 		1C856F0430725B5900751712 /* PrefectureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C856F0330725B5900751712 /* PrefectureDetailView.swift */; };
@@ -7267,24 +7258,12 @@
 		1CD68CA3306F61F50054CB9A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C9A306F61F50054CB9A /* SearchViewModel.swift */; };
 		1CD68CA4306F61F50054CB9A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C8F306F61F50054CB9A /* AppView.swift */; };
 		1CD68CA6306F61F50054CB9A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C9C306F61F50054CB9A /* AppCoordinator.swift */; };
-		1CD68CA8306F61F50054CB9A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C93306F61F50054CB9A /* APIError.swift */; };
-		1CD68CA9306F61F50054CB9A /* AshiatoKaiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68C9E306F61F50054CB9A /* AshiatoKaiAPI.swift */; };
-		1CD68CAD306F624A0054CB9A /* ImmigrantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CAC306F624A0054CB9A /* ImmigrantDTO.swift */; };
-		1CD68CB2306F627A0054CB9A /* RemoteSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CB1306F627A0054CB9A /* RemoteSearchRepository.swift */; };
 		1CD68CB8306F63070054CB9A /* SearchForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CB7306F63070054CB9A /* SearchForm.swift */; };
 		1CD68CBA306F63220054CB9A /* SearchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CB9306F631F0054CB9A /* SearchState.swift */; };
-		1CD68CBC306F63770054CB9A /* URLSessionAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CBB306F63770054CB9A /* URLSessionAPIClient.swift */; };
-		1CD68CBE306F63AB0054CB9A /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CBD306F63AB0054CB9A /* APIClient.swift */; };
-		1CD68CC0306F640C0054CB9A /* APIErrorEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CBF306F640C0054CB9A /* APIErrorEnvelope.swift */; };
 		1CD68CC3306F675C0054CB9A /* RetrieveImmigrantsUseCaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CC2306F675C0054CB9A /* RetrieveImmigrantsUseCaseInterface.swift */; };
 		1CD68CC6306F677F0054CB9A /* RetrieveImmigrantsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CC5306F677F0054CB9A /* RetrieveImmigrantsError.swift */; };
 		1CD68CC8306F678E0054CB9A /* RetrieveImmigrantsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CC7306F678E0054CB9A /* RetrieveImmigrantsUseCase.swift */; };
 		1CD68CCA306F68C10054CB9A /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CC9306F68C10054CB9A /* AppContainer.swift */; };
-		1CD68CD0306F6CC70054CB9A /* ImmigrantGroupDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CCF306F6CC70054CB9A /* ImmigrantGroupDTO.swift */; };
-		1CD68CD2306F6CDD0054CB9A /* ImmigrantGroupMemberDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CD1306F6CDD0054CB9A /* ImmigrantGroupMemberDTO.swift */; };
-		1CD68CD4306F6D110054CB9A /* RemoteImmigrantGroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CD3306F6D110054CB9A /* RemoteImmigrantGroupRepository.swift */; };
-		1CD68CD7306F6D3F0054CB9A /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CD6306F6D3F0054CB9A /* SearchRepository.swift */; };
-		1CD68CD9306F6D520054CB9A /* ImmigrantGroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CD8306F6D520054CB9A /* ImmigrantGroupRepository.swift */; };
 		1CD68CDC306F6DB20054CB9A /* RetrieveImmigrantGroupUseCaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CDB306F6DB20054CB9A /* RetrieveImmigrantGroupUseCaseInterface.swift */; };
 		1CD68CDE306F6DC20054CB9A /* RetrieveImmigrantGroupUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CDD306F6DC20054CB9A /* RetrieveImmigrantGroupUseCase.swift */; };
 		1CD68CE1306F6DFE0054CB9A /* GroupDetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CE0306F6DFE0054CB9A /* GroupDetailsState.swift */; };
@@ -7293,7 +7272,6 @@
 		1CD68CE7306F6FD30054CB9A /* SearchNavigationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CE6306F6FD30054CB9A /* SearchNavigationEvent.swift */; };
 		1CD68CEE306F78A00054CB9A /* NameSurnameKanjiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD68CED306F78A00054CB9A /* NameSurnameKanjiView.swift */; };
 		AA11BB22CC33DD44EE55FF02 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA11BB22CC33DD44EE55FF01 /* Localizable.xcstrings */; };
-		AB0000020000000000000002 /* NameStatisticsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000002 /* NameStatisticsDTO.swift */; };
 		AB0000030000000000000003 /* RetrieveNameStatisticsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000030000000000000003 /* RetrieveNameStatisticsUseCase.swift */; };
 		AB0000040000000000000004 /* RetrieveNameStatisticsUseCaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000040000000000000004 /* RetrieveNameStatisticsUseCaseInterface.swift */; };
 		AB0000050000000000000005 /* RetrieveTopNamesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000050000000000000005 /* RetrieveTopNamesUseCase.swift */; };
@@ -14514,11 +14492,6 @@
 		1C54442D3074C247005BA7BC /* ArchiveHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveHeader.swift; sourceTree = "<group>"; };
 		1C54442F3074C259005BA7BC /* ArchiveCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCard.swift; sourceTree = "<group>"; };
 		1C5444313074C269005BA7BC /* ArchiveBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveBackgroundModifier.swift; sourceTree = "<group>"; };
-		1C6E602830AF7CEB00D3B65C /* APIErrorMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorMapper.swift; sourceTree = "<group>"; };
-		1C856E8C30720ECA00751712 /* StatisticsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsRepository.swift; sourceTree = "<group>"; };
-		1C856E8E30720F3800751712 /* PrefectureStatisticsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureStatisticsDTO.swift; sourceTree = "<group>"; };
-		1C856E9030720F6300751712 /* RemoteStatisticsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStatisticsRepository.swift; sourceTree = "<group>"; };
-		1C856E9430720FFE00751712 /* SurnameStatisticsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurnameStatisticsDTO.swift; sourceTree = "<group>"; };
 		1C856E9B3072144900751712 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		1C856EA1307214A800751712 /* TopPrefecturesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPrefecturesState.swift; sourceTree = "<group>"; };
 		1C856EA5307215E700751712 /* RetrieveTopPrefecturesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveTopPrefecturesUseCase.swift; sourceTree = "<group>"; };
@@ -14545,13 +14518,8 @@
 		1C856ED1307226CF00751712 /* SurnameKanjiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurnameKanjiView.swift; sourceTree = "<group>"; };
 		1C856ED430722BF200751712 /* JapanesePrefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapanesePrefecture.swift; sourceTree = "<group>"; };
 		1C856ED630722C0600751712 /* PrefectureMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureMapView.swift; sourceTree = "<group>"; };
-		1C856ED830724FA800751712 /* GeolocationFeatureCollectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationFeatureCollectionDTO.swift; sourceTree = "<group>"; };
-		1C856EDB30724FD900751712 /* GeolocationGeometryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationGeometryDTO.swift; sourceTree = "<group>"; };
-		1C856EE83072508F00751712 /* GeolocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationRepository.swift; sourceTree = "<group>"; };
-		1C856EEA3072509F00751712 /* RemoteGeolocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGeolocationRepository.swift; sourceTree = "<group>"; };
 		1C856EED307250DE00751712 /* RetrieveGeolocationUseCaseInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveGeolocationUseCaseInterface.swift; sourceTree = "<group>"; };
 		1C856EEF307250F600751712 /* RetrieveGeolocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveGeolocationUseCase.swift; sourceTree = "<group>"; };
-		1C856EF3307252E300751712 /* GeolocationFeatureDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationFeatureDTO.swift; sourceTree = "<group>"; };
 		1C856EFE30725B2C00751712 /* PrefectureDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureDetailState.swift; sourceTree = "<group>"; };
 		1C856F0130725B4600751712 /* PrefectureDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureDetailViewModel.swift; sourceTree = "<group>"; };
 		1C856F0330725B5900751712 /* PrefectureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureDetailView.swift; sourceTree = "<group>"; };
@@ -14563,28 +14531,16 @@
 		1C856F1330727A6D00751712 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		1CD68C8F306F61F50054CB9A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		1CD68C90306F61F50054CB9A /* AshiatoKaiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AshiatoKaiApp.swift; sourceTree = "<group>"; };
-		1CD68C93306F61F50054CB9A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		1CD68C98306F61F50054CB9A /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
 		1CD68C99306F61F50054CB9A /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		1CD68C9A306F61F50054CB9A /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		1CD68C9C306F61F50054CB9A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		1CD68C9E306F61F50054CB9A /* AshiatoKaiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AshiatoKaiAPI.swift; sourceTree = "<group>"; };
-		1CD68CAC306F624A0054CB9A /* ImmigrantDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmigrantDTO.swift; sourceTree = "<group>"; };
-		1CD68CB1306F627A0054CB9A /* RemoteSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSearchRepository.swift; sourceTree = "<group>"; };
 		1CD68CB7306F63070054CB9A /* SearchForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForm.swift; sourceTree = "<group>"; };
 		1CD68CB9306F631F0054CB9A /* SearchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchState.swift; sourceTree = "<group>"; };
-		1CD68CBB306F63770054CB9A /* URLSessionAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAPIClient.swift; sourceTree = "<group>"; };
-		1CD68CBD306F63AB0054CB9A /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		1CD68CBF306F640C0054CB9A /* APIErrorEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorEnvelope.swift; sourceTree = "<group>"; };
 		1CD68CC2306F675C0054CB9A /* RetrieveImmigrantsUseCaseInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveImmigrantsUseCaseInterface.swift; sourceTree = "<group>"; };
 		1CD68CC5306F677F0054CB9A /* RetrieveImmigrantsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveImmigrantsError.swift; sourceTree = "<group>"; };
 		1CD68CC7306F678E0054CB9A /* RetrieveImmigrantsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveImmigrantsUseCase.swift; sourceTree = "<group>"; };
 		1CD68CC9306F68C10054CB9A /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
-		1CD68CCF306F6CC70054CB9A /* ImmigrantGroupDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmigrantGroupDTO.swift; sourceTree = "<group>"; };
-		1CD68CD1306F6CDD0054CB9A /* ImmigrantGroupMemberDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmigrantGroupMemberDTO.swift; sourceTree = "<group>"; };
-		1CD68CD3306F6D110054CB9A /* RemoteImmigrantGroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImmigrantGroupRepository.swift; sourceTree = "<group>"; };
-		1CD68CD6306F6D3F0054CB9A /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
-		1CD68CD8306F6D520054CB9A /* ImmigrantGroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmigrantGroupRepository.swift; sourceTree = "<group>"; };
 		1CD68CDB306F6DB20054CB9A /* RetrieveImmigrantGroupUseCaseInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveImmigrantGroupUseCaseInterface.swift; sourceTree = "<group>"; };
 		1CD68CDD306F6DC20054CB9A /* RetrieveImmigrantGroupUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveImmigrantGroupUseCase.swift; sourceTree = "<group>"; };
 		1CD68CE0306F6DFE0054CB9A /* GroupDetailsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsState.swift; sourceTree = "<group>"; };
@@ -14593,7 +14549,6 @@
 		1CD68CE6306F6FD30054CB9A /* SearchNavigationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationEvent.swift; sourceTree = "<group>"; };
 		1CD68CED306F78A00054CB9A /* NameSurnameKanjiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSurnameKanjiView.swift; sourceTree = "<group>"; };
 		38A007151ABE87CC01A5B6E9 /* AshiatoKai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AshiatoKai.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA0000020000000000000002 /* NameStatisticsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameStatisticsDTO.swift; sourceTree = "<group>"; };
 		AA0000030000000000000003 /* RetrieveNameStatisticsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveNameStatisticsUseCase.swift; sourceTree = "<group>"; };
 		AA0000040000000000000004 /* RetrieveNameStatisticsUseCaseInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveNameStatisticsUseCaseInterface.swift; sourceTree = "<group>"; };
 		AA0000050000000000000005 /* RetrieveTopNamesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveTopNamesUseCase.swift; sourceTree = "<group>"; };
@@ -14617,6 +14572,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C04B83230B00C3300355F4C /* AshiatoKaiData in Frameworks */,
 				1CD368E530AFD8A300DD67AB /* AshiatoKaiDomain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -21931,24 +21887,6 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		1C6E602630ACEF8100D3B65C /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				1C6E602730AF7CE100D3B65C /* Mapping */,
-				1CD68CAA306F621F0054CB9A /* API */,
-				1CD68CAE306F62650054CB9A /* Repositories */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		1C6E602730AF7CE100D3B65C /* Mapping */ = {
-			isa = PBXGroup;
-			children = (
-				1C6E602830AF7CEB00D3B65C /* APIErrorMapper.swift */,
-			);
-			path = Mapping;
-			sourceTree = "<group>";
-		};
 		1C856E8A30720E2F00751712 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
@@ -22056,16 +21994,6 @@
 			path = JapanesePrefecture;
 			sourceTree = "<group>";
 		};
-		1C856EDA30724FCC00751712 /* Geolocation */ = {
-			isa = PBXGroup;
-			children = (
-				1C856EF3307252E300751712 /* GeolocationFeatureDTO.swift */,
-				1C856EDB30724FD900751712 /* GeolocationGeometryDTO.swift */,
-				1C856ED830724FA800751712 /* GeolocationFeatureCollectionDTO.swift */,
-			);
-			path = Geolocation;
-			sourceTree = "<group>";
-		};
 		1C856EEC307250D300751712 /* Geolocation */ = {
 			isa = PBXGroup;
 			children = (
@@ -22169,61 +22097,6 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		1CD68CAA306F621F0054CB9A /* API */ = {
-			isa = PBXGroup;
-			children = (
-				1CD68CB3306F629D0054CB9A /* Core */,
-				1CD68CAB306F62430054CB9A /* DTO */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		1CD68CAB306F62430054CB9A /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-				AA0000020000000000000002 /* NameStatisticsDTO.swift */,
-				1C856EDA30724FCC00751712 /* Geolocation */,
-				1C856E9430720FFE00751712 /* SurnameStatisticsDTO.swift */,
-				1C856E8E30720F3800751712 /* PrefectureStatisticsDTO.swift */,
-				1CD68CD1306F6CDD0054CB9A /* ImmigrantGroupMemberDTO.swift */,
-				1CD68CCF306F6CC70054CB9A /* ImmigrantGroupDTO.swift */,
-				1CD68CAC306F624A0054CB9A /* ImmigrantDTO.swift */,
-			);
-			path = DTO;
-			sourceTree = "<group>";
-		};
-		1CD68CAE306F62650054CB9A /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				1CD68CD5306F6D360054CB9A /* Protocols */,
-				1CD68CB0306F62740054CB9A /* Remote */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		1CD68CB0306F62740054CB9A /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				1C856EEA3072509F00751712 /* RemoteGeolocationRepository.swift */,
-				1C856E9030720F6300751712 /* RemoteStatisticsRepository.swift */,
-				1CD68CD3306F6D110054CB9A /* RemoteImmigrantGroupRepository.swift */,
-				1CD68CB1306F627A0054CB9A /* RemoteSearchRepository.swift */,
-			);
-			path = Remote;
-			sourceTree = "<group>";
-		};
-		1CD68CB3306F629D0054CB9A /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				1CD68CBF306F640C0054CB9A /* APIErrorEnvelope.swift */,
-				1CD68CBD306F63AB0054CB9A /* APIClient.swift */,
-				1CD68CBB306F63770054CB9A /* URLSessionAPIClient.swift */,
-				1CD68C93306F61F50054CB9A /* APIError.swift */,
-				1CD68C9E306F61F50054CB9A /* AshiatoKaiAPI.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
 		1CD68CB4306F62C70054CB9A /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -22266,17 +22139,6 @@
 				1CD68CC2306F675C0054CB9A /* RetrieveImmigrantsUseCaseInterface.swift */,
 			);
 			path = RetrieveImmigrants;
-			sourceTree = "<group>";
-		};
-		1CD68CD5306F6D360054CB9A /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				1C856EE83072508F00751712 /* GeolocationRepository.swift */,
-				1C856E8C30720ECA00751712 /* StatisticsRepository.swift */,
-				1CD68CD8306F6D520054CB9A /* ImmigrantGroupRepository.swift */,
-				1CD68CD6306F6D3F0054CB9A /* SearchRepository.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		1CD68CDA306F6DA20054CB9A /* RetrieveImmigrantGroup */ = {
@@ -22370,7 +22232,6 @@
 		BCE16DD0260827ECF338C787 /* AshiatoKai */ = {
 			isa = PBXGroup;
 			children = (
-				1C6E602630ACEF8100D3B65C /* Data */,
 				1C3A7AB4306F84B00001D249 /* UI */,
 				1CD68C91306F61F50054CB9A /* App */,
 			);
@@ -22403,6 +22264,7 @@
 			name = AshiatoKai;
 			packageProductDependencies = (
 				1CD368E430AFD8A300DD67AB /* AshiatoKaiDomain */,
+				1C04B83130B00C3300355F4C /* AshiatoKaiData */,
 			);
 			productName = ReactiveSearch;
 			productReference = 38A007151ABE87CC01A5B6E9 /* AshiatoKai.app */;
@@ -29646,7 +29508,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB0000020000000000000002 /* NameStatisticsDTO.swift in Sources */,
 				AB0000030000000000000003 /* RetrieveNameStatisticsUseCase.swift in Sources */,
 				AB0000040000000000000004 /* RetrieveNameStatisticsUseCaseInterface.swift in Sources */,
 				AB0000050000000000000005 /* RetrieveTopNamesUseCase.swift in Sources */,
@@ -29661,17 +29522,14 @@
 				1C3A7AC9306F88EB0001D249 /* Scanner.swift in Sources */,
 				1C856EFF30725B2C00751712 /* PrefectureDetailState.swift in Sources */,
 				1C856EBB30721C9F00751712 /* TopPrefecturesViewModel.swift in Sources */,
-				1C856EE93072508F00751712 /* GeolocationRepository.swift in Sources */,
 				1C856EAB3072166B00751712 /* RetrievePrefectureStatisticsUseCaseInterface.swift in Sources */,
 				1CD68C9F306F61F50054CB9A /* AshiatoKaiApp.swift in Sources */,
 				1C856EA6307215E700751712 /* RetrieveTopPrefecturesUseCase.swift in Sources */,
 				1CD68CDE306F6DC20054CB9A /* RetrieveImmigrantGroupUseCase.swift in Sources */,
 				1C3A7AC3306F874C0001D249 /* JapaneseCharacterResource.swift in Sources */,
-				1CD68CBE306F63AB0054CB9A /* APIClient.swift in Sources */,
 				1C856ECB3072211500751712 /* SurnameStatisticsState.swift in Sources */,
 				1C3A7AD1306F89A40001D249 /* AnimCJKParserError.swift in Sources */,
 				1CD68CC6306F677F0054CB9A /* RetrieveImmigrantsError.swift in Sources */,
-				1C856ED930724FA800751712 /* GeolocationFeatureCollectionDTO.swift in Sources */,
 				1C856ED2307226CF00751712 /* SurnameKanjiView.swift in Sources */,
 				1C856F0430725B5900751712 /* PrefectureDetailView.swift in Sources */,
 				1C856EB53072172300751712 /* RetrieveSurnameStatisticsUseCase.swift in Sources */,
@@ -29690,8 +29548,6 @@
 				1C856EEE307250DE00751712 /* RetrieveGeolocationUseCaseInterface.swift in Sources */,
 				1C856EA83072161200751712 /* RetrieveTopPrefecturesUseCaseInterface.swift in Sources */,
 				1C3A7AC7306F883A0001D249 /* SVGPathParserError.swift in Sources */,
-				1CD68CD2306F6CDD0054CB9A /* ImmigrantGroupMemberDTO.swift in Sources */,
-				1CD68CD4306F6D110054CB9A /* RemoteImmigrantGroupRepository.swift in Sources */,
 				1C5444203074B754005BA7BC /* ContactView.swift in Sources */,
 				1C856EB73072188D00751712 /* StatisticsNavigationEvent.swift in Sources */,
 				1CD68CC8306F678E0054CB9A /* RetrieveImmigrantsUseCase.swift in Sources */,
@@ -29699,30 +29555,21 @@
 				1C856EB1307216E600751712 /* RetrieveTopSurnamesUseCase.swift in Sources */,
 				1C3A7ABA306F84F10001D249 /* JapaneseCharacter.swift in Sources */,
 				1CD68CA2306F61F50054CB9A /* SearchView.swift in Sources */,
-				1C856E9530720FFE00751712 /* SurnameStatisticsDTO.swift in Sources */,
 				1C3A7AD5306F8A8B0001D249 /* JapaneseCharacterView.swift in Sources */,
 				1CD68CBA306F63220054CB9A /* SearchState.swift in Sources */,
 				1C3A7ACF306F89840001D249 /* AnimCJKXMLDelegate.swift in Sources */,
-				1C856E8D30720ECA00751712 /* StatisticsRepository.swift in Sources */,
 				1C856ECF3072213200751712 /* SurnameStatisticsView.swift in Sources */,
-				1CD68CD7306F6D3F0054CB9A /* SearchRepository.swift in Sources */,
 				1C856ECD3072212100751712 /* SurnameStatisticsViewModel.swift in Sources */,
 				1C3A7ADC306F929C0001D249 /* JapaneseNameWritingView.swift in Sources */,
 				1C856ED730722C0600751712 /* PrefectureMapView.swift in Sources */,
-				1CD68CAD306F624A0054CB9A /* ImmigrantDTO.swift in Sources */,
 				1C856EB33072170100751712 /* RetrieveSurnameStatisticsUseCaseInterface.swift in Sources */,
-				1C856EF4307252E300751712 /* GeolocationFeatureDTO.swift in Sources */,
-				1CD68CD9306F6D520054CB9A /* ImmigrantGroupRepository.swift in Sources */,
 				1C856ED530722BF200751712 /* JapanesePrefecture.swift in Sources */,
 				1CD68CA3306F61F50054CB9A /* SearchViewModel.swift in Sources */,
 				1C3A7ADA306F91350001D249 /* JapaneseNameWritingViewModel.swift in Sources */,
 				1C3A7ADE306F92BF0001D249 /* JapaneseCharacterLoader.swift in Sources */,
 				1CD68CA4306F61F50054CB9A /* AppView.swift in Sources */,
-				1CD68CD0306F6CC70054CB9A /* ImmigrantGroupDTO.swift in Sources */,
 				1C856F1430727A6D00751712 /* RootView.swift in Sources */,
 				1C856EBD30721CB000751712 /* TopPrefecturesView.swift in Sources */,
-				1CD68CC0306F640C0054CB9A /* APIErrorEnvelope.swift in Sources */,
-				1CD68CBC306F63770054CB9A /* URLSessionAPIClient.swift in Sources */,
 				1C3A7AC5306F87F00001D249 /* JapaneseStrokeComponent.swift in Sources */,
 				1C3A7AE0306F92D00001D249 /* JapaneseNameWritingContainerView.swift in Sources */,
 				1C856EAF307216CA00751712 /* RetrieveTopSurnamesUseCaseInterface.swift in Sources */,
@@ -29732,7 +29579,6 @@
 				1C54442E3074C247005BA7BC /* ArchiveHeader.swift in Sources */,
 				1C856EA2307214A800751712 /* TopPrefecturesState.swift in Sources */,
 				1C856EC73072207400751712 /* PrefectureStatisticsViewModel.swift in Sources */,
-				1C6E602930AF7CEB00D3B65C /* APIErrorMapper.swift in Sources */,
 				1C856F093072646100751712 /* GeographicProjection.swift in Sources */,
 				1CD68CDC306F6DB20054CB9A /* RetrieveImmigrantGroupUseCaseInterface.swift in Sources */,
 				1C54442C3074C232005BA7BC /* AshiatoKaiTheme.swift in Sources */,
@@ -29744,17 +29590,10 @@
 				1CD68CCA306F68C10054CB9A /* AppContainer.swift in Sources */,
 				1C3A7AC1306F85370001D249 /* JapaneseCharacterWritingView.swift in Sources */,
 				1C856F073072644D00751712 /* GeographicShapeView.swift in Sources */,
-				1C856EDC30724FD900751712 /* GeolocationGeometryDTO.swift in Sources */,
-				1C856EEB3072509F00751712 /* RemoteGeolocationRepository.swift in Sources */,
-				1CD68CB2306F627A0054CB9A /* RemoteSearchRepository.swift in Sources */,
-				1C856E9130720F6300751712 /* RemoteStatisticsRepository.swift in Sources */,
 				1C856F0230725B4600751712 /* PrefectureDetailViewModel.swift in Sources */,
 				1CD68CB8306F63070054CB9A /* SearchForm.swift in Sources */,
 				1C856EC130721EB800751712 /* TopSurnamesView.swift in Sources */,
-				1CD68CA8306F61F50054CB9A /* APIError.swift in Sources */,
-				1CD68CA9306F61F50054CB9A /* AshiatoKaiAPI.swift in Sources */,
 				1C856F0B307274C500751712 /* SearchResultsView.swift in Sources */,
-				1C856E8F30720F3800751712 /* PrefectureStatisticsDTO.swift in Sources */,
 				1CD68CE5306F6EC80054CB9A /* GroupDetailsView.swift in Sources */,
 				1CD68CE7306F6FD30054CB9A /* SearchNavigationEvent.swift in Sources */,
 			);
@@ -29939,6 +29778,10 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1C04B83130B00C3300355F4C /* AshiatoKaiData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AshiatoKaiData;
+		};
 		1CD368E430AFD8A300DD67AB /* AshiatoKaiDomain */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1CF7DBA030AF8762006DD8E2 /* XCLocalSwiftPackageReference "Packages/AshiatoKaiDomain" */;
